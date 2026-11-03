@@ -1,0 +1,37 @@
+[
+  {
+    "name": "pdfplumber",
+    "url": "https://pypi.org/pypi/pdfplumber/json",
+    "status": "retrieved"
+  },
+  {
+    "name": "pypdfium2",
+    "url": "https://pypi.org/pypi/pypdfium2/json",
+    "status": "retrieved"
+  },
+  {
+    "name": "fastapi_license",
+    "url": "https://raw.githubusercontent.com/fastapi/fastapi/master/LICENSE",
+    "status": "retrieved"
+  },
+  {
+    "name": "moodle_5_0_2",
+    "url": "https://raw.githubusercontent.com/moodle/moodle/v5.0.2/version.php",
+    "status": "retrieved"
+  },
+  {
+    "name": "moodle_plagiarism",
+    "url": "https://raw.githubusercontent.com/moodle/moodle/v5.0.2/lib/plagiarismlib.php",
+    "status": "retrieved"
+  },
+  {
+    "name": "moodle_assign_api",
+    "url": "https://raw.githubusercontent.com/moodle/moodle/v5.0.2/mod/assign/db/services.php",
+    "status": "retrieved"
+  },
+  {
+    "name": "embedding_model",
+    "url": "https://raw.githubusercontent.com/UKPLab/sentence-transformers/master/README.md",
+    "status": "retrieved"
+  }
+]

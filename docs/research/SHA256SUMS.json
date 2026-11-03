@@ -1,0 +1,38 @@
+[
+  {
+    "file": "dependencies.json",
+    "sha256": "c41a5063cd1ab5d21537313abab8b403526939eeb23121a18fb0e8556fc7b29c"
+  },
+  {
+    "file": "embedding_model.txt",
+    "sha256": "77d3457b8233da01a844c64fc8a69e06b71fa0dd69a2e12d4c7b0bce015ee98d"
+  },
+  {
+    "file": "fastapi_license.txt",
+    "sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e"
+  },
+  {
+    "file": "moodle_5_0_2.txt",
+    "sha256": "7116362b0cdff924afd057a4ce17d12932887242745d8372d1817b907d19efed"
+  },
+  {
+    "file": "moodle_assign_api.txt",
+    "sha256": "652a962b68e76c05f99825959ed5ac560d89433a5a25cc3a162775d7c7897d91"
+  },
+  {
+    "file": "moodle_plagiarism.txt",
+    "sha256": "b484662511372cb643803d02854d8659c3053c9a01a8d277c93117d8e4ed373d"
+  },
+  {
+    "file": "pdfplumber.json",
+    "sha256": "d1168f626ce41926d1a8ed3ba687754df62b18b1f9cf86e20056306fd93711b3"
+  },
+  {
+    "file": "pypdfium2.json",
+    "sha256": "67b519b08ab70ec1b0826a4ce164f8fc3259d603320d889c4ac3eb55d369c367"
+  },
+  {
+    "file": "sources.json",
+    "sha256": "6cb36e5522e441e80eab6fb74b4cb744cd02829403e96d6b567c1d46fbe4a84e"
+  }
+]

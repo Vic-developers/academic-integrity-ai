@@ -1,0 +1,12 @@
+{
+  "name": "pdfplumber",
+  "version": "0.11.10",
+  "license": null,
+  "license_expression": null,
+  "requires_python": ">=3.8",
+  "requires_dist": [
+    "pdfminer.six==20260107",
+    "Pillow>=12.2.0",
+    "pypdfium2>=5.9.0"
+  ]
+}
