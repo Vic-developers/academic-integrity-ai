@@ -1,5 +1,9 @@
 # Fase 4 — Visor de evidencias y revisión humana
 
+## Corrección posterior del PDF
+
+El visor aplica la transformación real de PDF.js a las cajas originales y admite las cuatro rotaciones, CropBox, orígenes desplazados y UserUnit. Conserva compatibilidad con versiones ya extraídas; solo omite el overlay cuando la referencia o los caracteres no son verificables. [Verificación](validation/pdf-correction/README.md).
+
 El push previo autorizado quedó verificado en origin/work, commit 30e05a4. Esta fase se implementa después de ese push; no se publica automáticamente su nuevo commit.
 
 ## Comportamiento

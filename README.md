@@ -1,5 +1,9 @@
 # Academic Integrity AI
 
+## Corrección posterior del PDF
+
+El visor aplica la transformación real de PDF.js a las cajas originales y admite las cuatro rotaciones, CropBox, orígenes desplazados y UserUnit. Conserva compatibilidad con versiones ya extraídas; solo omite el overlay cuando la referencia o los caracteres no son verificables. [Verificación](docs/validation/pdf-correction/README.md).
+
 ## Estado actual — Fase 4
 
 Visor comparativo de evidencias con resaltado de rangos originales, contexto, navegación, solapamientos, filtros, revisión humana con historial y exportación JSON. PDF con cajas de caracteres cuando la geometría es verificable; DOCX/TXT estructurados. [Fase 4 y límites](docs/PHASE_4.md), [verificación](docs/validation/phase4/README.md).

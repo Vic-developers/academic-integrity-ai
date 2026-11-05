@@ -1,5 +1,9 @@
 # Registro de cambios
 
+## Corrección posterior del PDF
+
+El visor aplica la transformación real de PDF.js a las cajas originales y admite las cuatro rotaciones, CropBox, orígenes desplazados y UserUnit. Conserva compatibilidad con versiones ya extraídas; solo omite el overlay cuando la referencia o los caracteres no son verificables. [Verificación](docs/validation/pdf-correction/README.md).
+
 ## Estado actual — Fase 4
 
 Visor de dos paneles, rangos Unicode comprobados, cajas PDF con abstención geométrica, navegación, filtros, marcadores temporales, estados de revisión con historial y exportación JSON. Push anterior confirmado en origin/work hasta 30e05a4; nuevo trabajo se conserva en commit local.

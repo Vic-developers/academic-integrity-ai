@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-05",
+  "scope": "Corrección PDF posterior a Fase 4, Linux CPU",
+  "browser_tests_passed": 9,
+  "geometry_cases": [
+    {
+      "rotation": 0,
+      "crop": false,
+      "offset_media_box": false,
+      "user_unit": 1
+    },
+    {
+      "rotation": 0,
+      "crop": true,
+      "offset_media_box": true,
+      "user_unit": 1
+    },
+    {
+      "rotation": 90,
+      "crop": false,
+      "offset_media_box": false,
+      "user_unit": 1
+    },
+    {
+      "rotation": 90,
+      "crop": true,
+      "offset_media_box": true,
+      "user_unit": 1
+    },
+    {
+      "rotation": 180,
+      "crop": false,
+      "offset_media_box": false,
+      "user_unit": 1
+    },
+    {
+      "rotation": 180,
+      "crop": true,
+      "offset_media_box": true,
+      "user_unit": 1
+    },
+    {
+      "rotation": 270,
+      "crop": false,
+      "offset_media_box": false,
+      "user_unit": 1
+    },
+    {
+      "rotation": 270,
+      "crop": true,
+      "offset_media_box": true,
+      "user_unit": 2
+    }
+  ],
+  "glyph_ink_ratio_threshold": 0.85,
+  "zoom_verified": 1.5,
+  "invalid_geometry_and_corrupt_text_abstention": "passed",
+  "backend_production_code_unchanged_from_phase4": true,
+  "last_full_backend_tests": 74,
+  "source_files_matching_container": 36,
+  "frontend_files_matching_container": 205,
+  "frontend_entry_and_bundles_sha256": {
+    "index.html": "7e4707b998a22770494e8c17f44c394183ae16f6cc9f6fdc185c22d6f36b1740",
+    "assets/pdf.worker.min-CIqJB0yW.mjs": "1e64c8240e54735ec5913b37acd5134747799cb8c6bb3777c70adbc01232d2aa",
+    "assets/index-BmQ9tj8H.js": "509fd11f1657f5ad62b5e83f81c48af056a2aeed0e62027ce820f6f6066d7550",
+    "assets/index-B4iWhkEz.css": "b3d79a88bc07af5003bf69b9d54f49aabbcce307442fa87c168f209c73b3c6b8",
+    "assets/PdfViewer-cK-bqodB.js": "653f0d5b6225b20a46cd73213a8e131fc7f1abb8e25a61261d73ff7224402ffd"
+  },
+  "schema_revision": "0004_review",
+  "development_data": {
+    "users": 0,
+    "documents": 0,
+    "courses": 0,
+    "audits": 0
+  },
+  "private_originals_after_test_cleanup": 0,
+  "frontend_image": "sha256:57695ffe40501e12cf3af97285e64270de9c0164965855f7908a99c7eaef0514",
+  "dependencies_unchanged": true,
+  "dependency_audit_reference": "../phase4/checks.json",
+  "limitations": [
+    "Sin OCR ni antivirus",
+    "Las cajas de caracteres no fiables no se inventan",
+    "No validado en Windows/WSL2 ni producción"
+  ]
+}

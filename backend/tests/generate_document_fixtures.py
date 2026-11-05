@@ -57,4 +57,46 @@ for rotated in [False, True]:
 )
 
 print("Documentos sintéticos de prueba generados")
-(root / 'visor-rotado-fuente.pdf').write_bytes((root / 'visor-rotado.pdf').read_bytes())
+(root / "visor-rotado-fuente.pdf").write_bytes((root / "visor-rotado.pdf").read_bytes())
+
+
+def geometry_pdf(rotation, crop=False, offset=False, user_unit=1):
+    out = io.BytesIO()
+    pdf = canvas.Canvas(out, pagesize=(600, 800), pageCompression=0)
+    pdf.drawString(100, 600, "La evidencia verificable exige una revision humana responsable ahora")
+    pdf.save()
+    data = out.getvalue().decode("latin1")
+    # reportlab writes a plain page dictionary; rebuild xref offsets after changing it.
+    import re
+
+    data = data.replace("/Rotate 0", f"/Rotate {rotation}")
+    if offset:
+        data = data.replace("/MediaBox [ 0 0 600 800 ]", "/MediaBox [ 20 30 620 830 ]")
+    if crop:
+        data = data.replace("/Rotate ", "/CropBox [ 60 100 550 740 ] /Rotate ", 1)
+    if user_unit != 1:
+        data = data.replace("/Rotate ", f"/UserUnit {user_unit} /Rotate ", 1)
+    # Rebuild the classic xref because substituted dictionary lengths change object positions.
+    starts = {int(m.group(1)): m.start() for m in re.finditer(r"(?m)^(\d+) 0 obj\b", data)}
+    xref = data.index("xref\n")
+    trailer = data[data.index("trailer\n", xref) : data.index("startxref\n", xref)]
+    data = (
+        data[:xref]
+        + "xref\n0 "
+        + str(max(starts) + 1)
+        + "\n0000000000 65535 f \n"
+        + "".join(f"{starts[i]:010d} 00000 n \n" for i in range(1, max(starts) + 1))
+        + trailer
+        + "startxref\n"
+        + str(xref)
+        + "\n%%EOF\n"
+    )
+    return data.encode("latin1")
+
+
+for rotation in [0, 90, 180, 270]:
+    for crop in [False, True]:
+        name = f"geometria-{rotation}-{'crop' if crop else 'media'}.pdf"
+        data = geometry_pdf(rotation, crop, offset=crop, user_unit=2 if rotation == 270 and crop else 1)
+        (root / name).write_bytes(data)
+        (root / name.replace(".pdf", "-fuente.pdf")).write_bytes(data)

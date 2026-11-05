@@ -1,5 +1,9 @@
 # Arquitectura
 
+## Corrección posterior del PDF
+
+El visor aplica la transformación real de PDF.js a las cajas originales y admite las cuatro rotaciones, CropBox, orígenes desplazados y UserUnit. Conserva compatibilidad con versiones ya extraídas; solo omite el overlay cuando la referencia o los caracteres no son verificables. [Verificación](docs/validation/pdf-correction/README.md).
+
 ## Estado actual — Fase 4
 
 Visor recupera fragmentos de la versión ligada a la evidencia, verifica hashes en servidor y navegador y segmenta puntos de código con fronteras de solapamiento. PDF.js renderiza el original; overlay SVG usa cajas de caracteres solo con referencia geométrica compatible. [Diseño y limitaciones](docs/PHASE_4.md).

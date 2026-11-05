@@ -1,5 +1,9 @@
 # API literal — Fase 3
 
+## Corrección posterior del PDF
+
+El visor aplica la transformación real de PDF.js a las cajas originales y admite las cuatro rotaciones, CropBox, orígenes desplazados y UserUnit. Conserva compatibilidad con versiones ya extraídas; solo omite el overlay cuando la referencia o los caracteres no son verificables. [Verificación](validation/pdf-correction/README.md).
+
 Prefijo `/api/v1`. Sesión, institución seleccionada, CSRF y Origin se aplican como en fases anteriores. OpenAPI real: `/api/openapi.json`.
 
 | Método y ruta | Resultado |

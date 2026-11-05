@@ -269,20 +269,32 @@ test("PDF real: cajas sobre glifos, zoom y recuperación de resaltado entre pág
   await expect(main.locator(".pdf-highlights rect").first()).toBeVisible();
 });
 
-test("PDF rotado declara la limitación y un mapa alterado no muestra resaltados", async ({
+test("PDF rechaza geometría incoherente y mapas alterados", async ({
   page,
 }) => {
   test.setTimeout(90000);
   await login(page);
   const { audit, findings } = await compare(page, [
-    "visor-rotado.pdf",
-    "visor-rotado-fuente.pdf",
+    "visor.pdf",
+    "visor-pdf-fuente.txt",
   ]);
   const main = page.getByRole("region", {
     name: "Documento principal con resaltado",
     exact: true,
   });
-  await expect(main.getByText(/Geometría PDF no compatible/)).toBeVisible();
+  await page.route(
+    `**/api/v1/audits/${audit.id}/findings/${findings[0].id}/view?side=target*`,
+    async (route) => {
+      const response = await route.fetch();
+      const body = await response.json();
+      body.page_geometry.rotation = 45;
+      await route.fulfill({ response, json: body });
+    },
+  );
+  await page.reload();
+  await expect(
+    main.getByText(/No se pudo verificar la referencia geométrica/),
+  ).toBeVisible();
   await expect(main.locator(".pdf-highlights rect")).toHaveCount(0);
   await expect(main.locator("mark").first()).toBeVisible();
   await page.route(
@@ -304,4 +316,70 @@ test("PDF rotado declara la limitación y un mapa alterado no muestra resaltados
       exact: true,
     }),
   ).toHaveCount(0);
+});
+
+test("PDF con cuatro rotaciones, CropBox, origen desplazado y UserUnit alinea glifos", async ({
+  page,
+}) => {
+  test.setTimeout(240000);
+  await login(page);
+  for (const rotation of [0, 90, 180, 270])
+    for (const crop of [false, true]) {
+      const name = `geometria-${rotation}-${crop ? "crop" : "media"}`;
+      await compare(page, [`${name}.pdf`, `${name}-fuente.pdf`]);
+      const main = page.getByRole("region", {
+        name: "Documento principal con resaltado",
+        exact: true,
+      });
+      await expect(
+        main.locator(".pdf-highlights rect").first(),
+        name,
+      ).toBeVisible();
+      async function inkRatio() {
+        return main.evaluate((el) => {
+          const canvas = el.querySelector("canvas")!;
+          const bounds = canvas.getBoundingClientRect();
+          const ctx = canvas.getContext("2d")!;
+          const boxes = Array.from(el.querySelectorAll(".pdf-highlights rect"));
+          return (
+            boxes.filter((box) => {
+              const b = box.getBoundingClientRect();
+              const x = Math.max(
+                0,
+                Math.floor(((b.x - bounds.x) * canvas.width) / bounds.width),
+              );
+              const y = Math.max(
+                0,
+                Math.floor(((b.y - bounds.y) * canvas.height) / bounds.height),
+              );
+              const w = Math.min(
+                  canvas.width - x,
+                  Math.max(
+                    1,
+                    Math.ceil((b.width * canvas.width) / bounds.width),
+                  ),
+                ),
+                h = Math.min(
+                  canvas.height - y,
+                  Math.max(
+                    1,
+                    Math.ceil((b.height * canvas.height) / bounds.height),
+                  ),
+                );
+              const data = ctx.getImageData(x, y, w, h).data;
+              for (let i = 0; i < data.length; i += 4)
+                if (data[i] < 150 && data[i + 3] > 0) return true;
+              return false;
+            }).length / boxes.length
+          );
+        });
+      }
+      expect(await inkRatio(), name).toBeGreaterThan(0.85);
+      await main
+        .getByRole("combobox", { name: "Zoom", exact: true })
+        .selectOption("1.5");
+      await expect
+        .poll(inkRatio, { message: `zoom ${name}` })
+        .toBeGreaterThan(0.85);
+    }
 });

@@ -4,6 +4,7 @@ import type { PDFDocumentProxy, RenderTask } from "pdfjs-dist";
 import workerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 import type { EvidenceView, Highlight } from "../evidence";
 import { reviewNames } from "../evidence";
+import { pdfProjection } from "../pdfGeometry";
 import ErrorMessage from "./ErrorMessage";
 GlobalWorkerOptions.workerSrc = workerUrl;
 
@@ -27,6 +28,11 @@ export default function PdfViewer({
 }) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const [geometryValid, setGeometryValid] = useState(false);
+  const [projected, setProjected] = useState<{
+    width: number;
+    height: number;
+    boxes: Map<string, number[][]>;
+  } | null>(null);
   const [rendered, setRendered] = useState(false);
   const [pdf, setPdf] = useState<PDFDocumentProxy | null>(null);
   const [zoom, setZoom] = useState(1);
@@ -66,24 +72,33 @@ export default function PdfViewer({
       .getPage(page)
       .then((p) => {
         if (!active || !canvas.current) return;
-        const g = evidence?.geometry;
-        setGeometryValid(
-          Boolean(
-            g &&
-              g.rotation === 0 &&
-              p.rotate === 0 &&
-              p.view.every(
-                (v, i) => Math.abs(v - [0, 0, g.width, g.height][i]) < 0.1,
-              ) &&
-              g.bbox.every(
-                (v, i) => Math.abs(v - [0, 0, g.width, g.height][i]) < 0.1,
-              ),
-          ),
-        );
         const viewport = p.getViewport({ scale: zoom * 1.2 });
+        const project = pdfProjection(
+          evidence?.geometry ?? null,
+          p.rotate,
+          p.view,
+          viewport,
+        );
+        setGeometryValid(Boolean(project));
+        setProjected(
+          project
+            ? {
+                width: Math.ceil(viewport.width),
+                height: Math.ceil(viewport.height),
+                boxes: new Map(
+                  (evidence?.highlights ?? []).map((h) => [
+                    h.finding_id,
+                    (h.boxes ?? [])
+                      .map(project)
+                      .filter((box): box is number[] => box !== null),
+                  ]),
+                ),
+              }
+            : null,
+        );
         const target = canvas.current;
-        target.width = viewport.width;
-        target.height = viewport.height;
+        target.width = Math.ceil(viewport.width);
+        target.height = Math.ceil(viewport.height);
         render = p.render({ canvas: target, viewport });
         return render.promise.then(() => {
           if (active) setRendered(true);
@@ -97,7 +112,7 @@ export default function PdfViewer({
       active = false;
       render?.cancel();
     };
-  }, [pdf, page, zoom, evidence?.geometry]);
+  }, [pdf, page, zoom, evidence?.geometry, evidence?.highlights]);
   return (
     <div className="panel pdf-view">
       <div className="viewer-tools">
@@ -135,8 +150,8 @@ export default function PdfViewer({
       {!pdf && !error && <p role="status">Abriendo PDF original…</p>}
       {evidence && !geometryValid && rendered && (
         <p className="small" role="status">
-          Geometría PDF no compatible (rotación, recorte o referencia no
-          verificada). Consulta el resaltado en el texto original extraído.
+          No se pudo verificar la referencia geométrica del PDF. Consulta el
+          resaltado en el texto original extraído.
         </p>
       )}
       {evidence &&
@@ -154,14 +169,14 @@ export default function PdfViewer({
             ref={canvas}
             aria-label={`Página ${page} del PDF original. El texto extraído accesible aparece debajo.`}
           />
-          {evidence && rendered && geometryValid && evidence.geometry && (
+          {evidence && rendered && geometryValid && projected && (
             <svg
               className="pdf-highlights"
-              viewBox={`0 0 ${evidence.geometry.width} ${evidence.geometry.height}`}
+              viewBox={`0 0 ${projected.width} ${projected.height}`}
               aria-label="Resaltados del PDF"
             >
               {evidence.highlights.flatMap((h) =>
-                (h.boxes ?? []).map((b, i) => (
+                (projected.boxes.get(h.finding_id) ?? []).map((b, i) => (
                   <rect
                     key={`${h.finding_id}-${i}`}
                     className={`pdf-match ${h.review_state} ${h.finding_id === evidence.selected ? "selected" : ""}`}
