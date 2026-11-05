@@ -1,5 +1,9 @@
 # Modelo de datos
 
+## Estado al cierre de Fase 1
+
+Esquema efectivo de Fase 1: users, institutions, memberships, sessions, reset_tokens, email_jobs y activity, más alembic_version. Roles como valores restringidos por CHECK; catálogos de permisos y entidades documentales se implementarán después. Identidad global interna y tablas tenant tienen controles diferentes, descritos en [DEVELOPMENT](docs/DEVELOPMENT.md). El resto es diseño objetivo.
+
 PostgreSQL 16 y extensión pgvector como base propuesta. UUID como PK, timestamps UTC con zona, SHA-256 para integridad. Todos los registros de negocio llevan institution_id NOT NULL; índices comienzan por institución y criterio de acceso. Tablas globales de permisos y catálogos de modelos no contienen documentos ni datos de alumnos.
 
 ## Entidades y relaciones

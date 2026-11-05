@@ -1,0 +1,268 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-05T11:38:46.705157+00:00"
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "alembic",
+      "version": "1.20.1",
+      "purl": "pkg:pypi/alembic@1.20.1"
+    },
+    {
+      "type": "library",
+      "name": "amqp",
+      "version": "5.4.2",
+      "purl": "pkg:pypi/amqp@5.4.2"
+    },
+    {
+      "type": "library",
+      "name": "annotated-doc",
+      "version": "0.0.5",
+      "purl": "pkg:pypi/annotated-doc@0.0.5"
+    },
+    {
+      "type": "library",
+      "name": "annotated-types",
+      "version": "0.8.0",
+      "purl": "pkg:pypi/annotated-types@0.8.0"
+    },
+    {
+      "type": "library",
+      "name": "anyio",
+      "version": "4.16.0",
+      "purl": "pkg:pypi/anyio@4.16.0"
+    },
+    {
+      "type": "library",
+      "name": "argon2-cffi",
+      "version": "25.1.0",
+      "purl": "pkg:pypi/argon2-cffi@25.1.0"
+    },
+    {
+      "type": "library",
+      "name": "argon2-cffi-bindings",
+      "version": "26.1.0",
+      "purl": "pkg:pypi/argon2-cffi-bindings@26.1.0"
+    },
+    {
+      "type": "library",
+      "name": "billiard",
+      "version": "4.3.2",
+      "purl": "pkg:pypi/billiard@4.3.2"
+    },
+    {
+      "type": "library",
+      "name": "celery",
+      "version": "5.6.3",
+      "purl": "pkg:pypi/celery@5.6.3"
+    },
+    {
+      "type": "library",
+      "name": "cffi",
+      "version": "2.1.1",
+      "purl": "pkg:pypi/cffi@2.1.1"
+    },
+    {
+      "type": "library",
+      "name": "click",
+      "version": "8.5.0",
+      "purl": "pkg:pypi/click@8.5.0"
+    },
+    {
+      "type": "library",
+      "name": "click-didyoumean",
+      "version": "0.3.1",
+      "purl": "pkg:pypi/click-didyoumean@0.3.1"
+    },
+    {
+      "type": "library",
+      "name": "click-plugins",
+      "version": "1.1.1.2",
+      "purl": "pkg:pypi/click-plugins@1.1.1.2"
+    },
+    {
+      "type": "library",
+      "name": "click-repl",
+      "version": "0.4.1",
+      "purl": "pkg:pypi/click-repl@0.4.1"
+    },
+    {
+      "type": "library",
+      "name": "dnspython",
+      "version": "2.9.2",
+      "purl": "pkg:pypi/dnspython@2.9.2"
+    },
+    {
+      "type": "library",
+      "name": "email-validator",
+      "version": "2.3.0",
+      "purl": "pkg:pypi/email-validator@2.3.0"
+    },
+    {
+      "type": "library",
+      "name": "fastapi",
+      "version": "0.141.1",
+      "purl": "pkg:pypi/fastapi@0.141.1"
+    },
+    {
+      "type": "library",
+      "name": "greenlet",
+      "version": "3.5.6",
+      "purl": "pkg:pypi/greenlet@3.5.6"
+    },
+    {
+      "type": "library",
+      "name": "h11",
+      "version": "0.16.0",
+      "purl": "pkg:pypi/h11@0.16.0"
+    },
+    {
+      "type": "library",
+      "name": "idna",
+      "version": "3.20",
+      "purl": "pkg:pypi/idna@3.20"
+    },
+    {
+      "type": "library",
+      "name": "kombu",
+      "version": "5.7.0",
+      "purl": "pkg:pypi/kombu@5.7.0"
+    },
+    {
+      "type": "library",
+      "name": "mako",
+      "version": "1.4.3",
+      "purl": "pkg:pypi/mako@1.4.3"
+    },
+    {
+      "type": "library",
+      "name": "markupsafe",
+      "version": "3.0.4",
+      "purl": "pkg:pypi/markupsafe@3.0.4"
+    },
+    {
+      "type": "library",
+      "name": "packaging",
+      "version": "26.3",
+      "purl": "pkg:pypi/packaging@26.3"
+    },
+    {
+      "type": "library",
+      "name": "prompt-toolkit",
+      "version": "3.0.53",
+      "purl": "pkg:pypi/prompt-toolkit@3.0.53"
+    },
+    {
+      "type": "library",
+      "name": "psycopg",
+      "version": "3.3.8",
+      "purl": "pkg:pypi/psycopg@3.3.8"
+    },
+    {
+      "type": "library",
+      "name": "psycopg-binary",
+      "version": "3.3.8",
+      "purl": "pkg:pypi/psycopg-binary@3.3.8"
+    },
+    {
+      "type": "library",
+      "name": "pycparser",
+      "version": "3.12",
+      "purl": "pkg:pypi/pycparser@3.12"
+    },
+    {
+      "type": "library",
+      "name": "pydantic",
+      "version": "2.14.3",
+      "purl": "pkg:pypi/pydantic@2.14.3"
+    },
+    {
+      "type": "library",
+      "name": "pydantic-core",
+      "version": "2.50.4",
+      "purl": "pkg:pypi/pydantic-core@2.50.4"
+    },
+    {
+      "type": "library",
+      "name": "pydantic-settings",
+      "version": "2.16.2",
+      "purl": "pkg:pypi/pydantic-settings@2.16.2"
+    },
+    {
+      "type": "library",
+      "name": "python-dateutil",
+      "version": "4.0.0",
+      "purl": "pkg:pypi/python-dateutil@4.0.0"
+    },
+    {
+      "type": "library",
+      "name": "python-dotenv",
+      "version": "1.2.4",
+      "purl": "pkg:pypi/python-dotenv@1.2.4"
+    },
+    {
+      "type": "library",
+      "name": "redis",
+      "version": "7.4.1",
+      "purl": "pkg:pypi/redis@7.4.1"
+    },
+    {
+      "type": "library",
+      "name": "sqlalchemy",
+      "version": "2.0.57",
+      "purl": "pkg:pypi/sqlalchemy@2.0.57"
+    },
+    {
+      "type": "library",
+      "name": "starlette",
+      "version": "1.10.0",
+      "purl": "pkg:pypi/starlette@1.10.0"
+    },
+    {
+      "type": "library",
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "purl": "pkg:pypi/typing-extensions@4.16.0"
+    },
+    {
+      "type": "library",
+      "name": "typing-inspection",
+      "version": "0.4.5",
+      "purl": "pkg:pypi/typing-inspection@0.4.5"
+    },
+    {
+      "type": "library",
+      "name": "tzdata",
+      "version": "2026.6",
+      "purl": "pkg:pypi/tzdata@2026.6"
+    },
+    {
+      "type": "library",
+      "name": "tzlocal",
+      "version": "5.4.5",
+      "purl": "pkg:pypi/tzlocal@5.4.5"
+    },
+    {
+      "type": "library",
+      "name": "uvicorn",
+      "version": "0.52.4",
+      "purl": "pkg:pypi/uvicorn@0.52.4"
+    },
+    {
+      "type": "library",
+      "name": "vine",
+      "version": "5.1.0",
+      "purl": "pkg:pypi/vine@5.1.0"
+    },
+    {
+      "type": "library",
+      "name": "wcwidth",
+      "version": "0.9.4",
+      "purl": "pkg:pypi/wcwidth@0.9.4"
+    }
+  ]
+}

@@ -1,6 +1,10 @@
 # Evaluación y pruebas
 
-## Evidencia actual
+## Estado al cierre de Fase 1
+
+Fase 1: 22 pruebas backend y 2 recorridos Playwright aprobados con servicios reales. Detalles, advertencias y alcance en [PHASE_1](docs/PHASE_1.md). No hay métricas científicas de los motores. La sección de evidencia de Fase 0 de abajo es histórica.
+
+## Evidencia histórica de Fase 0
 
 Fase 0: inspección del entorno, consulta TLS de metadatos y fuentes oficiales, revisión documental y enlaces locales. Cero pruebas de aplicación ejecutadas porque no existe implementación. No hay métricas de precisión, tiempos de inferencia ni capacidad concurrente medidas. Los objetivos siguientes son criterios de aceptación propuestos, no resultados.
 

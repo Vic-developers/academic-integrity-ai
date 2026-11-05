@@ -1,5 +1,9 @@
 # Infraestructura y operación
 
+## Estado al cierre de Fase 1
+
+Fase 1 incorpora Compose local y comandos de instalación reales en [README](README.md) y [DEVELOPMENT](docs/DEVELOPMENT.md). Las imágenes y dependencias se construyeron/probaron en Linux CPU. No es configuración de producción ni instalación Windows comprobada. La inspección del 3 de noviembre de abajo se conserva como histórica.
+
 ## Inspección real
 
 3 de noviembre de 2026: checkout vacío, rama local work sin commits al inicio; Python 3.12.14, Node 24.19.0, npm 11.9.0 y cliente Docker 28.4.0. Se observaron 5 CPU, 33 GiB de memoria visible y unos 60 GiB libres en filesystem. Los límites cgroup consultados son 32 GiB de memoria y cuota equivalente a 4 CPU (cpu.max 400000/100000); dimensionar workers con esta cuota, no con los 5 procesadores visibles. No son una garantía de capacidad de aplicación. No se ha probado el daemon Docker ni construido imágenes. Proxy HTTP de plataforma obligatorio, TLS conservado; no VPN configurada. Se inspeccionaron solo nombres/presencia de variables, nunca valores.

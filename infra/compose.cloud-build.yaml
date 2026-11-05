@@ -1,0 +1,17 @@
+# Overlay only for this managed environment. No session certificate is baked into images.
+services:
+  api:
+    build:
+      secrets: [proxy_ca]
+  migrate:
+    build:
+      secrets: [proxy_ca]
+  worker:
+    build:
+      secrets: [proxy_ca]
+  frontend:
+    build:
+      secrets: [proxy_ca]
+secrets:
+  proxy_ca:
+    file: /etc/ssl/certs/ca-certificates.crt

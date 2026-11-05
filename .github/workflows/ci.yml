@@ -1,0 +1,30 @@
+name: Verificación de Fase 1
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - run: python scripts/configure_dev.py
+      - run: python -m pip install --require-hashes -r backend/requirements-dev.lock
+      - run: npm ci --prefix frontend
+      - run: ruff check backend scripts
+      - run: npm run build --prefix frontend
+      - run: docker compose -f compose.yaml -f infra/compose.test-access.yaml up -d --wait db redis mailpit
+      - run: python scripts/test_backend.py
+      - run: docker compose build
+      - run: npx --prefix frontend playwright install --with-deps chromium
+      - run: python scripts/run_e2e.py
+      - run: pip-audit -r backend/requirements.lock --disable-pip --no-deps
+      - run: npm audit --prefix frontend --audit-level=low
+      - if: always()
+        run: docker compose -f compose.yaml -f infra/compose.test-access.yaml down

@@ -25,3 +25,7 @@ Solapes: segmentar límites y conservar conjunto de IDs por segmento; permitir e
 ## Diseño y accesibilidad
 
 Sistema de tokens claro/oscuro, tipografía legible y contraste WCAG 2.2 AA. Rojo = exacta; amarillo = semántica; naranja = posible paráfrasis; azul = referencia pendiente; verde = justificada; gris = descartada. Siempre etiqueta/icono y descripción: el color no expresa culpabilidad. Estados vacíos, carga, indisponibilidad y errores con acción concreta. Foco visible, botones semánticos, encabezados, live region para progreso moderado y alternativa textual a gráfico/PDF. Las 20 pantallas son diseño de producto: no están implementadas.
+
+## Estado de Fase 1
+
+Implementados login, recuperación, selección institucional, resumen, usuarios y actividad, tema y layout responsive. Las demás pantallas y el visualizador son diseño pendiente de fases posteriores. Las rutas de administración comprueban el rol para mostrar acciones, además de la autorización obligatoria del servidor.

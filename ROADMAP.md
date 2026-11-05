@@ -1,5 +1,9 @@
 # Hoja de ruta y riesgos
 
+## Estado al cierre de Fase 1
+
+Fase 1 implementada y comprobada: consultar [PHASE_1](docs/PHASE_1.md). Fase 2 no iniciada y pendiente de autorización. Esta hoja conserva las puertas de las fases futuras.
+
 Cada fase requiere objetivos, archivos reales, pruebas aplicables, correcciones, seguridad, documentación, revisión de diferencias y commit local. Push solo con autorización; ninguna publicación de entorno o producto implícita. Al presentar cada fase se espera permiso para la siguiente. No declarar finalización si persisten fallos críticos.
 
 | Fase | Entregable y puerta de salida |

@@ -1,5 +1,9 @@
 # API y contratos de motores
 
+## Estado al cierre de Fase 1
+
+API implementada de Fase 1: auth/login, auth/logout, auth/me, auth/institution, auth/password-reset/request, auth/password-reset/confirm, GET/POST users, GET activity y GET statistics. OpenAPI real en /api/openapi.json; no se sirve Swagger externo para mantener CSP sin CDN. Usuarios usa limit/offset con límite 100 en esta fase; cursores opacos quedan como objetivo. Las otras rutas de abajo siguen siendo contratos futuros.
+
 Diseño contractual, aún sin endpoints implementados. Prefijo /api/v1; OpenAPI generado por FastAPI en Fase 1. JSON UTF-8, fechas ISO 8601 UTC, UUID opacos. Errores application/problem+json con status, code, detail y request_id, sin rutas privadas ni trazas. Listados por cursor opaco con límite máximo 100.
 
 | Ruta prevista | Operación y autorización |

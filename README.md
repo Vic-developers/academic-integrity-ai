@@ -2,33 +2,40 @@
 
 Plataforma de apoyo a la revisión académica con evidencias verificables y decisión humana.
 
-## Estado real
+## Estado real — Fase 1
 
-Fase 0 — investigación y arquitectura, 3 de noviembre de 2026. Este repositorio contiene diseño y documentación, no una aplicación ejecutable. No existen todavía motores, modelos entrenados, API, usuarios, migraciones ni pruebas funcionales. No hay resultados de análisis ni métricas científicas. No se ha desplegado ni publicado el proyecto.
+Infraestructura y acceso implementados: React/TypeScript, FastAPI, PostgreSQL 16 con pgvector, Redis, worker Celery y buzón SMTP local. Inicio/cierre de sesión, recuperación de contraseña, selección institucional, seis roles, usuarios y actividad con autorización del servidor. El dashboard consulta miembros reales de la base seleccionada. No contiene métricas de auditorías ficticias.
 
-La siguiente fase requiere autorización expresa. La publicación del entorno es distinta de un push de Git y del despliegue del producto.
+Carga documental, extracción, motores, evidencias académicas e informes aún no están implementados: comienzan en Fase 2 y siguientes. La disponibilidad local no equivale a producción ni a validación científica. Ver [resultado de Fase 1](docs/PHASE_1.md).
+
+## Inicio en Windows / PowerShell
+
+Requisitos: Python 3.12 para generar configuración, Git y Docker Desktop con motor Linux/WSL2 y Compose v2. CPU sin GPU; reservar al menos 8 GiB RAM y 30 GiB libres para imágenes/cachés; 16 GiB recomendados para desarrollar. Windows no se ha ejecutado en esta sesión: los comandos son la ruta prevista, pendiente de comprobar en tu equipo.
+
+Desde `C:\Proyectos\academic-integrity-ai`:
+
+```powershell
+py -3.12 scripts/configure_dev.py
+docker compose up --build -d
+docker compose ps
+```
+
+El script genera contraseñas aleatorias y no sobrescribe `.env`. No existen cuentas por defecto. Crear la primera institución y su administrador con el comando interactivo:
+
+```powershell
+docker compose run --rm migrate python -m app.cli --institution "Mi institución" --email "administrador@tu-dominio.edu" --name "Administrador"
+```
+
+Se solicita la contraseña sin mostrarla. Abrir http://localhost:5173; seleccionar la institución después del login. Buzón local de recuperación: http://localhost:8025. No usar el buzón de desarrollo para correo real ni exponer estos puertos públicamente. La base de datos y Redis no publican puertos en el Compose normal.
+
+En Linux, sustituir `py -3.12` por `python3.12`. Consultar [guía de desarrollo y pruebas](docs/DEVELOPMENT.md) para ejecutar servicios desde el host. Los secretos se leen del entorno, nunca deben subirse a Git.
 
 ## Documentación
 
-- [Arquitectura y estructura](ARCHITECTURE.md).
-- [Requisitos y aceptación](REQUIREMENTS.md).
-- [Datos y aislamiento](DATABASE.md).
-- [Contratos REST y motores](API.md).
-- [Seguridad y privacidad](SECURITY.md).
-- [Modelos y abstención](AI_MODELS.md).
-- [Evaluación y pruebas](EVALUATION.md).
-- [Infraestructura, hardware y costes](DEPLOYMENT.md).
-- [Integración Moodle](MOODLE_INTEGRATION.md).
-- [Fases y riesgos](ROADMAP.md).
-- [Interfaces y posiciones](docs/UX.md).
-- [Decisiones y alternativas](docs/DECISIONS.md).
-- [Investigación y validación tecnológica](docs/RESEARCH.md).
-- [Registro de cambios](CHANGELOG.md).
+- [Arquitectura](ARCHITECTURE.md), [datos](DATABASE.md), [requisitos](REQUIREMENTS.md), [API](API.md).
+- [Seguridad](SECURITY.md), [modelos](AI_MODELS.md), [evaluación](EVALUATION.md).
+- [Instalación e infraestructura](DEPLOYMENT.md), [Moodle](MOODLE_INTEGRATION.md), [hoja de ruta](ROADMAP.md).
+- [UX y posiciones](docs/UX.md), [decisiones](docs/DECISIONS.md), [investigación histórica](docs/RESEARCH.md).
+- [Fase 0](docs/PHASE_0.md), [revisión de entorno](docs/REVIEW_2026-11-05.md), [Fase 1](docs/PHASE_1.md), [cambios](CHANGELOG.md).
 
-## Desarrollo futuro
-
-Se utilizará el checkout existente: cada tarea de nube ya está aislada; no crear worktrees sin petición expresa. La Fase 1 aportará comandos de instalación reproducibles, lockfiles, Compose, migraciones y pruebas. No se ofrecen comandos de arranque ficticios en esta fase. Windows utilizará WSL2 y Docker Desktop con integración de WSL, sujeto a validación durante esa fase. No hacen falta credenciales comerciales para diseñar ni para la comparación institucional prevista.
-
-## Revisión actual
-
-La inspección del 5 de noviembre de 2026 y sus límites están en [REVIEW_2026-11-05](docs/REVIEW_2026-11-05.md). Los recursos históricos no describen la sesión actual.
+Las versiones de investigación de Fase 0 son históricas. Los locks de Fase 1 y manifiestos de validación identifican las versiones efectivamente instaladas. La Fase 2 requiere autorización expresa. No se ha hecho push ni desplegado un servicio público.

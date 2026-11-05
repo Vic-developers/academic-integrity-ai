@@ -1,5 +1,9 @@
 # Seguridad y privacidad
 
+## Estado al cierre de Fase 1
+
+Controles de acceso de Fase 1 implementados y probados: Argon2id, sesión hash, CSRF/Origin, rate limit compartido con bloqueo si Redis falla, RLS y FK tenant. Revisar [DEVELOPMENT](docs/DEVELOPMENT.md) para la confianza del proxy y frontera de identidad. MFA, archivos/SSRF, backups y auditoría de producción siguen como diseño para sus fases; no se presentan como controles ejecutados.
+
 Diseño de controles y pruebas; no es una auditoría de un sistema implementado. Documentos académicos son contenido no confiable. Ninguna instrucción embebida controla herramientas, autorización o prompts del sistema.
 
 ## Amenazas y controles

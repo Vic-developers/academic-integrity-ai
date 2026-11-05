@@ -1,5 +1,9 @@
 # Requisitos y aceptación
 
+## Estado al cierre de Fase 1
+
+Los criterios de infraestructura/autenticación de Fase 1 están implementados y sus resultados se documentan en [PHASE_1](docs/PHASE_1.md). La aceptación del producto completo y las capacidades de fases posteriores permanecen pendientes.
+
 ## Alcance
 
 Usuarios: superadministrador, administrador institucional, coordinador, docente, auditor y estudiante. El rol es una membresía institucional; no una propiedad global que otorgue acceso a todos los datos. Superadministración opera metadatos y soporte con acceso excepcional explícito, temporal y auditado a documentos. Docente gestiona sus asignaciones, auditor revisa los casos asignados, estudiante consulta sus entregas cuando la política lo permita. No hay sanciones automáticas.

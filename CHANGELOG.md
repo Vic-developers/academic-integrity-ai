@@ -11,3 +11,7 @@
 ## 2026-11-05 — Revisión de Fase 0
 
 Revisados documentos, enlaces y hashes locales; registrada capacidad actual (2 CPU/8 GiB), CPU como objetivo y fallo de acceso remoto. Se conserva arquitectura previa y la separación entre diseño y validación ejecutable. Sin implementación de Fase 1 ni publicación.
+
+## 2026-11-05 — Fase 1
+
+Implementados infraestructura, migración, sesiones, recuperación SMTP con cola durable, seis roles, RLS, alta por CLI, interfaz institucional y pruebas reales. Locks con hashes, bases Docker fijadas por digest, auditorías de dependencias y CI preparado. Sin carga documental ni motores. Resultados y límites en [PHASE_1](docs/PHASE_1.md).

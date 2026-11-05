@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-05",
+  "scope": "Fase 1; Linux CPU, no Windows ni producción",
+  "backend": {
+    "tests_passed": 22,
+    "source": "backend/tests",
+    "database": "aid_test",
+    "redis_database": 15
+  },
+  "browser": {
+    "tests_passed": 2,
+    "engine": "Chromium del sistema",
+    "mocked_product_responses": false
+  },
+  "checks": {
+    "typescript_build": "passed",
+    "ruff": "passed",
+    "docker_backend_build": "passed",
+    "docker_frontend_build": "passed",
+    "empty_postgresql_bootstrap": "passed",
+    "restricted_database_role": "passed",
+    "readiness": "ready",
+    "development_default_accounts": 0
+  },
+  "known_vulnerabilities": {
+    "python_runtime": 0,
+    "frontend_npm": 0
+  },
+  "image_ids": {
+    "academic-integrity-ai-backend:dev": "sha256:dbff2abc816f8b20bcfb76ee804e11ac67c16bfc84651c70a9993a40983823c4",
+    "academic-integrity-ai-frontend": "sha256:85d69d73b4d50a7912ef408e7cfef03fd3882a08c5a3b8b265bb3651aab5afa7"
+  },
+  "not_executed": [
+    "Windows/WSL2",
+    "SMTP de producción",
+    "GitHub Actions remoto",
+    "auditoría completa de imágenes",
+    "evaluación científica de motores"
+  ]
+}

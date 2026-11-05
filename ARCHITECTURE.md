@@ -1,5 +1,9 @@
 # Arquitectura
 
+## Estado al cierre de Fase 1
+
+Fase 1 implementada en `backend/app` (auth, institutions, db, security, worker) y `frontend/src/pages`/`components`. Las fronteras y motores de este diseño se ampliarán por fases; el outbox genérico aún es diseño, mientras la cola durable de correo ya funciona. Ver [Fase 1](docs/PHASE_1.md).
+
 ## Decisión base de Fase 0
 
 Monolito modular Python con API FastAPI y workers Celery separados como procesos. SPA React/TypeScript. PostgreSQL es la fuente de verdad; pgvector alberga embeddings; Redis es un intermediario de tareas, nunca el único registro de trabajo. Archivos privados en volumen local de desarrollo y almacenamiento compatible S3 en producción. Esta es la arquitectura adoptada; las versiones finales, capacidad y umbrales dependerán de la validación de Fase 1 y de las evaluaciones posteriores.
