@@ -28,3 +28,7 @@ La siguiente fase requiere autorización expresa. La publicación del entorno es
 ## Desarrollo futuro
 
 Se utilizará el checkout existente: cada tarea de nube ya está aislada; no crear worktrees sin petición expresa. La Fase 1 aportará comandos de instalación reproducibles, lockfiles, Compose, migraciones y pruebas. No se ofrecen comandos de arranque ficticios en esta fase. Windows utilizará WSL2 y Docker Desktop con integración de WSL, sujeto a validación durante esa fase. No hacen falta credenciales comerciales para diseñar ni para la comparación institucional prevista.
+
+## Revisión actual
+
+La inspección del 5 de noviembre de 2026 y sus límites están en [REVIEW_2026-11-05](docs/REVIEW_2026-11-05.md). Los recursos históricos no describen la sesión actual.

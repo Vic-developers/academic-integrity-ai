@@ -34,3 +34,7 @@ Estado: investigación y diseño completados para revisión; implementación no 
 Resolver versiones mantenidas y avisos de seguridad, elegir release/licencia de Redis y revisar licencias transitivas del extractor antes del lock de Fase 1. Validar geometría en Fase 2, proveedor de búsqueda autorizado en Fase 3, modelos/licencias/evaluación en Fases 5 y 8. Política legal y retención, presupuesto y volumen reales se necesitan antes del piloto. No se requieren secretos para continuar el diseño.
 
 No se inicia Fase 1, no se hace push y no se modifica/publica la configuración del entorno. Próximo paso, sujeto a autorización: infraestructura, lockfiles y revisión de licencias, autenticación/roles y layout con pruebas reales.
+
+## Revisión actual
+
+La inspección del 5 de noviembre de 2026 y sus límites están en [REVIEW_2026-11-05](REVIEW_2026-11-05.md). Los recursos históricos no describen la sesión actual.

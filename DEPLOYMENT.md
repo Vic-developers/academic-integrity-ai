@@ -36,3 +36,7 @@ Licencias permisivas reducen coste de software, no eliminan CPU, almacenamiento,
 Copias cifradas, DB con PITR cuando lo permita el operador, objetos versionados y prueba de restauración. Objetivos iniciales propuestos RPO ≤24 h y RTO ≤4 h, pendientes de ensayo y contrato. Registrar longitud de cola, jobs huérfanos, latencia, errores de proveedor y uso de cuotas sin texto académico. Manual de incidentes y responsables antes de producción.
 
 Windows: prever WSL2 + Docker Desktop, checkout en filesystem Linux y puertos restringidos; PowerShell solo para invocar herramientas documentadas cuando existan. No se ha ejecutado instalación Windows. No hay comandos docker compose que funcionen aún: se crearán y probarán en Fase 1. No se modificó el borrador del entorno ni se publicó nada durante Fase 0.
+
+## Revisión actual
+
+La inspección del 5 de noviembre de 2026 y sus límites están en [REVIEW_2026-11-05](docs/REVIEW_2026-11-05.md). Los recursos históricos no describen la sesión actual.
