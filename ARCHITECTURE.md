@@ -1,5 +1,9 @@
 # Arquitectura
 
+## Fase 6 — Bibliografía local y adaptadores de metadatos
+
+Extracción bibliográfica determinista sobre fragmentos existentes, con offsets originales; no usa un LLM ni reconstruye fuentes. Las consultas de metadatos solo usan DOI, hosts fijos, tres niveles de consentimiento y transporte hijo con límite total de seis segundos. No se descarga el artículo ni se verifican afirmaciones. La falta de acceso remoto se conserva como resultado parcial, sin datos inventados.
+
 ## Continuación sin Hugging Face — Infraestructura vectorial
 
 El repositorio interno de vectores no llama al instalador ni al encoder, no descarga modelos y no expone rutas públicas de indexación o búsqueda. Una futura integración de inferencia deberá superar la aprobación del modelo antes de suministrar embeddings. Los tests usan bases unitarias sintéticas identificadas como fixtures técnicos; nunca aparecen como auditorías del producto.

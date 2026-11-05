@@ -195,6 +195,11 @@ export default function DocumentDetail() {
       </details>
       <div className="viewer-tools">
         {ready && (
+          <Link className="button-link" to={`/bibliografia/${document.id}`}>
+            Revisar bibliografía
+          </Link>
+        )}
+        {ready && (
           <Link
             className="button-link"
             to={`/auditorias?document=${document.id}`}

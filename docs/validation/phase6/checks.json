@@ -1,0 +1,154 @@
+{
+  "date": "2026-11-05",
+  "scope": "Fase 6 local bibliographic workflow and provider adapters, Linux CPU",
+  "phase6_live_provider_gate_completed": false,
+  "backend": {
+    "tests_passed": 134,
+    "previous": 101,
+    "new_bibliography_tests": 28,
+    "new_login_isolation_tests": 5,
+    "database": "aid_test",
+    "redis_database": 15,
+    "fixtures_are_contract_tests_not_live_sources": true,
+    "unicode_evidence_doi_duplicates_citation_candidates": "passed",
+    "provider_identity_hash_errors_response_limits": "passed",
+    "institution_policy_admin_and_revocation": "passed",
+    "cancel_during_lookup_drops_late_results": "passed",
+    "revocation_stops_additional_lookups": "passed",
+    "tenant_requester_document_permissions": "passed",
+    "idempotency_body_limits_and_expired_jobs": "passed",
+    "delete_invalidates_and_clears_private_snapshots": "passed",
+    "fixed_host_child_rejects_arbitrary_destination": "passed",
+    "migration_round_trip": "passed"
+  },
+  "browser": {
+    "tests_passed": 10,
+    "real_worker_and_documents": true,
+    "bibliography_local_duplicates_zero_remote_coverage": "passed",
+    "json_export_persistence_and_mobile": "passed",
+    "prior_auth_documents_literal_pdf_review_regressions": "passed"
+  },
+  "builds": {
+    "backend": "passed",
+    "frontend": "passed",
+    "typescript_strict": "passed",
+    "ruff": "passed"
+  },
+  "providers": {
+    "crossref": {
+      "successful": false,
+      "state": "network_unavailable",
+      "reason": "Managed proxy rejected or could not reach provider"
+    },
+    "openalex": {
+      "successful": false,
+      "state": "network_unavailable",
+      "reason": "Managed proxy rejected or could not reach provider"
+    },
+    "successful_live_provider_queries": 0,
+    "network_policy_changed": false,
+    "server_external_enabled_in_this_session": false,
+    "no_fabricated_provider_success": true
+  },
+  "code_provenance": {
+    "backend_files_matching_container": 50,
+    "backend_sha256": {
+      "app/main.py": "2ebc2b80b7942ce03ee5da854b2c57c6ea32af4a469daf75c4140a9aa484d92d",
+      "app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "app/schemas.py": "189508305718dcb86d01f4deb444d981ce61c0929f2ffe58857b78ea048de406",
+      "app/config.py": "116bef84b9f5ea601422e21b3c1ec3e921d5aa2eea9f813ecdc21c96a41f2a2a",
+      "app/institutions.py": "d3a3a8ed019b8c74df29985161253b599230afa7ffe6fb0e78b58bb87ce3738f",
+      "app/security.py": "f19b2c1d1fdfcef514f9ff87a0049a89e69cc2959a36f355305270096c8fee45",
+      "app/auth.py": "a48f382bd7a17d4e24c736f737d564929f5247688f6b89835bfc8dea55a347a1",
+      "app/cli.py": "e3b7748590089f4afdf6b7c3de04a28a30b87231a6f4b24a6e199ae1bb9828e1",
+      "app/worker.py": "0c9baa0923248ad6b0a9a6c7b414d2e6a733220ee1880d567ead42114241d466",
+      "app/models.py": "1ccaa224f00703425a66368529a7d0eb335171c57a42e44d181b57c8e7e6540e",
+      "app/db.py": "ed1c169008ccd60c381a54e69d44fbb4b371e7bfab948497a4d95ff1e33c3527",
+      "app/semantic/store.py": "1a79cb80881308b1787b674da5c6e3f70a4e4877f43e6b4d3a6299e311b44b34",
+      "app/semantic/registry.py": "2abacd171ceb81714d9d5a266e5a35c498def81937bc85a2006d0aea0161ff58",
+      "app/semantic/chunking.py": "15aa2826ce62ef519a6d22e8571e488538f7865875a05da524f7d55201d908da",
+      "app/semantic/__init__.py": "2d5426947e0930c7d072b96b7b11e8b0a560636c13f7c3f72c50802583fda5c7",
+      "app/semantic/models.py": "54442502416fe1a2f31d21e33996d68bbb97e0073c9a0da95e5c8db6776acec2",
+      "app/semantic/encoder.py": "7683bc77382910da50a8bfa53185b6ec9e4e6138b3141d4c62eb5b9482b1e178",
+      "app/documents/limits.py": "0c6f3a6204d3982348ec6d4a371c88ad4747bfd89bbd06ade36b93d64f01c18f",
+      "app/documents/extractor.py": "768b15bdd792519a11b5807feebf3210e11fda8e766623ef110e9c384575a0b2",
+      "app/documents/__init__.py": "115e8cf248ae42e82351f324f42931bc065ce15aeb5f9e8aa65215ea95227231",
+      "app/documents/service.py": "dcc87e5c733d96f0a9ada3d8875ded99e89237ca6e0dbfb3bd276e64782914c3",
+      "app/documents/normalization.py": "afe66b2f5f8438a663050d8bca509962289498bf47f49d8e7a813ce7d0ad8f50",
+      "app/documents/storage.py": "46daae6fd129f905e5f01bbfd4f02e17a9abca9f805cbbc9bb72a56089ffab18",
+      "app/documents/sandbox.py": "5c21db2a0599b425608fbe92d802e7f6ded93ca4bf5611aee60c817fbe456923",
+      "app/documents/jobs.py": "4f475b8cd57405ad4d59535d5a2d84a585e897741b20bb78baad59f4b30ac31d",
+      "app/documents/api.py": "94306c27a0cc411b8c5c6e20f0c382372d14776c76c1a51c68b27f29d9be20a0",
+      "app/documents/runner.py": "17724b3768af4fb3a00457c3829c1aa87a8defa7cca20fe71e41aa0e311e0b72",
+      "app/documents/courses.py": "42addd6888c57ab9261ae8a32fb3a931a6bd851fed84abc7a81e09d76e25a708",
+      "app/documents/validation.py": "cf563b424a40a2c4515a256280a58e669a52f6abb2f719fc310a054c6c60618f",
+      "app/documents/models.py": "63e07546277f4ab0e6f7e568a0c05b7815b15894073310de0ba639787d979aeb",
+      "app/bibliography/extraction.py": "73a538873fd20e5326709cb203b6b1398962457c2d84d0c30e3add412dff519e",
+      "app/bibliography/providers.py": "f528e7bf20144356d9643060c81106f0b1d5af3d0357b52ee3884f7cb594a6ae",
+      "app/bibliography/http_child.py": "2bcfc32a42672a3e2c5917a8263acca2565a74c01653834ab8355ab363a3b5ee",
+      "app/bibliography/__init__.py": "b1db5aaf37e069253381118218c992254e28779fb523b198122d1178818ca1a7",
+      "app/bibliography/service.py": "b23c529e374d058689f153029014918153e78b15bb8f1b814a31029e6be960f3",
+      "app/bibliography/jobs.py": "13371bcf60576af0542b1ac7c934838d2553e3f9b4933b9bba40cc644d7abb8b",
+      "app/bibliography/api.py": "c36af39454d1b6d04041ca1d3d627c1adf8e3dddf99ff57a76f85e72a06f260d",
+      "app/bibliography/models.py": "a00e2dd186e68591b7cac897a470c3439f5e6edc4974866a5c5e49dd4375c56b",
+      "app/audits/limits.py": "adda483271fe73aa898ce032f7b608b75f27d09fcd6ede776535ea47c21035bc",
+      "app/audits/providers.py": "cc2658181ae2a9a6ed219161520acd60a541969744d62e0ba31b39aa20d0818a",
+      "app/audits/evidence.py": "c6bbfe1039f7b16eded0a6c0ab9a78cda14ba7f6a97c283157d7b92dd45657e5",
+      "app/audits/__init__.py": "9ab94de766d5bcae5b39e66d8f0537042fddcc4667d98d506df6a70cee34cec7",
+      "app/audits/run_child.py": "55f31bc48169ccefa6713cfd23b855261b33c875ee2cbfe1a346bce27013cc4d",
+      "app/audits/service.py": "ea76cf48a81aef6798068f9d8d28d8cebe3a7ce5345b2dbe1d01dc25e18de977",
+      "app/audits/engine.py": "4edab99028be498a415c3f0cb9a6ff818097aa7a9fefa4453c7ba7b9d09b82d9",
+      "app/audits/jobs.py": "b708b464614ea00cf3c0d08256a8113318a2018dbeab769caad97b6756498f74",
+      "app/audits/api.py": "5d3469eb001398f865ded5272b68f43c7169693a6f294610d2030d2f12f4efc3",
+      "app/audits/runner.py": "779547f6ae861c3d932c23747f1473721e3cb0ac460722f1e4095c7d09457c52",
+      "app/audits/viewer.py": "62f5e8c9632b3f4d99b765b69173e9eebff40b4f7868d17538ed0bd1083ab267",
+      "app/audits/models.py": "06ffff44fd5088711fc5c4d1010b6fc4ac5d519dbe864ccf9a6a71a7c13a2b24"
+    },
+    "frontend_files_matching_container": 205,
+    "frontend_entry_and_bundles_sha256": {
+      "index.html": "86059e4899323d247979aed9d849ae299d577c27ba58469577785659b3e98e69",
+      "assets/pdf.worker.min-CIqJB0yW.mjs": "1e64c8240e54735ec5913b37acd5134747799cb8c6bb3777c70adbc01232d2aa",
+      "assets/PdfViewer-nfnJL01-.js": "47b902613ab915deae8fc9ac8ac61a0c92efa1924b6bc1edf15333aa99f8d6cb",
+      "assets/index-BUABDZZb.css": "ef95ba76c00b45129bafebf66575a07fc41fc9bbdfe0e78bd1b1c6e98f3ac6ad",
+      "assets/index-CE80IU4Y.js": "8d06a8b26a5e712ab5e5f972088f25e63825aed04e1f304e0e08314077044713"
+    }
+  },
+  "schema_revision": "0006_bibliography",
+  "pgvector_version": "0.8.7",
+  "rls": [
+    [
+      "bibliography_jobs",
+      true,
+      true
+    ],
+    [
+      "bibliography_runs",
+      true,
+      true
+    ]
+  ],
+  "development_data": {
+    "users": 0,
+    "documents": 0,
+    "courses": 0,
+    "audits": 0,
+    "semantic_vectors": 0,
+    "bibliography_runs": 0
+  },
+  "private_originals_after_cleanup": 0,
+  "new_dependencies": false,
+  "dependency_audit_reference": "../phase4/checks.json; historical scans, unchanged locks",
+  "images": {
+    "academic-integrity-ai-backend:dev": "sha256:442b171cc3f4467049476a0e5a1b5de039a5162ded656ee387c269892dceac01",
+    "academic-integrity-ai-frontend": "sha256:617e2a02aa906cd0864566146f890838d6c3b1037b8713e13c0a1d7acc44b52a"
+  },
+  "limitations": [
+    "No successful live Crossref/OpenAlex access in this network",
+    "APA/numeric citation heuristics; candidate extraction, not academic validity proof",
+    "Only DOI lookup; no title search or article/fulltext/claims verification",
+    "First author partial comparison; publisher and complete author list not inferred",
+    "200 references, 500 citation candidates, 10 unique DOI, 2 providers, 8 MiB evidence",
+    "No Hugging Face/model downloads; semantic inference remains postponed",
+    "Prior OCR/antivirus/full parser filesystem containment and Windows/production limits persist"
+  ]
+}

@@ -1,5 +1,9 @@
 # Modelo de datos
 
+## Fase 6 — Bibliografía local y adaptadores de metadatos
+
+0006_bibliography añade bibliography_runs y bibliography_jobs con RLS forzada, FK compuestas, idempotencia y snapshots privados. Las funciones internas de claim/recovery tienen lease, token, intentos acotados, search_path fijo y PUBLIC revocado. institutions añade bibliography_external_allowed=false, con permiso UPDATE solo para esa columna y política RLS que exige administrador/superadministrador activo de la institución. El resto de sus columnas continúa sin permiso de escritura para aid_app.
+
 ## Continuación sin Hugging Face — Infraestructura vectorial
 
 0005_vector crea semantic_vectors con vector(384), RLS forzada, FK compuesta a institución/versión/fragmento, identidad de modelo y chunker, rangos originales, hashes, norma unitaria y caché única. Añade unicidad compuesta a document_fragments. Instala la extensión vector si falta; el downgrade conserva esa extensión compartida y elimina solo la tabla/constraint nuevas. No se modifican migraciones históricas.

@@ -1,5 +1,9 @@
 # API y contratos de motores
 
+## Fase 6 — Bibliografía local y adaptadores de metadatos
+
+Bibliografía implementada en [BIBLIOGRAPHY_API](docs/BIBLIOGRAPHY_API.md). Incluye capacidades, permiso institucional, creación asíncrona, historial autorizado, estado, referencias paginadas, respuesta registrada, cancelación y exportación JSON. No se aceptan URL de proveedores proporcionadas por el cliente. El cuerpo POST está limitado a 64 KiB.
+
 ## Continuación sin Hugging Face — Infraestructura vectorial
 
 No se añaden endpoints públicos para vectores ni resultados semánticos. GET /audits/capabilities mantiene semantic_available=false. Documentos DELETE elimina sus vectores derivados inmediatamente. La infraestructura interna puede comparar vectores numéricos, pero no equivale a inferencia, modelo aprobado o paráfrasis verificada.

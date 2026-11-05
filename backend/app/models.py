@@ -31,6 +31,7 @@ class User(Base):
 
 class Institution(Base):
     __tablename__ = "institutions"
+    bibliography_external_allowed: Mapped[bool] = mapped_column(Boolean, default=False, server_default="false")
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
     name: Mapped[str] = mapped_column(String(160))
 

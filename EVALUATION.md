@@ -1,5 +1,9 @@
 # Evaluación y pruebas
 
+## Fase 6 — Bibliografía local y adaptadores de metadatos
+
+La evaluación local prueba referencias APA/numeradas limitadas, DOI, duplicados, citas compatibles y evidencia Unicode. Los contratos de proveedores usan JSON etiquetado como fixture técnico en aid_test. Se efectuaron además dos consultas reales a Crossref/OpenAlex, ambas sin éxito por la red; no se publica precisión de verificación remota. La cobertura local heurística no demuestra ausencia de fuentes/citas ni validez bibliográfica general.
+
 ## Continuación sin Hugging Face — Infraestructura vectorial
 
 Las pruebas nuevas comprueban pgvector real con vectores numéricos conocidos: coseno 1, 0,8 y -1, filtrado antes de top-k, aislamiento, revocación, hashes, FK, caché, concurrencia y borrado. No son embeddings de un modelo y no producen métricas de exactitud semántica. [Validación](docs/validation/phase5-vector/README.md).

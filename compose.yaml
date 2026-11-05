@@ -8,6 +8,8 @@ x-backend: &backend
     PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-http://localhost:5173}
     ENVIRONMENT: development
     SECURE_COOKIES: "false"
+    BIBLIOGRAPHY_EXTERNAL_ENABLED: "${BIBLIOGRAPHY_EXTERNAL_ENABLED:-false}"
+    OPENALEX_API_KEY: "${OPENALEX_API_KEY:-}"
     SMTP_HOST: mailpit
     SMTP_PORT: "1025"
   depends_on:

@@ -58,7 +58,24 @@ with tempfile.TemporaryDirectory(prefix="academic-integrity-e2e-") as tmp:
         env=test_env,
         check=True,
     )
-    browser_env = {**os.environ, "E2E_FIXTURES_DIR": str(fixtures)}
+    login_config = Path(tmp) / "login-counters.json"
+    login_config.write_text(
+        json.dumps(
+            {
+                "purpose": "academic-integrity-browser-test",
+                "database": "aid_test",
+                "redis_url": test_env["REDIS_URL"],
+            }
+        )
+    )
+    login_config.chmod(0o600)
+    browser_env = {
+        **os.environ,
+        "E2E_FIXTURES_DIR": str(fixtures),
+        "E2E_TEST_PYTHON": sys.executable,
+        "E2E_LOGIN_RESET_SCRIPT": str(root / "scripts/reset_browser_login_limits.py"),
+        "E2E_LOGIN_RESET_CONFIG": str(login_config),
+    }
     override = Path(tmp) / "test.yaml"
     override.write_text(json.dumps(config))
     override.chmod(0o600)

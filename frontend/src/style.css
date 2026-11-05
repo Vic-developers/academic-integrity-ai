@@ -956,3 +956,15 @@ mark.match:focus-visible {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.bibliography-reference {
+  margin: 18px 0;
+  overflow-wrap: anywhere;
+}
+.provider-json {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 400px;
+  overflow: auto;
+  font-size: 12px;
+}

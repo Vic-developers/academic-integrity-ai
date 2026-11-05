@@ -1,4 +1,4 @@
-import { test, expect, type Page } from "@playwright/test";
+import { test, expect, type Page } from "./fixtures";
 import { join } from "node:path";
 async function login(page: Page) {
   await page.goto("/login");

@@ -1,5 +1,9 @@
 # Seguridad y privacidad
 
+## Fase 6 — Bibliografía local y adaptadores de metadatos
+
+Salida externa deshabilitada por defecto: exige habilitación del servidor, permiso de administrador institucional y opt-in por revisión. Solo transmite DOI; nunca la bibliografía completa ni el texto del documento. Hosts fijos HTTPS, sin redirecciones, respuesta limitada, red/SSL heredados de forma acotada y timeout total del proceso hijo. OpenAlex usa clave opcional de servidor, nunca retornada o registrada en evidencia. Permisos y consentimiento se revalidan antes de cada lookup habilitado y antes de persistir; cancelación/retirada descartan resultados tardíos. Borrar el documento limpia inmediatamente snapshots y resultados derivados.
+
 ## Continuación sin Hugging Face — Infraestructura vectorial
 
 Los vectores quedan bajo RLS forzada y FK compuestas. Escritura revalida documento, extracción, fragmento, rangos originales y valores numéricos; serializa con el bloqueo documental usado por borrado. La consulta comprueba todas las fuentes y aplica permisos vigentes antes de top-k; no ofrece resultados parciales si una fuente es ajena. Borrar un documento elimina los vectores en la misma transacción, antes del purge físico. Eliminar fragmentos también los elimina por cascada. No se exponen endpoints de vectores ni se activa inferencia.

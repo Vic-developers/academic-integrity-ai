@@ -1,5 +1,11 @@
 # Academic Integrity AI
 
+## Fase 6 — Bibliografía local y adaptadores de metadatos
+
+Bibliografía permite extraer referencias candidatas, DOI, posibles duplicados y patrones de citas; conserva texto, rangos y hashes y exporta evidencia JSON. Crossref/OpenAlex tienen adaptadores y estados de cobertura, pero sus consultas reales fueron rechazadas por la red de esta sesión. No se presenta ninguna fuente como verificada externamente sin una respuesta válida.
+
+[Alcance implementado y límites](docs/PHASE_6.md), [contrato API](docs/BIBLIOGRAPHY_API.md). La validación real en línea permanece pendiente; el modo local funciona sin esos proveedores. Hugging Face y la inferencia semántica siguen pospuestos según la decisión previa.
+
 ## Continuación sin Hugging Face — Infraestructura vectorial
 
 Por decisión del usuario se continúa sin habilitar Hugging Face ni descargar modelos. Se añadió la infraestructura interna de pgvector: vectores privados por institución/versión/fragmento, búsqueda exacta filtrada, caché inmutable y borrado de derivados. No se generan embeddings ni hallazgos semánticos; la comparación literal y el visor PDF siguen disponibles.

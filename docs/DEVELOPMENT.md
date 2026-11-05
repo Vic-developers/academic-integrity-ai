@@ -1,5 +1,9 @@
 # Desarrollo y pruebas — Fase 1
 
+## Fase 6 — Bibliografía local y adaptadores de metadatos
+
+Migración esperada 0006_bibliography. Nuevas pruebas: backend/tests/test_bibliography.py y frontend/tests/bibliography.spec.ts. Los fixtures de proveedores son técnicos, nunca fuentes verificadas de un usuario. El modo local no hace solicitudes externas. Los orígenes reales de ambos proveedores resultaron no accesibles en esta sesión. Revisar el contrato y limitaciones en PHASE_6.md antes de habilitar egress.
+
 ## Continuación sin Hugging Face — Infraestructura vectorial
 
 La migración actual es 0005_vector. Pruebas técnicas nuevas: backend/tests/test_vector_infrastructure.py, ejecutadas en aid_test con pgvector real. Los vectores de prueba están etiquetados como sintéticos y no representan capacidad semántica. El repositorio interno recibe una sesión con contexto de institución/usuario y una membresía vigente; una futura ruta/worker debe mantener esa autenticación y aprobar el modelo antes de llamarlo.

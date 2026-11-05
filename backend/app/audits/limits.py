@@ -9,7 +9,12 @@ class AuditBodyLimitMiddleware:
         if (
             scope["type"] != "http"
             or scope["method"] != "POST"
-            or not (scope["path"] == "/api/v1/audits" or scope["path"].startswith("/api/v1/audits/"))
+            or not (
+                scope["path"] == "/api/v1/audits"
+                or scope["path"].startswith("/api/v1/audits/")
+                or scope["path"] == "/api/v1/bibliography"
+                or scope["path"].startswith("/api/v1/bibliography/")
+            )
         ):
             return await self.app(scope, receive, send)
         size = 0

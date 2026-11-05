@@ -1,5 +1,9 @@
 # Infraestructura y operación
 
+## Fase 6 — Bibliografía local y adaptadores de metadatos
+
+Esquema actual 0006_bibliography. BIBLIOGRAPHY_EXTERNAL_ENABLED=false por defecto; OpenAlex necesita OPENALEX_API_KEY. Además, cada institución debe autorizar las consultas mediante su administrador y cada revisión requiere opt-in. Habilitar flags no concede acceso de red: respetar la política del entorno y su CA con TLS verificado. En esta sesión no se habilitaron los proveedores ni Hugging Face; no se probó acceso remoto satisfactorio ni despliegue público.
+
 ## Continuación sin Hugging Face — Infraestructura vectorial
 
 Esquema esperado actual: 0005_vector. La migración requiere que el servidor tenga pgvector instalado y el usuario de migración pueda crear la extensión en la base. API/worker conservan la imagen y dependencias CPU de fases anteriores; no hay servicio ONNX activo ni pesos incluidos. Se respeta la decisión de no habilitar Hugging Face.

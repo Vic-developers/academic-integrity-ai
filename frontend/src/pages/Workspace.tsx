@@ -15,6 +15,8 @@ import DocumentDetail from "./DocumentDetail";
 import Courses from "./Courses";
 import Audits from "./Audits";
 import EvidenceViewer from "./EvidenceViewer";
+import Bibliography from "./Bibliography";
+import BibliographyResult from "./BibliographyResult";
 import AuditResult from "./AuditResult";
 export default function Workspace() {
   const { data, error, isPending } = useQuery({
@@ -103,6 +105,7 @@ export default function Workspace() {
           <Link to="/">◈ &nbsp; Resumen</Link>
           <Link to="/documentos">▤ &nbsp; Documentos</Link>
           <Link to="/asignaturas">▦ &nbsp; Asignaturas</Link>
+          <Link to="/bibliografia">▧ &nbsp; Bibliografía</Link>
           <Link to="/auditorias">⌕ &nbsp; Comparación literal</Link>
           {["admin", "superadmin", "coordinator"].includes(selected.role) && (
             <Link to="/usuarios">♙ &nbsp; Usuarios</Link>
@@ -172,6 +175,15 @@ export default function Workspace() {
               element={<Documents role={selected.role} />}
             />
             <Route path="/documentos/:id" element={<DocumentDetail />} />
+            <Route path="/bibliografia" element={<Bibliography />} />
+            <Route
+              path="/bibliografia/:documentId"
+              element={<Bibliography />}
+            />
+            <Route
+              path="/bibliografia/resultados/:id"
+              element={<BibliographyResult />}
+            />
             <Route path="/auditorias" element={<Audits />} />
             <Route
               path="/auditorias/:id/evidencias"

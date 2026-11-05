@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 import { join } from "node:path";
 
 test("comparación literal real con fuentes explícitas y cobertura web honesta", async ({

@@ -261,6 +261,9 @@ def remove(document_id: UUID, member: Member, db: DB) -> None:
 
     db.execute(delete(SemanticVector).where(SemanticVector.version_id == version.id))
     invalidate_document(db, version.id)
+    from app.bibliography.service import invalidate
+
+    invalidate(db, version.id)
     document.deleted_at = now()
     for job in db.scalars(
         select(DocumentJob).where(DocumentJob.version_id == version.id, DocumentJob.kind == "extract")

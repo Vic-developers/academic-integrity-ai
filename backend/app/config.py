@@ -26,6 +26,8 @@ class Settings(BaseSettings):
     max_zip_entries: int = 2000
     max_document_chars: int = 500_000
     extraction_timeout: int = 45
+    bibliography_external_enabled: bool = False
+    openalex_api_key: str = ""
     max_audit_sources: int = 20
     max_audit_chars: int = 1_000_000
     max_literal_findings: int = 500

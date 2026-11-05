@@ -100,3 +100,10 @@ for rotation in [0, 90, 180, 270]:
         data = geometry_pdf(rotation, crop, offset=crop, user_unit=2 if rotation == 270 and crop else 1)
         (root / name).write_bytes(data)
         (root / name.replace(".pdf", "-fuente.pdf")).write_bytes(data)
+(root / "bibliografia-real-prueba.txt").write_text(
+    "Contexto de prueba (García, 2020). Otra afirmación [9].\n\nReferencias\n\n"
+    "[1] García, A. (2020). Estudio técnico de evidencia. Revista de Pruebas. https://doi.org/10.5555/technical-fixture.\n\n"
+    "[2] López, B. (2021). Otra investigación de prueba. Revista Local. doi:10.5555/other-fixture\n\n"
+    "[3] García, A. (2020). Estudio técnico de evidencia. Revista de Pruebas. DOI:10.5555/TECHNICAL-FIXTURE\n",
+    encoding="utf-8",
+)

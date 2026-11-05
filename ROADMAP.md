@@ -1,5 +1,9 @@
 # Hoja de ruta y riesgos
 
+## Fase 6 — Bibliografía local y adaptadores de metadatos
+
+Se implementó el flujo local de fase 6: extracción, patrones de cita, duplicados, trabajos durables, permisos, vista y exportación. Los adaptadores Crossref/OpenAlex se prueban con fixtures de contrato; las dos consultas reales al origen fallaron por la política de red. La puerta de verificación en línea sigue pendiente. No se ha comenzado la fase 7; semántica permanece pospuesta. [Estado detallado](docs/PHASE_6.md).
+
 ## Continuación sin Hugging Face — Infraestructura vectorial
 
 Decisión: omitir Hugging Face. La parte independiente de la fase 5 implementa persistencia y recuperación matemática en pgvector, con permisos y borrado probados. Inferencia multilingüe, calibración y hallazgos semánticos permanecen pospuestos. No se ha iniciado la fase 6. [Resultado](docs/PHASE_5_VECTOR.md).

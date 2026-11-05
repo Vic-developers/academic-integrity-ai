@@ -1,5 +1,9 @@
 # Requisitos y aceptación
 
+## Fase 6 — Bibliografía local y adaptadores de metadatos
+
+Extracción y visualización bibliográfica local implementadas con estados y evidencia trazables. DOI, título, primer autor, año y publicación se comparan solo cuando hay datos compatibles; editorial impresa y lista completa de autores no se infieren. Metadatos remotos se registran únicamente si la respuesta identifica el DOI solicitado y cumple el contrato. Validación real de Crossref/OpenAlex pendiente en esta red.
+
 ## Estado actual — Fase 4
 
 Resaltado en texto original con mapa Unicode, dos paneles, superposiciones y navegación implementados. PDF superpuesto solo con geometría compatible; fallback explícito para rotación/recorte o caracteres sin referencia. Revisión humana trazable y exportación JSON disponibles; PDF de informes y casos siguen pendientes.

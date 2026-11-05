@@ -1,5 +1,9 @@
 # Registro de cambios
 
+## Fase 6 — Bibliografía local y adaptadores de metadatos
+
+Flujo bibliográfico local con trabajos durables, revisión de patrones, candidatos duplicados, citas y evidencia original. Adaptadores Crossref/OpenAlex con consentimiento, límites, hash/respuesta y errores explícitos. Política institucional revocable, cancelación, retirada de evidencia y exportación. Sin éxito de consulta remota en esta sesión; no se generan fuentes ni acusaciones automáticas.
+
 ## Continuación sin Hugging Face — Infraestructura vectorial
 
 Migración 0005_vector e infraestructura interna de pgvector sin nuevas dependencias, descargas de modelos ni activación semántica. RLS, FK compuestas, búsqueda coseno exacta, caché idempotente/inmutable, presupuestos y eliminación inmediata/cascada de vectores. La continuación respeta la decisión de omitir Hugging Face.

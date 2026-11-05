@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 // Dedicated aid_test database; these are synthetic test credentials, never provisioned in development.
 const password = "Test-only-password-2026!";
 test("acceso real, selección institucional, gestión de usuarios, tema y cierre", async ({

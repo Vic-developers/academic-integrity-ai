@@ -1,0 +1,12 @@
+{
+  "crossref": {
+    "successful": false,
+    "state": "network_unavailable",
+    "reason": "Managed proxy rejected or could not reach provider"
+  },
+  "openalex": {
+    "successful": false,
+    "state": "network_unavailable",
+    "reason": "Managed proxy rejected or could not reach provider"
+  }
+}
