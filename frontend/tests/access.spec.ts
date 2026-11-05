@@ -23,7 +23,7 @@ test("acceso real, selección institucional, gestión de usuarios, tema y cierre
   await expect(
     page.getByRole("heading", { name: "Un punto de partida confiable." }),
   ).toBeVisible();
-  await expect(page.getByText("Sin análisis ejecutados")).toBeVisible();
+  await expect(page.getByText("Comparación literal disponible")).toBeVisible();
   await page.getByRole("link", { name: /Usuarios/ }).click();
   await expect(
     page.getByRole("cell", { name: "outsider@example.org" }),

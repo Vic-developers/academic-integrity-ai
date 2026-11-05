@@ -1,5 +1,10 @@
 # Interfaces y visualizador de evidencias
 
+## Estado actual — Fase 3
+
+Comparaciones permite escoger principal y fuentes, consultar estado real y abrir citas originales con rangos/versiones. Cobertura web separada muestra indisponibilidad y cero consultas. La pantalla requiere revisión humana; no expone un porcentaje de culpabilidad. Resaltado exacto y decisiones siguen en fase 4/futuras.
+
+
 ## Navegación y pantallas
 
 Login y recuperación; espacio institucional con sidebar por permisos: Dashboard, Documentos, Nueva auditoría, Historial, Resultados, Visor, Comparador, Referencias, Rúbricas, Defensa, Casos, Informes, Estadísticas, Instituciones, Usuarios, Modelos, Configuración, Integraciones y Actividad. Una ruta oculta en la UI no sustituye autorización servidor. React Router organiza rutas; TanStack Query controla caché por institución/usuario y la vacía al cambiar sesión/tenant. React Hook Form y Zod validan formularios; el servidor revalida siempre.

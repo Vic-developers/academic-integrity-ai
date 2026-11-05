@@ -1,10 +1,15 @@
 # Requisitos y aceptación
 
-## Estado de Fase 2
+## Estado actual — Fase 3
+
+Implementada la comparación literal sobre documentos institucionales seleccionados legibles, con evidencia y cobertura. Búsqueda web declarada no disponible por falta de proveedor autorizado; no se simula. Resaltado exacto, semántica, IA e informes permanecen futuros.
+
+
+## Antecedente histórico — Fase 2
 
 La Fase 2 implementa gestión PDF/DOCX/TXT y estructura verificable, con OCR explícitamente no disponible. Los criterios y límites reales están en [PHASE_2](docs/PHASE_2.md); las comparaciones y resaltados de coincidencias siguen pendientes de sus fases.
 
-## Estado al cierre de Fase 1
+## Antecedente histórico — cierre de Fase 1
 
 Los criterios de infraestructura/autenticación de Fase 1 están implementados y sus resultados se documentan en [PHASE_1](docs/PHASE_1.md). La aceptación del producto completo y las capacidades de fases posteriores permanecen pendientes.
 

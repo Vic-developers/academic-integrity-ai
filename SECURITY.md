@@ -1,10 +1,15 @@
 # Seguridad y privacidad
 
-## Estado de Fase 2
+## Estado actual — Fase 3
+
+Auditorías verifican acceso al principal y todas las fuentes al crear, ejecutar y leer; revocación oculta el resultado y borrado invalida/limpia derivados. Idempotencia concurrente, RLS, límites de texto/evidencia/CPU y cancelación probados. No hay fetch de URL ni acceso web activo. Persisten las limitaciones de aislamiento del parser descritas en Fase 2.
+
+
+## Antecedente histórico — Fase 2
 
 Fase 2 agrega originales privados 0400, rollback de archivos ante fallo de commit, RLS/propietario/asignatura, validación de formatos/ZIP/XML, subproceso sin secretos y filtros seccomp. La contención completa de filesystem y antivirus no están implementados; antes de producción son puertas explícitas. Ver [Fase 2](docs/PHASE_2.md) para el alcance real y la corrección de PDF.js.
 
-## Estado al cierre de Fase 1
+## Antecedente histórico — cierre de Fase 1
 
 Controles de acceso de Fase 1 implementados y probados: Argon2id, sesión hash, CSRF/Origin, rate limit compartido con bloqueo si Redis falla, RLS y FK tenant. Revisar [DEVELOPMENT](docs/DEVELOPMENT.md) para la confianza del proxy y frontera de identidad. MFA, archivos/SSRF, backups y auditoría de producción siguen como diseño para sus fases; no se presentan como controles ejecutados.
 

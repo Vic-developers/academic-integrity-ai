@@ -254,6 +254,9 @@ def remove(document_id: UUID, member: Member, db: DB) -> None:
     document, version = get_document(db, member, str(document_id), lock=True)
     if document.owner_id != member.id and member.role not in MANAGERS:
         raise HTTPException(403, "No puedes eliminar este documento")
+    from app.audits.service import invalidate_document
+
+    invalidate_document(db, version.id)
     document.deleted_at = now()
     for job in db.scalars(
         select(DocumentJob).where(DocumentJob.version_id == version.id, DocumentJob.kind == "extract")

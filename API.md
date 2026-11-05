@@ -1,10 +1,15 @@
 # API y contratos de motores
 
-## Estado de Fase 2
+## Estado actual — Fase 3
+
+API literal implementada: [contrato actual](docs/LITERAL_API.md). Las rutas de decisiones y evidencia separada de la tabla futura siguen pendientes; los hallazgos actuales incluyen su evidencia. Se usa limit/offset, no cursores.
+
+
+## Antecedente histórico — Fase 2
 
 La API de Fase 2 está implementada y detallada en [DOCUMENT_API](docs/DOCUMENT_API.md). OpenAPI incluye carga multipart, documentos, fragmentos, descarga, cancelación, eliminación y asociaciones académicas. Las auditorías y motores siguen como contratos futuros.
 
-## Estado al cierre de Fase 1
+## Antecedente histórico — cierre de Fase 1
 
 API implementada de Fase 1: auth/login, auth/logout, auth/me, auth/institution, auth/password-reset/request, auth/password-reset/confirm, GET/POST users, GET activity y GET statistics. OpenAPI real en /api/openapi.json; no se sirve Swagger externo para mantener CSP sin CDN. Usuarios usa limit/offset con límite 100 en esta fase; cursores opacos quedan como objetivo. Las otras rutas de abajo siguen siendo contratos futuros.
 

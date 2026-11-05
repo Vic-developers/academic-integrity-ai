@@ -1,0 +1,32 @@
+{
+  "protocol": "literal-technical-v1",
+  "seed": 20261105,
+  "engine_version": "literal-winnow-v1",
+  "normalizer": "nfkc-casefold-map-v1",
+  "corpus_sha256": "ff0d4604faec1911bbd87f1e90524661d0a8cad46686cc30ec1259588e24326d",
+  "provenance": "Synthetic fixtures generated locally; no student documents or web sources",
+  "cases": 201,
+  "positives": 121,
+  "negatives": 80,
+  "word_positions": {
+    "true_positive": 4625,
+    "false_positive": 0,
+    "false_negative": 0
+  },
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "positive_documents_retrieved": 121,
+  "negative_documents_flagged": 0,
+  "elapsed_seconds": 0.14766193799914618,
+  "acceptance": {
+    "precision_at_least_0_98": true,
+    "recall_at_least_0_95": true
+  },
+  "limitations": [
+    "Controlled technical corpus, not representative of academic writing",
+    "No measurement of Internet source coverage",
+    "No plagiarism or authorship classification",
+    "No claim of production throughput"
+  ]
+}

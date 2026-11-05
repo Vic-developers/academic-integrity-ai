@@ -1,12 +1,19 @@
 # Academic Integrity AI
 
+## Estado real — Fase 3
+
+Comparación literal asíncrona con fuentes institucionales elegidas explícitamente, rangos y citas verificables, versiones/SHA-256, cobertura y permisos reales. No hay proveedor web configurado: cero búsquedas y fuentes web verificadas. La cobertura describe texto extraído y fuentes seleccionadas; no determina plagio.
+
+Ver [Fase 3](docs/PHASE_3.md), [API literal](docs/LITERAL_API.md) y [evaluación técnica](evaluation/literal-v1/README.md). El visor de resaltado exacto de fase 4 sigue pendiente de autorización.
+
+
 Plataforma de apoyo a la revisión académica con evidencias verificables y decisión humana.
 
-## Estado real — Fase 2
+## Antecedente — Fase 2
 
 Carga privada PDF/DOCX/TXT, extracción asíncrona real, hash, duplicados visibles, asignaturas/actividades/matrículas y vistas PDF/estructuradas implementados, junto con la autenticación y roles de Fase 1.
 
-Un estado de extracción completada no implica originalidad ni auditoría académica. OCR no está integrado: páginas PDF sin texto muestran resultado parcial. Comparaciones, modelos, informes y Moodle todavía no están implementados.
+Un estado de extracción completada no implica originalidad ni auditoría académica. OCR no está integrado: páginas PDF sin texto muestran resultado parcial. En ese cierre aún no existían comparaciones; modelos, informes y Moodle siguen pendientes.
 
 Resultados y límites: [Fase 2](docs/PHASE_2.md), [API documental](docs/DOCUMENT_API.md). Las comprobaciones se ejecutaron en Linux CPU, sin GPU ni APIs comerciales de análisis.
 
@@ -40,8 +47,12 @@ En Linux, sustituir `py -3.12` por `python3.12`. Consultar [guía de desarrollo 
 - [UX y posiciones](docs/UX.md), [decisiones](docs/DECISIONS.md), [investigación histórica](docs/RESEARCH.md).
 - [Fase 0](docs/PHASE_0.md), [revisión de entorno](docs/REVIEW_2026-11-05.md), [Fase 1](docs/PHASE_1.md), [Fase 2](docs/PHASE_2.md), [cambios](CHANGELOG.md).
 
-Las versiones de investigación de Fase 0 son históricas. Los locks actuales y manifiestos de validación identifican las versiones efectivamente instaladas. La Fase 3 requiere autorización expresa. No se ha hecho push ni desplegado un servicio público.
+Las versiones de investigación de Fase 0 son históricas. Los locks actuales y manifiestos de validación identifican las versiones efectivamente instaladas. La Fase 3 está implementada; la Fase 4 requiere autorización expresa. No se ha hecho push ni desplegado un servicio público.
 
 ## Uso documental
 
 Tras iniciar sesión, crea una asignatura y actividad si corresponde, matricula estudiantes autorizados y carga archivos en Documentos. Puedes cargar sin actividad para trabajo propio. El procesamiento ocurre en segundo plano; abre el documento para revisar original, texto extraído y limitaciones. Los primeros parsers admiten Linux x86_64/aarch64; el backend nativo Windows no está validado: utilizar Docker/WSL2.
+
+## Comparación literal
+
+En Comparaciones selecciona un documento principal y las fuentes autorizadas que deseas consultar. Espera la extracción, inicia el trabajo y revisa citas, rangos, versiones y cobertura en el resultado. También puedes abrirlo desde el documento. Una búsqueda web solicitada queda parcial porque actualmente no existe proveedor conectado.

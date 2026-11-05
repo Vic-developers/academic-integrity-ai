@@ -3,6 +3,7 @@ from alembic import context
 from sqlalchemy import create_engine
 from app.db import Base
 from app import models  # noqa: F401
+from app.audits import models as audit_models  # noqa: F401
 from app.documents import models as document_models  # noqa: F401
 
 config = context.config

@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "../api";
 import type { Identity } from "../api";
@@ -24,9 +25,9 @@ export default function Overview({ identity }: { identity: Identity }) {
           </span>
         </div>
         <div className="panel phase">
-          <span className="pill">FASE 2</span>
+          <span className="pill">FASE 3</span>
           <h2>La base está en marcha</h2>
-          <p>Acceso institucional y gestión documental.</p>
+          <p>Documentos y comparación literal con evidencias.</p>
         </div>
       </div>
       <div className="panel next">
@@ -37,10 +38,11 @@ export default function Overview({ identity }: { identity: Identity }) {
         <p>
           La carga y la extracción de archivos están disponibles en Documentos.
           <br />
-          Aquí aparecerán los resultados de las auditorías cuando se
-          implementen.
+          Compara textos con fuentes seleccionadas y revisa las evidencias.
         </p>
-        <span className="pill neutral">Sin análisis ejecutados</span>
+        <Link className="button-link" to="/auditorias">
+          Comparación literal disponible
+        </Link>
       </div>
       <p className="muted small">
         Las coincidencias y los indicios lingüísticos requieren revisión humana.

@@ -1,5 +1,10 @@
 # Registro de cambios
 
+## Estado actual — Fase 3
+
+Comparación literal normalizada con fuentes explícitas, evidencias trazables, unión de palabras sin duplicación, trabajos durables, cancelación e idempotencia; permisos y borrado de derivados. Web no disponible con cobertura honesta. Pruebas y evaluación técnica sintética añadidas.
+
+
 ## Fase 0 — 2026-11-03
 
 - Inspeccionado entorno y repositorio inicialmente vacío.

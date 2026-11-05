@@ -194,6 +194,14 @@ export default function DocumentDetail() {
         </dl>
       </details>
       <div className="viewer-tools">
+        {ready && (
+          <Link
+            className="button-link"
+            to={`/auditorias?document=${document.id}`}
+          >
+            Comparar con fuentes autorizadas
+          </Link>
+        )}
         {document.can_manage &&
           ["received", "extracting"].includes(document.state) && (
             <button

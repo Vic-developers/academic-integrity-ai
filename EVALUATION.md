@@ -1,10 +1,15 @@
 # Evaluación y pruebas
 
-## Estado de Fase 2
+## Estado actual — Fase 3
+
+[Protocolo literal técnico v1](evaluation/literal-v1/README.md) ejecutado sobre 201 casos sintéticos con anotación por posiciones. Resultado reproducible en docs/validation/phase3/literal-evaluation.json. No constituye validación académica representativa ni evaluación web; no se publica precisión de detección de plagio.
+
+
+## Antecedente histórico — Fase 2
 
 Fase 2 amplía las pruebas reales a documentos, Unicode, cajas PDF, corrupciones, permisos, cancelación, purga, rollback, leases y migraciones. Las cifras definitivas están en [checks](docs/validation/phase2/checks.json). No son métricas de detección académica.
 
-## Estado al cierre de Fase 1
+## Antecedente histórico — cierre de Fase 1
 
 Fase 1: 22 pruebas backend y 2 recorridos Playwright aprobados con servicios reales. Detalles, advertencias y alcance en [PHASE_1](docs/PHASE_1.md). No hay métricas científicas de los motores. La sección de evidencia de Fase 0 de abajo es histórica.
 

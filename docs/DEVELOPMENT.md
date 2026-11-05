@@ -1,5 +1,10 @@
 # Desarrollo y pruebas — Fase 1
 
+## Estado actual — Fase 3
+
+Migración actual 0003_literal. Pruebas de comparación en backend/tests/test_literal.py y frontend/tests/literal.spec.ts. Corpus reproducible: `PYTHONPATH=backend python evaluation/literal-v1/evaluate.py --output docs/validation/phase3/literal-evaluation.json`. No conectar proveedores web sin política y autorización.
+
+
 ## Alcance
 
 Compose es un entorno de desarrollo con cookies HTTP locales y Mailpit; no es un despliegue de producción. El backend valida configuración de producción: exige origen HTTPS, cookie Secure y SMTP STARTTLS. Producción requiere además proxy TLS, secretos gestionados, backups restaurados y auditorías de Fases 15–16.

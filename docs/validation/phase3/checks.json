@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-05",
+  "scope": "Fase 3, Linux CPU; no producción",
+  "backend": {
+    "tests_passed": 65,
+    "database": "aid_test",
+    "redis_database": 15,
+    "round_trip_migration": "passed",
+    "concurrent_idempotency": "passed",
+    "source_revocation_and_deletion": "passed",
+    "cancel_late_results_discarded": "passed"
+  },
+  "browser": {
+    "tests_passed": 5,
+    "real_worker_and_smtp": true,
+    "real_literal_comparison_and_web_unavailable": "passed",
+    "phase1_phase2_regressions": "passed"
+  },
+  "builds": {
+    "backend": "passed",
+    "frontend": "passed",
+    "typescript_strict": "passed",
+    "ruff": "passed"
+  },
+  "code_provenance": {
+    "app_files_matching_container": 35,
+    "sha256": {
+      "app/main.py": "1cef15eedb5b4156522751c3b5361de8db04cb78946531e56989b758d75d232f",
+      "app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "app/schemas.py": "189508305718dcb86d01f4deb444d981ce61c0929f2ffe58857b78ea048de406",
+      "app/config.py": "3bea069a92a9ff3d9f41c717c15ce66cc492bc83e5843ee003b1a0c135c05f37",
+      "app/institutions.py": "9970e821386def1ca88547941d8637e41dca82f857a02eb19be9c4f9fd24f305",
+      "app/security.py": "f19b2c1d1fdfcef514f9ff87a0049a89e69cc2959a36f355305270096c8fee45",
+      "app/auth.py": "a48f382bd7a17d4e24c736f737d564929f5247688f6b89835bfc8dea55a347a1",
+      "app/cli.py": "e3b7748590089f4afdf6b7c3de04a28a30b87231a6f4b24a6e199ae1bb9828e1",
+      "app/worker.py": "fce4d24b146593b11184f611bb03f7430fd6cba67e63cc11385febab15e97996",
+      "app/models.py": "0c4911999890c642ca3ced634f7be03098fe600b23a241bb5c7b8a1c9a1eddae",
+      "app/db.py": "ed1c169008ccd60c381a54e69d44fbb4b371e7bfab948497a4d95ff1e33c3527",
+      "app/documents/limits.py": "0c6f3a6204d3982348ec6d4a371c88ad4747bfd89bbd06ade36b93d64f01c18f",
+      "app/documents/extractor.py": "768b15bdd792519a11b5807feebf3210e11fda8e766623ef110e9c384575a0b2",
+      "app/documents/__init__.py": "115e8cf248ae42e82351f324f42931bc065ce15aeb5f9e8aa65215ea95227231",
+      "app/documents/service.py": "dcc87e5c733d96f0a9ada3d8875ded99e89237ca6e0dbfb3bd276e64782914c3",
+      "app/documents/normalization.py": "afe66b2f5f8438a663050d8bca509962289498bf47f49d8e7a813ce7d0ad8f50",
+      "app/documents/storage.py": "46daae6fd129f905e5f01bbfd4f02e17a9abca9f805cbbc9bb72a56089ffab18",
+      "app/documents/sandbox.py": "5c21db2a0599b425608fbe92d802e7f6ded93ca4bf5611aee60c817fbe456923",
+      "app/documents/jobs.py": "4f475b8cd57405ad4d59535d5a2d84a585e897741b20bb78baad59f4b30ac31d",
+      "app/documents/api.py": "98ebef9c89ecc3a3e74cdf00247e3bcb425e03877086f45b249ee41995078201",
+      "app/documents/runner.py": "17724b3768af4fb3a00457c3829c1aa87a8defa7cca20fe71e41aa0e311e0b72",
+      "app/documents/courses.py": "42addd6888c57ab9261ae8a32fb3a931a6bd851fed84abc7a81e09d76e25a708",
+      "app/documents/validation.py": "cf563b424a40a2c4515a256280a58e669a52f6abb2f719fc310a054c6c60618f",
+      "app/documents/models.py": "eba3fac6322968c8e99d247418d262f273fd86fecdf61b3c8aa49ec1a6bad7f6",
+      "app/audits/limits.py": "ddfde603c7663776e51ac84929f0a79122c5112d3608acc492c5169e31fcf959",
+      "app/audits/providers.py": "cc2658181ae2a9a6ed219161520acd60a541969744d62e0ba31b39aa20d0818a",
+      "app/audits/evidence.py": "c6bbfe1039f7b16eded0a6c0ab9a78cda14ba7f6a97c283157d7b92dd45657e5",
+      "app/audits/__init__.py": "9ab94de766d5bcae5b39e66d8f0537042fddcc4667d98d506df6a70cee34cec7",
+      "app/audits/run_child.py": "55f31bc48169ccefa6713cfd23b855261b33c875ee2cbfe1a346bce27013cc4d",
+      "app/audits/service.py": "ea76cf48a81aef6798068f9d8d28d8cebe3a7ce5345b2dbe1d01dc25e18de977",
+      "app/audits/engine.py": "4edab99028be498a415c3f0cb9a6ff818097aa7a9fefa4453c7ba7b9d09b82d9",
+      "app/audits/jobs.py": "b708b464614ea00cf3c0d08256a8113318a2018dbeab769caad97b6756498f74",
+      "app/audits/api.py": "ced76d4cc72390ee040b79b3e5563ebcc7cd3dada49c4a04065bc325bfd96a55",
+      "app/audits/runner.py": "779547f6ae861c3d932c23747f1473721e3cb0ac460722f1e4095c7d09457c52",
+      "app/audits/models.py": "585ca998e5e9958fdd8d96a7d5c068f3344ea59e5251614668f78648d9e208c9"
+    }
+  },
+  "development_data": {
+    "users": 0,
+    "documents": 0,
+    "courses": 0,
+    "audits": 0
+  },
+  "private_originals_after_test_cleanup": 0,
+  "schema_revision": "0003_literal",
+  "pgvector_version": "0.8.7",
+  "evaluation": {
+    "protocol": "literal-technical-v1",
+    "seed": 20261105,
+    "engine_version": "literal-winnow-v1",
+    "normalizer": "nfkc-casefold-map-v1",
+    "corpus_sha256": "ff0d4604faec1911bbd87f1e90524661d0a8cad46686cc30ec1259588e24326d",
+    "provenance": "Synthetic fixtures generated locally; no student documents or web sources",
+    "cases": 201,
+    "positives": 121,
+    "negatives": 80,
+    "word_positions": {
+      "true_positive": 4625,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "positive_documents_retrieved": 121,
+    "negative_documents_flagged": 0,
+    "elapsed_seconds": 0.14766193799914618,
+    "acceptance": {
+      "precision_at_least_0_98": true,
+      "recall_at_least_0_95": true
+    },
+    "limitations": [
+      "Controlled technical corpus, not representative of academic writing",
+      "No measurement of Internet source coverage",
+      "No plagiarism or authorship classification",
+      "No claim of production throughput"
+    ]
+  },
+  "dependencies": {
+    "python_runtime": 53,
+    "python_known_vulnerabilities": 0,
+    "frontend_known_vulnerabilities": 0
+  },
+  "image_ids": {
+    "academic-integrity-ai-backend:dev": "sha256:6e9270573576433115b4690a6ccf51d868be065e4654d0408069e4ee5b5d5f4e",
+    "academic-integrity-ai-frontend": "sha256:59ce62cbdfa44af671a76d8477f05188d8a7dd8509b650c2b100b5ff5d9bca9e",
+    "academic-integrity-pgvector:local-flat": "sha256:30587ea48b31e8b1722ca541ea61cb0ceab755a91cf4fe8c6aca1b4dff8143d1"
+  },
+  "web": {
+    "available": false,
+    "queries_sent": 0,
+    "verified_sources": 0
+  },
+  "environment_adaptation": {
+    "postgres_filesystem_compacted_locally": true,
+    "database_volume_preserved": true,
+    "official_image_reference_preserved": true
+  },
+  "limitations": [
+    "Corpus técnico sintético, sin validación académica representativa",
+    "Sin proveedor web autorizado/configurado",
+    "Sin OCR ni antivirus",
+    "Sin contención completa del filesystem del parser",
+    "Windows/WSL2 y producción no probados",
+    "Sin resaltado exacto interactivo, semántica, IA ni informes"
+  ]
+}

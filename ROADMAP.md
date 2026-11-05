@@ -1,10 +1,15 @@
 # Hoja de ruta y riesgos
 
-## Estado de Fase 2
+## Estado actual — Fase 3
+
+Fase 3 implementada: comparación literal institucional explícita y limitación web visible. [Resultados y límites](docs/PHASE_3.md). La fase 4 (visor de evidencias y resaltado exacto) no se ha iniciado y requiere autorización.
+
+
+## Antecedente histórico — Fase 2
 
 Fase 2 entregada para revisión: carga, almacenamiento, extracción y visualizador básico reales. Fase 3 permanece pendiente de autorización. Ver [PHASE_2](docs/PHASE_2.md).
 
-## Estado al cierre de Fase 1
+## Antecedente histórico — cierre de Fase 1
 
 Fase 1 implementada y comprobada: consultar [PHASE_1](docs/PHASE_1.md). Fase 2 no iniciada y pendiente de autorización. Esta hoja conserva las puertas de las fases futuras.
 

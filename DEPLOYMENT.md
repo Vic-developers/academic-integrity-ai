@@ -1,10 +1,15 @@
 # Infraestructura y operación
 
-## Estado de Fase 2
+## Estado actual — Fase 3
+
+Migración esperada actual: 0003_literal. API y worker deben usar la misma imagen/código. El worker procesa extracción y auditorías durables; no necesita GPU ni proveedor comercial. Los límites predeterminados son para desarrollo, sin benchmark de producción. No se ha desplegado públicamente.
+
+
+## Antecedente histórico — Fase 2
 
 Compose incorpora un volumen privado documents, compartido por API/worker con UID 10001. PDF.js y sus recursos se sirven localmente, sin CDN. Reconstruir imágenes y migrar antes de arrancar Fase 2; ver [DEVELOPMENT](docs/DEVELOPMENT.md). Mantener el volumen database y documents al actualizar.
 
-## Estado al cierre de Fase 1
+## Antecedente histórico — cierre de Fase 1
 
 Fase 1 incorpora Compose local y comandos de instalación reales en [README](README.md) y [DEVELOPMENT](docs/DEVELOPMENT.md). Las imágenes y dependencias se construyeron/probaron en Linux CPU. No es configuración de producción ni instalación Windows comprobada. La inspección del 3 de noviembre de abajo se conserva como histórica.
 

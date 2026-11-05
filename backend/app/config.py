@@ -26,6 +26,11 @@ class Settings(BaseSettings):
     max_zip_entries: int = 2000
     max_document_chars: int = 500_000
     extraction_timeout: int = 45
+    max_audit_sources: int = 20
+    max_audit_chars: int = 1_000_000
+    max_literal_findings: int = 500
+    max_literal_seeds: int = 50_000
+    max_literal_checks: int = 2_000_000
 
     @model_validator(mode="after")
     def production(self) -> "Settings":
