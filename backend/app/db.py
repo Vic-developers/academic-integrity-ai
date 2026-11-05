@@ -19,5 +19,14 @@ def context(db: Session, *, user_id: str = "", institution_id: str = "") -> None
 
 
 def database() -> Generator[Session, None, None]:
-    with Session(engine) as db, db.begin():
-        yield db
+    with Session(engine) as db:
+        try:
+            with db.begin():
+                yield db
+        except BaseException:
+            for path in db.info.get("uncommitted_files", []):
+                try:
+                    path.unlink(missing_ok=True)
+                except OSError:
+                    pass  # Private orphan can be reconciled; never mask the transaction failure.
+            raise

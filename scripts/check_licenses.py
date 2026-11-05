@@ -1,5 +1,6 @@
 """Capture installed runtime metadata. Exact notices still require review before distribution."""
 
+import argparse
 import json
 import re
 from importlib import metadata
@@ -35,7 +36,9 @@ for line in (root / "backend/requirements.lock").read_text().splitlines():
         }
     )
 assert all(r["installed_version"] == r["version"] for r in rows)
-output = root / "docs/validation/runtime-licenses.json"
+parser = argparse.ArgumentParser()
+parser.add_argument("--output-dir", default=str(root / "docs/validation"))
+output = Path(parser.parse_args().output_dir) / "runtime-licenses.json"
 output.parent.mkdir(parents=True, exist_ok=True)
 output.write_text(json.dumps(rows, indent=2, ensure_ascii=False))
 print(f"{len(rows)} distribuciones registradas")

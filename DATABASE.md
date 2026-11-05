@@ -1,5 +1,9 @@
 # Modelo de datos
 
+## Estado de Fase 2
+
+La migración 0002_documents añade courses, assignments, enrollments, documents, document_versions, document_fragments y document_jobs, con RLS forzada y FK compuestas. claim_document_job y fail_exhausted_document_jobs son funciones SECURITY DEFINER de uso interno con search_path fijo, privilegios revocados a PUBLIC y salida mínima. La primera migración permanece congelada.
+
 ## Estado al cierre de Fase 1
 
 Esquema efectivo de Fase 1: users, institutions, memberships, sessions, reset_tokens, email_jobs y activity, más alembic_version. Roles como valores restringidos por CHECK; catálogos de permisos y entidades documentales se implementarán después. Identidad global interna y tablas tenant tienen controles diferentes, descritos en [DEVELOPMENT](docs/DEVELOPMENT.md). El resto es diseño objetivo.

@@ -1,5 +1,9 @@
 # Arquitectura
 
+## Estado de Fase 2
+
+Fase 2 implementada en backend/app/documents con API, modelos, validación, almacenamiento, runner y jobs. Cola durable con funciones SQL limitadas para reclamar trabajos entre tenants y contexto RLS por transacción; el contenido sigue bajo RLS. Ver [Fase 2](docs/PHASE_2.md).
+
 ## Estado al cierre de Fase 1
 
 Fase 1 implementada en `backend/app` (auth, institutions, db, security, worker) y `frontend/src/pages`/`components`. Las fronteras y motores de este diseño se ampliarán por fases; el outbox genérico aún es diseño, mientras la cola durable de correo ya funciona. Ver [Fase 1](docs/PHASE_1.md).

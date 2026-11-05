@@ -13,6 +13,12 @@ root = Path(__file__).resolve().parents[1]
 load_dotenv(root / ".env")
 owner = make_url(os.environ["MIGRATION_DATABASE_URL"])
 app = make_url(os.environ["DATABASE_URL"])
+if owner.host not in {"localhost", "127.0.0.1", "::1"} or app.host not in {
+    "localhost",
+    "127.0.0.1",
+    "::1",
+}:
+    raise SystemExit("Las pruebas solo admiten PostgreSQL local dedicado")
 with psycopg.connect(
     owner.set(drivername="postgresql", database="postgres").render_as_string(
         hide_password=False
@@ -29,6 +35,7 @@ os.environ.update(
         hide_password=False
     ),
     REDIS_URL=os.environ["REDIS_URL"].rsplit("/", 1)[0] + "/15",
+    STORAGE_ROOT="/tmp/academic-integrity-aid_test-documents",
     ENVIRONMENT="test",
     ALLOW_TEST_DATABASE_RESET="yes",
     MAILPIT_URL=os.environ.get("MAILPIT_URL", "http://localhost:8025"),

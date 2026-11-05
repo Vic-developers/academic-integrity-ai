@@ -13,3 +13,5 @@ test-results/
 
 node_modules
 *.tsbuildinfo
+
+frontend/public/pdfjs/

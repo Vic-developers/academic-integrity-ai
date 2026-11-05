@@ -1,0 +1,885 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:94b8b2d7-fccf-4f61-b742-57d91bef2558",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-05T12:25:34.952Z",
+    "lifecycles": [
+      {
+        "phase": "pre-build"
+      }
+    ],
+    "tools": [
+      {
+        "vendor": "npm",
+        "name": "cli",
+        "version": "11.9.0"
+      }
+    ],
+    "component": {
+      "bom-ref": "academic-integrity-ai@0.1.0",
+      "type": "library",
+      "name": "frontend",
+      "version": "0.1.0",
+      "scope": "required",
+      "purl": "pkg:npm/academic-integrity-ai@0.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:private",
+          "value": "true"
+        }
+      ],
+      "externalReferences": []
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "@hookform/resolvers@5.9.2",
+      "type": "library",
+      "name": "@hookform/resolvers",
+      "version": "5.9.2",
+      "scope": "required",
+      "purl": "pkg:npm/%40hookform/resolvers@5.9.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@hookform/resolvers/-/resolvers-5.9.2.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "46d8d39d9aac0b7f2ce0d2a9d973b77c3f08039bb2378b41ecc710e42eae88c3dc57e5963bc17ec156b77be0575291f649c831821025c0544c56a8d3f560a101"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@napi-rs/canvas@1.1.0",
+      "type": "library",
+      "name": "@napi-rs/canvas",
+      "version": "1.1.0",
+      "scope": "optional",
+      "purl": "pkg:npm/%40napi-rs/canvas@1.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@napi-rs/canvas/-/canvas-1.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "93ea61fc3f07f464bc659e3ca24bc7aca789ca792a000d64314651bb34563654140c75e782aee845a58c64176649f77d661572f5bc0d29e8bfef031ba08fee32"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@napi-rs/canvas-android-arm64@1.1.0",
+      "type": "library",
+      "name": "@napi-rs/canvas-android-arm64",
+      "version": "1.1.0",
+      "scope": "optional",
+      "purl": "pkg:npm/%40napi-rs/canvas-android-arm64@1.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@napi-rs/canvas-android-arm64/-/canvas-android-arm64-1.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "98aad2991ca158ae2aebdf50d71b616d92198bb241bcbb6c44d9ce64078568b3ce153d72a3ccbcd9a442da73596d74c625753b7d50ce3601903ebd2fa3791eaf"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@napi-rs/canvas-darwin-arm64@1.1.0",
+      "type": "library",
+      "name": "@napi-rs/canvas-darwin-arm64",
+      "version": "1.1.0",
+      "scope": "optional",
+      "purl": "pkg:npm/%40napi-rs/canvas-darwin-arm64@1.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@napi-rs/canvas-darwin-arm64/-/canvas-darwin-arm64-1.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8aac124f8834a07fb1f150a9048621f8c62892ffe656f90cfaff6824607477d0373f6a81878da8809955c96abd4a93c2ac08d2eeda6531bd43dce21fc65faeb7"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@napi-rs/canvas-darwin-x64@1.1.0",
+      "type": "library",
+      "name": "@napi-rs/canvas-darwin-x64",
+      "version": "1.1.0",
+      "scope": "optional",
+      "purl": "pkg:npm/%40napi-rs/canvas-darwin-x64@1.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@napi-rs/canvas-darwin-x64/-/canvas-darwin-x64-1.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8e4780f1e553c43ba6d372d3bdcdf6609dbc17a281d54d206309d631f38051066f596121fe4bce35bcb8896189c77f93c38e54a8c18c5e3b70d8628d5590e156"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@napi-rs/canvas-linux-arm-gnueabihf@1.1.0",
+      "type": "library",
+      "name": "@napi-rs/canvas-linux-arm-gnueabihf",
+      "version": "1.1.0",
+      "scope": "optional",
+      "purl": "pkg:npm/%40napi-rs/canvas-linux-arm-gnueabihf@1.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@napi-rs/canvas-linux-arm-gnueabihf/-/canvas-linux-arm-gnueabihf-1.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "638624286d628e8aa481475310404d1b893ed812b96d1e6318be92e7a63109760fc067d47799c40fcffbe31c9cef3f9ba62c4f6ac0a3498a0fdf160f38818dc7"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@napi-rs/canvas-linux-arm64-gnu@1.1.0",
+      "type": "library",
+      "name": "@napi-rs/canvas-linux-arm64-gnu",
+      "version": "1.1.0",
+      "scope": "optional",
+      "purl": "pkg:npm/%40napi-rs/canvas-linux-arm64-gnu@1.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@napi-rs/canvas-linux-arm64-gnu/-/canvas-linux-arm64-gnu-1.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "744fd7b61a9892259c055b4a16565b517c0061f0ee406a835a2c739e2a493667af2c6a69acd9d35506727ed9b545926e76420e9f6124cd864330c113334f11a3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@napi-rs/canvas-linux-arm64-musl@1.1.0",
+      "type": "library",
+      "name": "@napi-rs/canvas-linux-arm64-musl",
+      "version": "1.1.0",
+      "scope": "optional",
+      "purl": "pkg:npm/%40napi-rs/canvas-linux-arm64-musl@1.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@napi-rs/canvas-linux-arm64-musl/-/canvas-linux-arm64-musl-1.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "0ea67f08c707961539ea93e3bfd00fd21dd4ecc150e4bcc2d47cccc91328b4bf8f16c26664903fce20293d8572cb3efc0da54b848f2ddd2a37cedaad8a36d8a6"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@napi-rs/canvas-linux-riscv64-gnu@1.1.0",
+      "type": "library",
+      "name": "@napi-rs/canvas-linux-riscv64-gnu",
+      "version": "1.1.0",
+      "scope": "optional",
+      "purl": "pkg:npm/%40napi-rs/canvas-linux-riscv64-gnu@1.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@napi-rs/canvas-linux-riscv64-gnu/-/canvas-linux-riscv64-gnu-1.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "909ee6e67d957dfc565cce5019ae657eaf193782dd389128cf7680240988a98bca899c35811757aa9b9c9d15ec17a0fd9cb62288895ebda02d01c951edce6296"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@napi-rs/canvas-linux-x64-gnu@1.1.0",
+      "type": "library",
+      "name": "@napi-rs/canvas-linux-x64-gnu",
+      "version": "1.1.0",
+      "scope": "optional",
+      "purl": "pkg:npm/%40napi-rs/canvas-linux-x64-gnu@1.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@napi-rs/canvas-linux-x64-gnu/-/canvas-linux-x64-gnu-1.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b90f49b89951850747cadb5c3163a2c0b91f22a92a681d1815455ef37e4b51ed764c7b766f9d475e44c8b6ad1fc564f58dd8543d7db2956675c1a9642720fa19"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@napi-rs/canvas-linux-x64-musl@1.1.0",
+      "type": "library",
+      "name": "@napi-rs/canvas-linux-x64-musl",
+      "version": "1.1.0",
+      "scope": "optional",
+      "purl": "pkg:npm/%40napi-rs/canvas-linux-x64-musl@1.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@napi-rs/canvas-linux-x64-musl/-/canvas-linux-x64-musl-1.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "85ab3808f3c092409a73f2d9d77540c39a7e3092dd68a568cab86e98dfc0eee25debdeb4c5890934366051e6f2c6285af36005cd7c7a455f90260e6a186d3bf6"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@napi-rs/canvas-win32-arm64-msvc@1.1.0",
+      "type": "library",
+      "name": "@napi-rs/canvas-win32-arm64-msvc",
+      "version": "1.1.0",
+      "scope": "optional",
+      "purl": "pkg:npm/%40napi-rs/canvas-win32-arm64-msvc@1.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@napi-rs/canvas-win32-arm64-msvc/-/canvas-win32-arm64-msvc-1.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "3099e4b4b28d8a3997a9d8d3ba08470d9f530cb67db949b686f157a9a3aa9f4fb0ee5a615c59dfb7a6e94a040073d5357b1736d14188065cc6bbdfa48828fd02"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@napi-rs/canvas-win32-x64-msvc@1.1.0",
+      "type": "library",
+      "name": "@napi-rs/canvas-win32-x64-msvc",
+      "version": "1.1.0",
+      "scope": "optional",
+      "purl": "pkg:npm/%40napi-rs/canvas-win32-x64-msvc@1.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@napi-rs/canvas-win32-x64-msvc/-/canvas-win32-x64-msvc-1.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "d3ce7be5b164ee289a7716a9e21f89c601aeb7dc43087006ba6eb08747889cde77cc43089a49841e2e4cbac857d853a634eeea44d5fb04f8830b96580701de12"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@standard-schema/utils@0.3.0",
+      "type": "library",
+      "name": "@standard-schema/utils",
+      "version": "0.3.0",
+      "scope": "required",
+      "purl": "pkg:npm/%40standard-schema/utils@0.3.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@standard-schema/utils/-/utils-0.3.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "7bb31ec3af3aa3031a3c954d34bb39e4f52f833dfbd672a0c2c738bf1138f73b0e0e92449f1831468db2fce2abaae79abd781934c0d58f70dd1c595a480794f2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tanstack/query-core@5.106.1",
+      "type": "library",
+      "name": "@tanstack/query-core",
+      "version": "5.106.1",
+      "scope": "required",
+      "purl": "pkg:npm/%40tanstack/query-core@5.106.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tanstack/query-core/-/query-core-5.106.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "7ab62ffd400275d71d82338bda2c6615d2bab4efc054179471308eb57d8de75c99a4343653b289fb1801fdb08d7ec177ba80834ea1871046c3885b083bd61499"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tanstack/react-query@5.106.1",
+      "type": "library",
+      "name": "@tanstack/react-query",
+      "version": "5.106.1",
+      "scope": "required",
+      "purl": "pkg:npm/%40tanstack/react-query@5.106.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tanstack/react-query/-/react-query-5.106.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "3910ef246fc349f9a514bf6543c183904d158ed41b2de44363b04bf318ca9101462df8c519f35636eb5e5a03ea03680f2602cbb967d0ec85f4165b07089ae2ca"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "cookie@1.1.1",
+      "type": "library",
+      "name": "cookie",
+      "version": "1.1.1",
+      "scope": "required",
+      "purl": "pkg:npm/cookie@1.1.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/cookie/-/cookie-1.1.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "7a2f00a2cee36b4c1e469173267100f541c9ffb5d09aa8256d1c277f60138dc07d5aaf3be15287f647e38e2acce94854dbf1397c561a77297284595d72a4a275"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "pdfjs-dist@6.5.438",
+      "type": "library",
+      "name": "pdfjs-dist",
+      "version": "6.5.438",
+      "scope": "required",
+      "purl": "pkg:npm/pdfjs-dist@6.5.438",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/pdfjs-dist/-/pdfjs-dist-6.5.438.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "be0f0fc35c7e0052b2e00303be1b9697970e615f1debdf14a0400da0516173bf61a970e7650aa7397a31c371c6f74ed61ce8352583af2e13fbe7a6e875d171a4"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "react@19.3.1",
+      "type": "library",
+      "name": "react",
+      "version": "19.3.1",
+      "scope": "required",
+      "purl": "pkg:npm/react@19.3.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/react/-/react-19.3.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "40d85676dee7ae05565901b9f10b86b004778efdc76dee266f8bf3ef0d9cb271dabdc89926075ad423cd6a5745e9e571bfdd2e7778d45e92a51cbebd80edfccb"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "react-dom@19.3.1",
+      "type": "library",
+      "name": "react-dom",
+      "version": "19.3.1",
+      "scope": "required",
+      "purl": "pkg:npm/react-dom@19.3.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/react-dom/-/react-dom-19.3.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "6346c0473e77961102d4d302012b34fe3f9f681ff3aaddd1f21a6f8357bcfbad59549e142f451d0b87016d77d931c22e86b7e07882d32def9978109abd03ed29"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "react-hook-form@7.91.0",
+      "type": "library",
+      "name": "react-hook-form",
+      "version": "7.91.0",
+      "scope": "required",
+      "purl": "pkg:npm/react-hook-form@7.91.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.91.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e41101527081c1adbc0055d84d898e681ffe092a49ffe09654048712f20653315d1f25223c7791846eebe61399f27662d323fba5b1dd14d5cefe9df510a4c915"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "react-router@7.18.5",
+      "type": "library",
+      "name": "react-router",
+      "version": "7.18.5",
+      "scope": "required",
+      "purl": "pkg:npm/react-router@7.18.5",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/react-router/-/react-router-7.18.5.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "75382f7170ceacb3eb94b1eb71902a5af7a22b584c4aa37eac6009cde80ff07b663647d1c4ea2c846581357dd92747198ce1e445d95426d68885930b2f21b23f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "scheduler@0.28.0",
+      "type": "library",
+      "name": "scheduler",
+      "version": "0.28.0",
+      "scope": "required",
+      "purl": "pkg:npm/scheduler@0.28.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/scheduler/-/scheduler-0.28.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8eea2b7c2988908c3cb53fa9e415d29ba3c98d017fc9c11898acb3511088b7f45a64884bf8fba56d0f58bb6cf51dd3890dda834e5c40d7ec4a0661d726c73303"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "set-cookie-parser@2.7.3",
+      "type": "library",
+      "name": "set-cookie-parser",
+      "version": "2.7.3",
+      "scope": "required",
+      "purl": "pkg:npm/set-cookie-parser@2.7.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/set-cookie-parser/-/set-cookie-parser-2.7.3.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8ab647b53aaeacb9dae7b2901bfb3e7f33b0bff27a5d21f872cf0cfefb2b637b82690dd2ebe40982e007d1674de3b497964f36be8319e276963107fc7dd12822"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "zod@4.6.7",
+      "type": "library",
+      "name": "zod",
+      "version": "4.6.7",
+      "scope": "required",
+      "purl": "pkg:npm/zod@4.6.7",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/zod/-/zod-4.6.7.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "83c5b60f6914e9af2e9ed734e777d7d6e5412b333bcaa0315bfdf3c24f37fba472176f9228eb95f9cd30043854c335753da19aa66647fab99c5333dffb7086c2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "academic-integrity-ai@0.1.0",
+      "dependsOn": [
+        "@hookform/resolvers@5.9.2",
+        "@tanstack/react-query@5.106.1",
+        "pdfjs-dist@6.5.438",
+        "react@19.3.1",
+        "react-dom@19.3.1",
+        "react-hook-form@7.91.0",
+        "react-router@7.18.5",
+        "zod@4.6.7"
+      ]
+    },
+    {
+      "ref": "@hookform/resolvers@5.9.2",
+      "dependsOn": [
+        "react-hook-form@7.91.0",
+        "zod@4.6.7",
+        "@standard-schema/utils@0.3.0"
+      ]
+    },
+    {
+      "ref": "@napi-rs/canvas@1.1.0",
+      "dependsOn": [
+        "@napi-rs/canvas-android-arm64@1.1.0",
+        "@napi-rs/canvas-darwin-arm64@1.1.0",
+        "@napi-rs/canvas-darwin-x64@1.1.0",
+        "@napi-rs/canvas-linux-arm-gnueabihf@1.1.0",
+        "@napi-rs/canvas-linux-arm64-gnu@1.1.0",
+        "@napi-rs/canvas-linux-arm64-musl@1.1.0",
+        "@napi-rs/canvas-linux-riscv64-gnu@1.1.0",
+        "@napi-rs/canvas-linux-x64-gnu@1.1.0",
+        "@napi-rs/canvas-linux-x64-musl@1.1.0",
+        "@napi-rs/canvas-win32-arm64-msvc@1.1.0",
+        "@napi-rs/canvas-win32-x64-msvc@1.1.0"
+      ]
+    },
+    {
+      "ref": "@napi-rs/canvas-android-arm64@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@napi-rs/canvas-darwin-arm64@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@napi-rs/canvas-darwin-x64@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@napi-rs/canvas-linux-arm-gnueabihf@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@napi-rs/canvas-linux-arm64-gnu@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@napi-rs/canvas-linux-arm64-musl@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@napi-rs/canvas-linux-riscv64-gnu@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@napi-rs/canvas-linux-x64-gnu@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@napi-rs/canvas-linux-x64-musl@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@napi-rs/canvas-win32-arm64-msvc@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@napi-rs/canvas-win32-x64-msvc@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@standard-schema/utils@0.3.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@tanstack/query-core@5.106.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "@tanstack/react-query@5.106.1",
+      "dependsOn": [
+        "react@19.3.1",
+        "@tanstack/query-core@5.106.1"
+      ]
+    },
+    {
+      "ref": "cookie@1.1.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pdfjs-dist@6.5.438",
+      "dependsOn": [
+        "@napi-rs/canvas@1.1.0"
+      ]
+    },
+    {
+      "ref": "react@19.3.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "react-dom@19.3.1",
+      "dependsOn": [
+        "react@19.3.1",
+        "scheduler@0.28.0"
+      ]
+    },
+    {
+      "ref": "react-hook-form@7.91.0",
+      "dependsOn": [
+        "react@19.3.1"
+      ]
+    },
+    {
+      "ref": "react-router@7.18.5",
+      "dependsOn": [
+        "react@19.3.1",
+        "react-dom@19.3.1",
+        "cookie@1.1.1",
+        "set-cookie-parser@2.7.3"
+      ]
+    },
+    {
+      "ref": "scheduler@0.28.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "set-cookie-parser@2.7.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "zod@4.6.7",
+      "dependsOn": []
+    }
+  ]
+}

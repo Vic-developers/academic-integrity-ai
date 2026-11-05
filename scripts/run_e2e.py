@@ -14,6 +14,8 @@ from sqlalchemy.engine import make_url
 
 root = Path(__file__).resolve().parents[1]
 env = dotenv_values(root / ".env")
+if make_url(str(env["DATABASE_URL"])).host not in {"localhost", "127.0.0.1", "::1"}:
+    raise SystemExit("Las pruebas solo admiten PostgreSQL local dedicado")
 url = (
     "postgresql+psycopg://aid_app:" + str(env["APP_DB_PASSWORD"]) + "@db:5432/aid_test"
 )
@@ -23,6 +25,9 @@ config = {
             "environment": {
                 "DATABASE_URL": url,
                 "ENVIRONMENT": "test",
+                "PUBLIC_ORIGIN": "http://localhost:5173",
+                "SECURE_COOKIES": "false",
+                "STORAGE_ROOT": "/var/lib/academic-integrity/documents/aid_test",
                 "REDIS_URL": "redis://redis:6379/15",
             }
         }
@@ -46,6 +51,14 @@ subprocess.run(
     [sys.executable, "tests/seed.py"], cwd=root / "backend", env=test_env, check=True
 )
 with tempfile.TemporaryDirectory(prefix="academic-integrity-e2e-") as tmp:
+    fixtures = Path(tmp) / "fixtures"
+    subprocess.run(
+        [sys.executable, "tests/generate_document_fixtures.py", str(fixtures)],
+        cwd=root / "backend",
+        env=test_env,
+        check=True,
+    )
+    browser_env = {**os.environ, "E2E_FIXTURES_DIR": str(fixtures)}
     override = Path(tmp) / "test.yaml"
     override.write_text(json.dumps(config))
     override.chmod(0o600)
@@ -82,10 +95,17 @@ with tempfile.TemporaryDirectory(prefix="academic-integrity-e2e-") as tmp:
         subprocess.run(
             ["npm", "run", "test:e2e"],
             cwd=root / "frontend",
-            env=os.environ.copy(),
+            env=browser_env,
             check=True,
         )
     finally:
+        # Only the explicit test storage subtree; never development originals.
+        test_stack = base + ["-f", str(override)]
+        subprocess.run(test_stack + ["stop", "worker"], check=True)
+        cleanup = "from app.config import settings; import shutil; c=settings(); assert c.environment=='test' and c.storage_root=='/var/lib/academic-integrity/documents/aid_test'; shutil.rmtree(c.storage_root, ignore_errors=True)"
+        subprocess.run(
+            test_stack + ["exec", "-T", "api", "python", "-c", cleanup], check=True
+        )
         subprocess.run(
             base
             + [

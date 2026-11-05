@@ -54,3 +54,13 @@ Locks Python con hashes; npm ci respeta package-lock.json. Revisar licencias dec
 `infra/compose.cloud-build.yaml` monta el CA público del entorno únicamente durante instalaciones Docker. Se usa con `docker compose -f compose.yaml -f infra/compose.cloud-build.yaml build`. Preservar los proxies heredados; no desactivar TLS. Si el builder necesita escribir en un home de solo lectura, configurar `BUILDX_CONFIG` en un directorio temporal escribible sin cambiar DOCKER_CONFIG ni credenciales.
 
 La workflow de GitHub Actions está preparada, pero no ejecutada remotamente en esta sesión. Solo publica comprobaciones, nunca despliega. Los resultados locales no equivalen a un CI remoto exitoso.
+
+## Actualización a Fase 2
+
+`docker compose up --build -d` reconstruye y ejecuta 0002_documents mediante el servicio migrate. No borrar volúmenes para actualizar. API/worker comparten documents privado; no montarlo como contenido web público ni cambiar sus permisos a 0777. `GET /api/v1/documents/limits` indica límites efectivos; los parámetros MAX_FILE_BYTES, MAX_REQUEST_BYTES, MAX_BATCH_FILES, MAX_PDF_PAGES, MAX_ZIP_BYTES, MAX_ZIP_ENTRIES, MAX_DOCUMENT_CHARS y EXTRACTION_TIMEOUT se leen del entorno. En Compose usar un overlay environment para cambiarlos; ponerlos en .env sin pasarlos al contenedor no modifica su configuración. STORAGE_ROOT solo cambia la ruta interna: al modificarla también debe ajustarse el volumen.
+
+El worker tiene CPU 30 s, memoria virtual 512 MiB, salida máxima 32 MiB y timeout de proceso 45 s por defecto; un lease dura 120 s y se recupera con token nuevo. No aumentar timeout por encima del lease sin revisar ambos. Seccomp es obligatorio en el parser; un kernel/plataforma que no lo permita produce sandbox_unavailable. El parser no es una VM; el aislamiento completo por trabajo y antivirus se requieren antes de producción.
+
+Las pruebas de navegador generan cuatro archivos sintéticos válidos (TXT, DOCX, PDF con texto y PDF sin texto), usan aid_test/Redis 15 y STORAGE_ROOT de pruebas. Al finalizar se detiene el worker de pruebas, se retira únicamente el subdirectorio aid_test de almacenamiento y se restauran API/worker a desarrollo. La base de desarrollo no recibe esas fixtures. No ejecutar estas pruebas en paralelo ni sobre infraestructura institucional.
+
+Los recursos PDF.js se copian desde la versión bloqueada al construir; no dependen de un CDN. El directorio generado public/pdfjs se excluye de Git. El visor se carga solo al abrir un PDF. Preservar las licencias/notices de las dependencias y completar revisión de distribución antes de publicar imágenes o un servicio.

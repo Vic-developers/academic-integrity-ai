@@ -29,3 +29,7 @@ Sistema de tokens claro/oscuro, tipografía legible y contraste WCAG 2.2 AA. Roj
 ## Estado de Fase 1
 
 Implementados login, recuperación, selección institucional, resumen, usuarios y actividad, tema y layout responsive. Las demás pantallas y el visualizador son diseño pendiente de fases posteriores. Las rutas de administración comprueban el rol para mostrar acciones, además de la autorización obligatoria del servidor.
+
+## Estado de Fase 2
+
+Documentos incluye carga por lote/arrastre, límites reales consultados, lista paginada y errores por archivo. Detalle incluye PDF original paginado/zoom o texto estructurado DOCX/TXT, normalización opcional, metadatos y descarga privada. Asignaturas incorpora actividades y matrículas. Los estados son de extracción; no hay indicadores de plagio o autoría. Los resaltados y visor comparativo siguen como diseño de Fase 4.

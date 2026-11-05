@@ -18,21 +18,31 @@ export class ApiError extends Error {
     super(message);
   }
 }
-export async function api<T>(path: string, body?: unknown): Promise<T> {
+export async function api<T>(
+  path: string,
+  body?: unknown,
+  method?: string,
+): Promise<T> {
   const csrf =
     document.cookie
       .split("; ")
       .find((x) => x.startsWith("aid_csrf="))
       ?.split("=")[1] ?? "";
+  const isForm = body instanceof FormData;
   const response = await fetch(`/api/v1${path}`, {
-    method: body === undefined ? "GET" : "POST",
+    method: method ?? (body === undefined ? "GET" : "POST"),
     credentials: "same-origin",
     headers: {
-      "Content-Type": "application/json",
+      ...(!isForm ? { "Content-Type": "application/json" } : {}),
       "X-Requested-With": "AcademicIntegrityAI",
       "X-CSRF-Token": csrf,
     },
-    body: body === undefined ? undefined : JSON.stringify(body),
+    body:
+      body === undefined
+        ? undefined
+        : isForm
+          ? (body as FormData)
+          : JSON.stringify(body),
   });
   if (!response.ok) {
     const data: unknown = await response.json().catch(() => ({}));

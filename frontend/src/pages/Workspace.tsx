@@ -10,6 +10,9 @@ import ErrorMessage from "../components/ErrorMessage";
 import Users from "./Users";
 import Activity from "./Activity";
 import Overview from "./Overview";
+import Documents from "./Documents";
+import DocumentDetail from "./DocumentDetail";
+import Courses from "./Courses";
 export default function Workspace() {
   const { data, error, isPending } = useQuery({
     queryKey: ["identity"],
@@ -95,6 +98,8 @@ export default function Workspace() {
         <span className="nav-label">ESPACIO DE TRABAJO</span>
         <nav aria-label="Principal">
           <Link to="/">◈ &nbsp; Resumen</Link>
+          <Link to="/documentos">▤ &nbsp; Documentos</Link>
+          <Link to="/asignaturas">▦ &nbsp; Asignaturas</Link>
           {["admin", "superadmin", "coordinator"].includes(selected.role) && (
             <Link to="/usuarios">♙ &nbsp; Usuarios</Link>
           )}
@@ -159,6 +164,15 @@ export default function Workspace() {
           <Routes>
             <Route path="/" element={<Overview identity={data} />} />
             <Route
+              path="/documentos"
+              element={<Documents role={selected.role} />}
+            />
+            <Route path="/documentos/:id" element={<DocumentDetail />} />
+            <Route
+              path="/asignaturas"
+              element={<Courses role={selected.role} />}
+            />
+            <Route
               path="/usuarios"
               element={
                 ["admin", "superadmin", "coordinator"].includes(
@@ -188,7 +202,8 @@ export default function Workspace() {
           </Routes>
         </main>
         <footer>
-          Academic Integrity AI <span>Fase 1 · Infraestructura y acceso</span>
+          Academic Integrity AI{" "}
+          <span>Gestión documental · Revisión humana</span>
         </footer>
       </div>
     </div>

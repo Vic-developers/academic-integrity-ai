@@ -1,5 +1,9 @@
 # Hoja de ruta y riesgos
 
+## Estado de Fase 2
+
+Fase 2 entregada para revisión: carga, almacenamiento, extracción y visualizador básico reales. Fase 3 permanece pendiente de autorización. Ver [PHASE_2](docs/PHASE_2.md).
+
 ## Estado al cierre de Fase 1
 
 Fase 1 implementada y comprobada: consultar [PHASE_1](docs/PHASE_1.md). Fase 2 no iniciada y pendiente de autorización. Esta hoja conserva las puertas de las fases futuras.

@@ -1,6 +1,7 @@
 """Synthetic fixtures. Refuse to touch databases other than aid_test."""
 
 import os
+import shutil
 import uuid
 from redis import Redis
 from sqlalchemy import create_engine, text
@@ -21,6 +22,9 @@ def seed_test_data() -> dict[str, str]:
         or not os.environ["REDIS_URL"].endswith("/15")
     ):
         raise RuntimeError("Use the isolated test stack and ALLOW_TEST_DATABASE_RESET=yes")
+    storage = os.environ.get("STORAGE_ROOT", "")
+    if storage == "/tmp/academic-integrity-aid_test-documents":
+        shutil.rmtree(storage, ignore_errors=True)
     admin_engine = create_engine(os.environ["MIGRATION_DATABASE_URL"])
     with admin_engine.begin() as conn:
         conn.execute(

@@ -24,18 +24,18 @@ export default function Overview({ identity }: { identity: Identity }) {
           </span>
         </div>
         <div className="panel phase">
-          <span className="pill">FASE 1</span>
+          <span className="pill">FASE 2</span>
           <h2>La base está en marcha</h2>
-          <p>Autenticación, roles y espacio institucional.</p>
+          <p>Acceso institucional y gestión documental.</p>
         </div>
       </div>
       <div className="panel next">
         <div className="document-icon" aria-hidden="true">
           ▤
         </div>
-        <h2>El análisis documental llega en la siguiente fase</h2>
+        <h2>Prepara tus documentos para la revisión</h2>
         <p>
-          La carga de archivos y los motores aún no están disponibles.
+          La carga y la extracción de archivos están disponibles en Documentos.
           <br />
           Aquí aparecerán los resultados de las auditorías cuando se
           implementen.

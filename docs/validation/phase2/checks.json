@@ -1,0 +1,88 @@
+{
+  "date": "2026-11-05",
+  "scope": "Fase 2, Linux CPU; no producción",
+  "backend": {
+    "tests_passed": 45,
+    "database": "aid_test",
+    "redis_database": 15,
+    "real_parsers": true,
+    "round_trip_migration": "passed"
+  },
+  "browser": {
+    "tests_passed": 4,
+    "real_worker_and_smtp": true,
+    "pdf_original_byte_comparison": "passed",
+    "pdf_canvas_pixels_pagination_zoom": "passed",
+    "docx_txt_scanned_pdf": "passed",
+    "student_course_authorization": "passed"
+  },
+  "builds": {
+    "backend": "passed",
+    "frontend": "passed",
+    "typescript_strict": "passed",
+    "ruff": "passed"
+  },
+  "code_provenance": {
+    "app_files_matching_container": 24,
+    "sha256": {
+      "app/main.py": "ad8ff6b7f993c8dd18d626541bd4fcca2d6bf9b7bb63e04af3566549bdee2f59",
+      "app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "app/schemas.py": "189508305718dcb86d01f4deb444d981ce61c0929f2ffe58857b78ea048de406",
+      "app/config.py": "ce8b65995ca680de4a275fdccf36307ebc0c7f97de5ab8652b318aa105be2b7f",
+      "app/institutions.py": "4a766e383a96e4a3ee3e3d484acdafb08407706d78b18da8274d26bec787fbbd",
+      "app/security.py": "f19b2c1d1fdfcef514f9ff87a0049a89e69cc2959a36f355305270096c8fee45",
+      "app/auth.py": "a48f382bd7a17d4e24c736f737d564929f5247688f6b89835bfc8dea55a347a1",
+      "app/cli.py": "e3b7748590089f4afdf6b7c3de04a28a30b87231a6f4b24a6e199ae1bb9828e1",
+      "app/worker.py": "3ff6be82923bdf35b9c8e8b8b0f17d4f78ac266f8a64f7d9aa3e76f59c8fb6c8",
+      "app/models.py": "0c4911999890c642ca3ced634f7be03098fe600b23a241bb5c7b8a1c9a1eddae",
+      "app/db.py": "ed1c169008ccd60c381a54e69d44fbb4b371e7bfab948497a4d95ff1e33c3527",
+      "app/documents/limits.py": "0c6f3a6204d3982348ec6d4a371c88ad4747bfd89bbd06ade36b93d64f01c18f",
+      "app/documents/extractor.py": "768b15bdd792519a11b5807feebf3210e11fda8e766623ef110e9c384575a0b2",
+      "app/documents/__init__.py": "115e8cf248ae42e82351f324f42931bc065ce15aeb5f9e8aa65215ea95227231",
+      "app/documents/service.py": "dcc87e5c733d96f0a9ada3d8875ded99e89237ca6e0dbfb3bd276e64782914c3",
+      "app/documents/normalization.py": "afe66b2f5f8438a663050d8bca509962289498bf47f49d8e7a813ce7d0ad8f50",
+      "app/documents/storage.py": "46daae6fd129f905e5f01bbfd4f02e17a9abca9f805cbbc9bb72a56089ffab18",
+      "app/documents/sandbox.py": "5c21db2a0599b425608fbe92d802e7f6ded93ca4bf5611aee60c817fbe456923",
+      "app/documents/jobs.py": "4f475b8cd57405ad4d59535d5a2d84a585e897741b20bb78baad59f4b30ac31d",
+      "app/documents/api.py": "fb9b7d216ad1b97721378aa5cec0bc089b6d87da42b59f80b33f55eeda550e0c",
+      "app/documents/runner.py": "17724b3768af4fb3a00457c3829c1aa87a8defa7cca20fe71e41aa0e311e0b72",
+      "app/documents/courses.py": "42addd6888c57ab9261ae8a32fb3a931a6bd851fed84abc7a81e09d76e25a708",
+      "app/documents/validation.py": "cf563b424a40a2c4515a256280a58e669a52f6abb2f719fc310a054c6c60618f",
+      "app/documents/models.py": "eba3fac6322968c8e99d247418d262f273fd86fecdf61b3c8aa49ec1a6bad7f6"
+    }
+  },
+  "development_data": {
+    "users": 0,
+    "documents": 0,
+    "courses": 0
+  },
+  "private_originals_after_test_cleanup": 0,
+  "schema_revision": "0002_documents",
+  "pgvector_version": "0.8.7",
+  "dependencies": {
+    "python_runtime": 53,
+    "python_known_vulnerabilities": 0,
+    "frontend_known_vulnerabilities": 0,
+    "pdfjs_version": "6.5.438"
+  },
+  "image_ids": {
+    "academic-integrity-ai-backend:dev": "sha256:9523034d6377081081e31e78b1a420a87ffab208558e427658e0cc01493c1daf",
+    "academic-integrity-ai-frontend": "sha256:d110bedb48813feaac39e4225e15eb0490444380cfebc8fd56612c0fc12864bc",
+    "academic-integrity-pgvector:local-flat": "sha256:30587ea48b31e8b1722ca541ea61cb0ceab755a91cf4fe8c6aca1b4dff8143d1"
+  },
+  "environment_adaptation": {
+    "postgres_filesystem_compacted_locally": true,
+    "database_volume_preserved": true,
+    "project_official_image_reference_preserved": true,
+    "runtime_overlay": "/workspace/work/phase2.runtime.yaml"
+  },
+  "not_implemented_or_not_tested": [
+    "OCR",
+    "Antivirus",
+    "Contención completa del filesystem del parser",
+    "Windows/WSL2",
+    "SMTP de producción",
+    "GitHub Actions remoto",
+    "Motores de comparación y evaluación científica"
+  ]
+}

@@ -2,11 +2,13 @@
 
 Plataforma de apoyo a la revisión académica con evidencias verificables y decisión humana.
 
-## Estado real — Fase 1
+## Estado real — Fase 2
 
-Infraestructura y acceso implementados: React/TypeScript, FastAPI, PostgreSQL 16 con pgvector, Redis, worker Celery y buzón SMTP local. Inicio/cierre de sesión, recuperación de contraseña, selección institucional, seis roles, usuarios y actividad con autorización del servidor. El dashboard consulta miembros reales de la base seleccionada. No contiene métricas de auditorías ficticias.
+Carga privada PDF/DOCX/TXT, extracción asíncrona real, hash, duplicados visibles, asignaturas/actividades/matrículas y vistas PDF/estructuradas implementados, junto con la autenticación y roles de Fase 1.
 
-Carga documental, extracción, motores, evidencias académicas e informes aún no están implementados: comienzan en Fase 2 y siguientes. La disponibilidad local no equivale a producción ni a validación científica. Ver [resultado de Fase 1](docs/PHASE_1.md).
+Un estado de extracción completada no implica originalidad ni auditoría académica. OCR no está integrado: páginas PDF sin texto muestran resultado parcial. Comparaciones, modelos, informes y Moodle todavía no están implementados.
+
+Resultados y límites: [Fase 2](docs/PHASE_2.md), [API documental](docs/DOCUMENT_API.md). Las comprobaciones se ejecutaron en Linux CPU, sin GPU ni APIs comerciales de análisis.
 
 ## Inicio en Windows / PowerShell
 
@@ -36,6 +38,10 @@ En Linux, sustituir `py -3.12` por `python3.12`. Consultar [guía de desarrollo 
 - [Seguridad](SECURITY.md), [modelos](AI_MODELS.md), [evaluación](EVALUATION.md).
 - [Instalación e infraestructura](DEPLOYMENT.md), [Moodle](MOODLE_INTEGRATION.md), [hoja de ruta](ROADMAP.md).
 - [UX y posiciones](docs/UX.md), [decisiones](docs/DECISIONS.md), [investigación histórica](docs/RESEARCH.md).
-- [Fase 0](docs/PHASE_0.md), [revisión de entorno](docs/REVIEW_2026-11-05.md), [Fase 1](docs/PHASE_1.md), [cambios](CHANGELOG.md).
+- [Fase 0](docs/PHASE_0.md), [revisión de entorno](docs/REVIEW_2026-11-05.md), [Fase 1](docs/PHASE_1.md), [Fase 2](docs/PHASE_2.md), [cambios](CHANGELOG.md).
 
-Las versiones de investigación de Fase 0 son históricas. Los locks de Fase 1 y manifiestos de validación identifican las versiones efectivamente instaladas. La Fase 2 requiere autorización expresa. No se ha hecho push ni desplegado un servicio público.
+Las versiones de investigación de Fase 0 son históricas. Los locks actuales y manifiestos de validación identifican las versiones efectivamente instaladas. La Fase 3 requiere autorización expresa. No se ha hecho push ni desplegado un servicio público.
+
+## Uso documental
+
+Tras iniciar sesión, crea una asignatura y actividad si corresponde, matricula estudiantes autorizados y carga archivos en Documentos. Puedes cargar sin actividad para trabajo propio. El procesamiento ocurre en segundo plano; abre el documento para revisar original, texto extraído y limitaciones. Los primeros parsers admiten Linux x86_64/aarch64; el backend nativo Windows no está validado: utilizar Docker/WSL2.

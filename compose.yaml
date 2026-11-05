@@ -14,6 +14,8 @@ x-backend: &backend
     db: {condition: service_healthy}
     redis: {condition: service_healthy}
     migrate: {condition: service_completed_successfully}
+  volumes:
+    - documents:/var/lib/academic-integrity/documents
   restart: unless-stopped
 services:
   db:
@@ -62,4 +64,5 @@ services:
     ports: ["127.0.0.1:5173:8080"]
     depends_on: [api]
 volumes:
+  documents:
   database:

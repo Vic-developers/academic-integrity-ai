@@ -17,6 +17,15 @@ class Settings(BaseSettings):
     smtp_password: str = ""
     smtp_starttls: bool = False
     environment: str = "production"
+    storage_root: str = "/var/lib/academic-integrity/documents"
+    max_file_bytes: int = 25 * 1024 * 1024
+    max_request_bytes: int = 64 * 1024 * 1024
+    max_batch_files: int = 100
+    max_pdf_pages: int = 300
+    max_zip_bytes: int = 100 * 1024 * 1024
+    max_zip_entries: int = 2000
+    max_document_chars: int = 500_000
+    extraction_timeout: int = 45
 
     @model_validator(mode="after")
     def production(self) -> "Settings":

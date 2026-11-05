@@ -1,5 +1,9 @@
 # Infraestructura y operación
 
+## Estado de Fase 2
+
+Compose incorpora un volumen privado documents, compartido por API/worker con UID 10001. PDF.js y sus recursos se sirven localmente, sin CDN. Reconstruir imágenes y migrar antes de arrancar Fase 2; ver [DEVELOPMENT](docs/DEVELOPMENT.md). Mantener el volumen database y documents al actualizar.
+
 ## Estado al cierre de Fase 1
 
 Fase 1 incorpora Compose local y comandos de instalación reales en [README](README.md) y [DEVELOPMENT](docs/DEVELOPMENT.md). Las imágenes y dependencias se construyeron/probaron en Linux CPU. No es configuración de producción ni instalación Windows comprobada. La inspección del 3 de noviembre de abajo se conserva como histórica.

@@ -1,0 +1,57 @@
+[
+  {
+    "name": "pdfplumber",
+    "version": "0.11.10",
+    "requires_python": ">=3.8",
+    "license": null,
+    "license_expression": null,
+    "requires_dist": [
+      "pdfminer.six==20260107",
+      "Pillow>=12.2.0",
+      "pypdfium2>=5.9.0"
+    ],
+    "source": "https://pypi.org/pypi/pdfplumber/json",
+    "consulted_on": "2026-11-05"
+  },
+  {
+    "name": "python-docx",
+    "version": "1.2.0",
+    "requires_python": ">=3.9",
+    "license": "MIT",
+    "license_expression": null,
+    "requires_dist": [
+      "lxml>=3.1.0",
+      "typing_extensions>=4.9.0"
+    ],
+    "source": "https://pypi.org/pypi/python-docx/json",
+    "consulted_on": "2026-11-05"
+  },
+  {
+    "name": "python-multipart",
+    "version": "0.0.33",
+    "requires_python": ">=3.11",
+    "license": null,
+    "license_expression": "Apache-2.0",
+    "requires_dist": null,
+    "source": "https://pypi.org/pypi/python-multipart/json",
+    "consulted_on": "2026-11-05"
+  },
+  {
+    "name": "reportlab",
+    "version": "5.1.0",
+    "requires_python": "<4,>=3.9",
+    "license": "BSD license (see license.txt for details), Copyright (c) 2000-2025, ReportLab Inc.",
+    "license_expression": null,
+    "requires_dist": [
+      "pillow>=9.0.0",
+      "charset-normalizer",
+      "rl_accel<1.1,>=0.9.0; extra == \"accel\"",
+      "rlPyCairo<1,>=0.2.0; extra == \"pycairo\"",
+      "freetype-py<2.4,>=2.3.0; extra == \"pycairo\"",
+      "rlbidi; extra == \"bidi\"",
+      "uharfbuzz; extra == \"shaping\""
+    ],
+    "source": "https://pypi.org/pypi/reportlab/json",
+    "consulted_on": "2026-11-05"
+  }
+]
