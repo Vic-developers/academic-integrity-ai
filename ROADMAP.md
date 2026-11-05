@@ -1,6 +1,10 @@
 # Hoja de ruta y riesgos
 
-## Estado actual — Fase 4
+## Fase 5 iniciada — Pendiente de verificar el modelo
+
+El origen de pesos multilingües está bloqueado por el proxy. Instalador, integridad y fragmentación preparados; inferencia, evaluación independiente y pgvector aún no integrados ni activados. [Estado real](docs/PHASE_5_PREPARATION.md). La siguiente puerta es verificar el modelo, no comenzar la fase 6.
+
+## Antecedente — Fase 4
 
 Fase 4 implementada: visor, resaltado verificable, navegación, explicación, revisión humana y pruebas. [Alcance](docs/PHASE_4.md). Fase 5 (similitud semántica) no iniciada; requiere autorización.
 

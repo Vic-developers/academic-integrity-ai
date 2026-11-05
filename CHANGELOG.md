@@ -1,5 +1,9 @@
 # Registro de cambios
 
+## Preparación de Fase 5
+
+Instalador de artefactos ONNX con revisión/hash/licencia, registro offline, encoder para evaluación CPU y fragmentación con presupuestos. Origen rechazado por el proxy; sin pesos descargados, sin inferencia medida ni motor activado. Las pruebas nuevas son de integridad y preparación, no de exactitud semántica.
+
 ## Corrección posterior del PDF
 
 El visor aplica la transformación real de PDF.js a las cajas originales y admite las cuatro rotaciones, CropBox, orígenes desplazados y UserUnit. Conserva compatibilidad con versiones ya extraídas; solo omite el overlay cuando la referencia o los caracteres no son verificables. [Verificación](docs/validation/pdf-correction/README.md).

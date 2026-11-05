@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-05",
+  "status": "preparation_verified_model_access_blocked",
+  "phase5_completed": false,
+  "pdf_and_phase4_pushed_commit": "0a8db5e8d28168d7948991e8be2a43dcb7891a21",
+  "backend_tests": {
+    "passed": 85,
+    "prior_tests": 74,
+    "new_technical_preparation_tests": 11,
+    "database": "aid_test",
+    "redis_database": 15,
+    "warning": "Existing Starlette/httpx deprecation"
+  },
+  "model_source": {
+    "host": "huggingface.co",
+    "observed_transport_error": "CONNECT 403 Forbidden",
+    "installer_exit_code": 2,
+    "installer_output": "model_source_network_unavailable",
+    "model_files_created": false,
+    "policy_bypassed": false
+  },
+  "model": {
+    "candidate_manifest": "../../../models/semantic-candidate.json",
+    "revision": null,
+    "artifact_hashes": null,
+    "weights_downloaded": false,
+    "license_verified": false,
+    "approved": false
+  },
+  "semantic_evaluation": {
+    "executed": false,
+    "precision": null,
+    "recall": null,
+    "latency": null,
+    "threshold": null,
+    "real_cpu_inference_executed": false
+  },
+  "integration": {
+    "new_cpu_dependencies_installed": false,
+    "pgvector_semantic_retrieval_implemented": false,
+    "semantic_worker_implemented": false,
+    "semantic_api_activated": false,
+    "product_semantic_available": false,
+    "reason": "Verify source artifacts and real model evaluation before the next integration gate"
+  },
+  "provenance": {
+    "active_backend_files_unchanged_and_identical_to_container": 36,
+    "prepared_modules_not_deployed_or_activated": [
+      "backend/app/semantic/registry.py",
+      "backend/app/semantic/chunking.py",
+      "backend/app/semantic/__init__.py",
+      "backend/app/semantic/encoder.py"
+    ],
+    "frontend_unchanged_from_pdf_correction": true
+  },
+  "technical_checks": [
+    "Immutable manifest hash and file checksums",
+    "Activation refused even when an untrusted approval flag is changed",
+    "Symlink, extra paths and file-size rejection",
+    "HTTPS and source host validation",
+    "Atomic rollback without deleting existing data",
+    "Unicode original offsets and token-budget windows",
+    "Explicit abstention on too-short or oversized passages"
+  ],
+  "next_required_action": "Allow the Hugging Face model source and download CDN in managed environment configuration, then rerun the pinned-artifact installer and proceed with actual CPU evaluation"
+}

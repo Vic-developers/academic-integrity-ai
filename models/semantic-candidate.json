@@ -1,0 +1,15 @@
+{
+  "schema": "semantic-candidate-v1",
+  "status": "pending_source_access_and_evaluation",
+  "base_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "artifact_model": "Xenova/paraphrase-multilingual-MiniLM-L12-v2",
+  "artifact_path": "onnx/model_quantized.onnx",
+  "runtime": "onnxruntime CPUExecutionProvider; no PyTorch or GPU",
+  "expected_dimension": 384,
+  "pooling": "Must verify upstream mean-token pooling and max_seq_length before execution",
+  "revision": null,
+  "sha256": null,
+  "license": "Pending verification of both model cards; do not assume approval",
+  "evaluation": null,
+  "approved": false
+}

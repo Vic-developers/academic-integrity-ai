@@ -1,5 +1,9 @@
 # Academic Integrity AI
 
+## Fase 5 en preparación
+
+La corrección PDF y la fase 4 están publicadas en GitHub hasta `0a8db5e`. La fase 5 fue autorizada y está iniciada; el proxy bloquea Hugging Face (CONNECT 403). Hay instalador y controles preparados, pero no se ha descargado ni evaluado un modelo y la similitud semántica continúa no disponible. [Trabajo y bloqueo](docs/PHASE_5_PREPARATION.md).
+
 ## Corrección posterior del PDF
 
 El visor aplica la transformación real de PDF.js a las cajas originales y admite las cuatro rotaciones, CropBox, orígenes desplazados y UserUnit. Conserva compatibilidad con versiones ya extraídas; solo omite el overlay cuando la referencia o los caracteres no son verificables. [Verificación](docs/validation/pdf-correction/README.md).
@@ -8,7 +12,7 @@ El visor aplica la transformación real de PDF.js a las cajas originales y admit
 
 Visor comparativo de evidencias con resaltado de rangos originales, contexto, navegación, solapamientos, filtros, revisión humana con historial y exportación JSON. PDF con cajas de caracteres cuando la geometría es verificable; DOCX/TXT estructurados. [Fase 4 y límites](docs/PHASE_4.md), [verificación](docs/validation/phase4/README.md).
 
-Push previo confirmado en GitHub (rama work, 30e05a4). La fase 5 sigue pendiente de autorización. Web permanece no disponible; las coincidencias no determinan plagio.
+Push previo confirmado en GitHub (rama work, 30e05a4). La fase 5 está autorizada y en preparación, pendiente de verificar el modelo. Web permanece no disponible; las coincidencias no determinan plagio.
 
 La base incluye autenticación institucional, carga privada PDF/DOCX/TXT y extracción asíncrona. La comparación literal consulta solo las fuentes autorizadas seleccionadas. OCR no está integrado; las páginas sin texto muestran cobertura parcial.
 
@@ -44,7 +48,7 @@ En Linux, sustituir `py -3.12` por `python3.12`. Consultar [guía de desarrollo 
 - [UX y posiciones](docs/UX.md), [decisiones](docs/DECISIONS.md), [investigación histórica](docs/RESEARCH.md).
 - [Fase 0](docs/PHASE_0.md), [revisión de entorno](docs/REVIEW_2026-11-05.md), [Fase 1](docs/PHASE_1.md), [Fase 2](docs/PHASE_2.md), [Fase 3](docs/PHASE_3.md), [Fase 4](docs/PHASE_4.md), [cambios](CHANGELOG.md).
 
-Las versiones de investigación de Fase 0 son históricas. Los locks actuales y manifiestos de validación identifican las versiones efectivamente instaladas. La Fase 4 está implementada; la Fase 5 requiere autorización expresa. Se publicó con autorización el trabajo previo hasta 30e05a4 en la rama work. La fase 4 se conserva inicialmente en Git local; no se ha desplegado un servicio público.
+Las versiones de investigación de Fase 0 son históricas. Los locks actuales y manifiestos de validación identifican las versiones efectivamente instaladas. La Fase 4 está implementada; la Fase 5 está iniciada y bloqueada por el acceso al modelo. Se publicó con autorización el trabajo previo hasta 30e05a4 en la rama work. La fase 4 se conserva inicialmente en Git local; no se ha desplegado un servicio público.
 
 ## Uso documental
 

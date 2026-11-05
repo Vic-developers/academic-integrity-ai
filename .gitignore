@@ -15,3 +15,7 @@ node_modules
 *.tsbuildinfo
 
 frontend/public/pdfjs/
+
+# Verified semantic model artifacts are installed outside Git; only manifests/protocols are tracked.
+/models/cache/
+*.onnx
