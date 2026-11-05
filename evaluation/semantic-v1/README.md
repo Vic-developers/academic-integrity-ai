@@ -18,3 +18,7 @@ Candidato multilingüe: paraphrase-multilingual-MiniLM-L12-v2, variante ONNX cua
 6. Solo después de superar la puerta experimental, integrar embeddings en pgvector con RLS y revisión del modelo, recuperación filtrada por institución y documentos autorizados antes de top-k, trabajos durables, borrado de vectores y evidencia trazable. Ampliar pruebas de API, permisos, aislamiento y navegador antes de declarar Fase 5 terminada.
 
 No hay aprobación automática basada en modificar un booleano del manifiesto. El registro actual rechaza la activación en todos los casos mientras esta puerta no esté implementada y superada. No existe búsqueda vectorial ni motor semántico disponible en la aplicación actual.
+
+## Continuación sin origen remoto
+
+Por decisión del usuario se pospone la parte de modelo y se desarrolla por separado el almacenamiento/consulta con pgvector. Las pruebas numéricas de esa infraestructura no son evaluación del encoder ni calibración de umbrales; no modifican las métricas semánticas ausentes indicadas arriba. Ver docs/PHASE_5_VECTOR.md para alcance y límites.

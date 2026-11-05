@@ -256,6 +256,10 @@ def remove(document_id: UUID, member: Member, db: DB) -> None:
         raise HTTPException(403, "No puedes eliminar este documento")
     from app.audits.service import invalidate_document
 
+    from sqlalchemy import delete
+    from app.semantic.models import SemanticVector
+
+    db.execute(delete(SemanticVector).where(SemanticVector.version_id == version.id))
     invalidate_document(db, version.id)
     document.deleted_at = now()
     for job in db.scalars(

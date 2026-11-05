@@ -1,5 +1,9 @@
 # Arquitectura
 
+## Continuación sin Hugging Face — Infraestructura vectorial
+
+El repositorio interno de vectores no llama al instalador ni al encoder, no descarga modelos y no expone rutas públicas de indexación o búsqueda. Una futura integración de inferencia deberá superar la aprobación del modelo antes de suministrar embeddings. Los tests usan bases unitarias sintéticas identificadas como fixtures técnicos; nunca aparecen como auditorías del producto.
+
 ## Corrección posterior del PDF
 
 El visor aplica la transformación real de PDF.js a las cajas originales y admite las cuatro rotaciones, CropBox, orígenes desplazados y UserUnit. Conserva compatibilidad con versiones ya extraídas; solo omite el overlay cuando la referencia o los caracteres no son verificables. [Verificación](docs/validation/pdf-correction/README.md).

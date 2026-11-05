@@ -1,5 +1,9 @@
 # Evaluación y pruebas
 
+## Continuación sin Hugging Face — Infraestructura vectorial
+
+Las pruebas nuevas comprueban pgvector real con vectores numéricos conocidos: coseno 1, 0,8 y -1, filtrado antes de top-k, aislamiento, revocación, hashes, FK, caché, concurrencia y borrado. No son embeddings de un modelo y no producen métricas de exactitud semántica. [Validación](docs/validation/phase5-vector/README.md).
+
 ## Estado actual — Fase 4
 
 Pruebas de posicionamiento incluyen Unicode astral/combining marks/ß/ligaduras, solapamientos, navegación y DOCX. En PDF un fixture renderizado comprueba píxeles dentro de cajas y escalado; rotación incompatible y corrupción del mapa requieren abstención. No extrapolar a todos los PDFs. [Registro](docs/validation/phase4/README.md).

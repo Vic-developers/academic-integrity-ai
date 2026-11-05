@@ -1,5 +1,11 @@
 # Modelo de datos
 
+## Continuación sin Hugging Face — Infraestructura vectorial
+
+0005_vector crea semantic_vectors con vector(384), RLS forzada, FK compuesta a institución/versión/fragmento, identidad de modelo y chunker, rangos originales, hashes, norma unitaria y caché única. Añade unicidad compuesta a document_fragments. Instala la extensión vector si falta; el downgrade conserva esa extensión compartida y elimina solo la tabla/constraint nuevas. No se modifican migraciones históricas.
+
+El índice B-tree limita el alcance por institución/modelo/chunker/versión. La búsqueda es exacta por distancia coseno, sin índice aproximado HNSW/IVFFlat. El alcance autorizado y las fuentes elegidas se filtran antes de top-k. Se prevén como máximo 200 pasajes por versión/modelo/chunker y 20 fuentes por consulta.
+
 ## Estado actual — Fase 4
 
 0004_review añade findings.review_revision y review_log, valores por defecto y CHECK de estados humanos permitidos. El historial conserva actor/fecha/motivo/citación; se elimina con la evidencia derivada cuando se borra la fuente. Las migraciones 0001–0003 permanecen congeladas.

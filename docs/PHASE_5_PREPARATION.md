@@ -1,5 +1,9 @@
 # Fase 5 — Preparación y bloqueo de origen
 
+## Continuación sin Hugging Face — Infraestructura vectorial
+
+El usuario decidió continuar sin habilitar Hugging Face. La indicación histórica de habilitar el origen que aparece abajo ya no es un requisito para este trabajo: la parte de modelo se pospone. Se completó infraestructura interna de vectores sin inferencia: [continuación](PHASE_5_VECTOR.md). No se hicieron solicitudes al origen del modelo en esta continuación.
+
 La fase 4 y la corrección del PDF se publicaron en origin/work hasta `0a8db5e8d28168d7948991e8be2a43dcb7891a21`. Las nueve pruebas de navegador incluyeron rotación 0/90/180/270, CropBox, origen desplazado y UserUnit con verificación sobre glifos reales.
 
 La fase 5 **está iniciada, no terminada**. La consulta real a Hugging Face fue rechazada por el proxy con CONNECT 403. El instalador devolvió `model_source_network_unavailable`, código 2, sin crear artefactos parciales. La configuración actual permite registros de paquetes y GitHub, pero no ese origen ni su CDN. Es necesario habilitar `huggingface.co` y sus destinos de descarga bajo `.hf.co` y `.huggingface.co` mediante la configuración del entorno.

@@ -33,6 +33,10 @@ test("lote real PDF DOCX TXT, visualizador, normalización y OCR no disponible",
     "4 archivo(s) recibido(s)",
   );
   await page.getByRole("link", { name: "evidencia.pdf", exact: true }).click();
+  await expect(page).toHaveURL(/\/documentos\/[0-9a-f-]+$/);
+  await expect(
+    page.getByRole("heading", { name: "evidencia.pdf", exact: true }),
+  ).toBeVisible();
   await expect(
     page.getByText("Extracción completada", { exact: true }),
   ).toBeVisible({ timeout: 60000 });
@@ -76,6 +80,10 @@ test("lote real PDF DOCX TXT, visualizador, normalización y OCR no disponible",
   ).toBeTruthy();
   await page.getByRole("link", { name: "← Documentos", exact: true }).click();
   await page.getByRole("link", { name: "evidencia.docx", exact: true }).click();
+  await expect(page).toHaveURL(/\/documentos\/[0-9a-f-]+$/);
+  await expect(
+    page.getByRole("heading", { name: "evidencia.docx", exact: true }),
+  ).toBeVisible();
   await expect(
     page.getByText("Extracción completada", { exact: true }),
   ).toBeVisible({ timeout: 60000 });
@@ -87,6 +95,10 @@ test("lote real PDF DOCX TXT, visualizador, normalización y OCR no disponible",
   ).toBeVisible();
   await page.getByRole("link", { name: "← Documentos", exact: true }).click();
   await page.getByRole("link", { name: "escaneado.pdf", exact: true }).click();
+  await expect(page).toHaveURL(/\/documentos\/[0-9a-f-]+$/);
+  await expect(
+    page.getByRole("heading", { name: "escaneado.pdf", exact: true }),
+  ).toBeVisible();
   await expect(
     page.getByText("Extracción parcial", { exact: true }),
   ).toBeVisible({ timeout: 60000 });
@@ -97,6 +109,10 @@ test("lote real PDF DOCX TXT, visualizador, normalización y OCR no disponible",
   ).toBeVisible();
   await page.getByRole("link", { name: "← Documentos", exact: true }).click();
   await page.getByRole("link", { name: "evidencia.txt", exact: true }).click();
+  await expect(page).toHaveURL(/\/documentos\/[0-9a-f-]+$/);
+  await expect(
+    page.getByRole("heading", { name: "evidencia.txt", exact: true }),
+  ).toBeVisible();
   await expect(
     page.getByText("Extracción completada", { exact: true }),
   ).toBeVisible({ timeout: 60000 });
@@ -174,6 +190,10 @@ test("asignatura, matrícula y entrega autorizada de estudiante", async ({
     page.getByRole("link", { name: "evidencia.pdf", exact: true }),
   ).toHaveCount(0);
   await page.getByRole("link", { name: "evidencia.txt", exact: true }).click();
+  await expect(page).toHaveURL(/\/documentos\/[0-9a-f-]+$/);
+  await expect(
+    page.getByRole("heading", { name: "evidencia.txt", exact: true }),
+  ).toBeVisible();
   await expect(
     page.getByText("Extracción completada", { exact: true }),
   ).toBeVisible({ timeout: 60000 });

@@ -1,5 +1,9 @@
 # Desarrollo y pruebas — Fase 1
 
+## Continuación sin Hugging Face — Infraestructura vectorial
+
+La migración actual es 0005_vector. Pruebas técnicas nuevas: backend/tests/test_vector_infrastructure.py, ejecutadas en aid_test con pgvector real. Los vectores de prueba están etiquetados como sintéticos y no representan capacidad semántica. El repositorio interno recibe una sesión con contexto de institución/usuario y una membresía vigente; una futura ruta/worker debe mantener esa autenticación y aprobar el modelo antes de llamarlo.
+
 ## Estado actual — Fase 4
 
 Esquema actual 0004_review. Tests de fase 4 en backend/tests/test_evidence_viewer.py y frontend/tests/evidence.spec.ts. Usar scripts de prueba para separar aid_test y limpiar almacenamiento; no ejecutar reseteo contra desarrollo.

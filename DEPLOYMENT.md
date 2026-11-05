@@ -1,5 +1,9 @@
 # Infraestructura y operación
 
+## Continuación sin Hugging Face — Infraestructura vectorial
+
+Esquema esperado actual: 0005_vector. La migración requiere que el servidor tenga pgvector instalado y el usuario de migración pueda crear la extensión en la base. API/worker conservan la imagen y dependencias CPU de fases anteriores; no hay servicio ONNX activo ni pesos incluidos. Se respeta la decisión de no habilitar Hugging Face.
+
 ## Estado actual — Fase 4
 
 Revisión Alembic esperada: 0004_review. API y worker deben ejecutar la misma imagen. Sin nuevas dependencias ni GPU. La exportación JSON usa sesión y permisos de auditoría; no se crea enlace público de descarga.

@@ -102,6 +102,7 @@ class Version(Base):
 class Fragment(Base):
     __tablename__ = "document_fragments"
     __table_args__ = (
+        UniqueConstraint("institution_id", "version_id", "id", name="uq_fragment_tenant_version_id"),
         UniqueConstraint("institution_id", "version_id", "ordinal"),
         ForeignKeyConstraint(
             ["institution_id", "version_id"],

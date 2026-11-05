@@ -1,5 +1,9 @@
 # Hoja de ruta y riesgos
 
+## Continuación sin Hugging Face — Infraestructura vectorial
+
+Decisión: omitir Hugging Face. La parte independiente de la fase 5 implementa persistencia y recuperación matemática en pgvector, con permisos y borrado probados. Inferencia multilingüe, calibración y hallazgos semánticos permanecen pospuestos. No se ha iniciado la fase 6. [Resultado](docs/PHASE_5_VECTOR.md).
+
 ## Fase 5 iniciada — Pendiente de verificar el modelo
 
 El origen de pesos multilingües está bloqueado por el proxy. Instalador, integridad y fragmentación preparados; inferencia, evaluación independiente y pgvector aún no integrados ni activados. [Estado real](docs/PHASE_5_PREPARATION.md). La siguiente puerta es verificar el modelo, no comenzar la fase 6.

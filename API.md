@@ -1,5 +1,9 @@
 # API y contratos de motores
 
+## Continuación sin Hugging Face — Infraestructura vectorial
+
+No se añaden endpoints públicos para vectores ni resultados semánticos. GET /audits/capabilities mantiene semantic_available=false. Documentos DELETE elimina sus vectores derivados inmediatamente. La infraestructura interna puede comparar vectores numéricos, pero no equivale a inferencia, modelo aprobado o paráfrasis verificada.
+
 ## Estado actual — Fase 4
 
 Visor implementado: GET /audits/{id}/findings/{finding_id}/view (side=target|source, range_index); GET .../original (versión fijada); GET .../export (JSON); POST .../review (expected_revision, state, citation, reason). Revalida todos los permisos. Conflictos de versión/hash o revisión: 409. Referencia: [Fase 4](docs/PHASE_4.md).

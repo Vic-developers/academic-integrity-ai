@@ -1,8 +1,14 @@
 # Academic Integrity AI
 
+## Continuación sin Hugging Face — Infraestructura vectorial
+
+Por decisión del usuario se continúa sin habilitar Hugging Face ni descargar modelos. Se añadió la infraestructura interna de pgvector: vectores privados por institución/versión/fragmento, búsqueda exacta filtrada, caché inmutable y borrado de derivados. No se generan embeddings ni hallazgos semánticos; la comparación literal y el visor PDF siguen disponibles.
+
+[Alcance y límites](docs/PHASE_5_VECTOR.md). La parte de la fase 5 que requiere modelo y evaluación semántica queda pospuesta, sin pedir cambios de red.
+
 ## Fase 5 en preparación
 
-La corrección PDF y la fase 4 están publicadas en GitHub hasta `0a8db5e`. La fase 5 fue autorizada y está iniciada; el proxy bloquea Hugging Face (CONNECT 403). Hay instalador y controles preparados, pero no se ha descargado ni evaluado un modelo y la similitud semántica continúa no disponible. [Trabajo y bloqueo](docs/PHASE_5_PREPARATION.md).
+La corrección PDF y la fase 4 están publicadas en GitHub hasta `0a8db5e`. La fase 5 fue autorizada y continúa sin habilitar Hugging Face, por decisión del usuario. Hay instalador y controles preparados, pero no se ha descargado ni evaluado un modelo y la similitud semántica continúa no disponible. [Trabajo y bloqueo](docs/PHASE_5_PREPARATION.md).
 
 ## Corrección posterior del PDF
 
@@ -48,7 +54,7 @@ En Linux, sustituir `py -3.12` por `python3.12`. Consultar [guía de desarrollo 
 - [UX y posiciones](docs/UX.md), [decisiones](docs/DECISIONS.md), [investigación histórica](docs/RESEARCH.md).
 - [Fase 0](docs/PHASE_0.md), [revisión de entorno](docs/REVIEW_2026-11-05.md), [Fase 1](docs/PHASE_1.md), [Fase 2](docs/PHASE_2.md), [Fase 3](docs/PHASE_3.md), [Fase 4](docs/PHASE_4.md), [cambios](CHANGELOG.md).
 
-Las versiones de investigación de Fase 0 son históricas. Los locks actuales y manifiestos de validación identifican las versiones efectivamente instaladas. La Fase 4 está implementada; la Fase 5 está iniciada y bloqueada por el acceso al modelo. Se publicó con autorización el trabajo previo hasta 30e05a4 en la rama work. La fase 4 se conserva inicialmente en Git local; no se ha desplegado un servicio público.
+Las versiones de investigación de Fase 0 son históricas. Los locks actuales y manifiestos de validación identifican las versiones efectivamente instaladas. La Fase 4 está implementada; la infraestructura vectorial de Fase 5 avanza y su parte de modelo queda pospuesta. Se publicó con autorización el trabajo previo hasta 30e05a4 en la rama work. La fase 4 se conserva inicialmente en Git local; no se ha desplegado un servicio público.
 
 ## Uso documental
 

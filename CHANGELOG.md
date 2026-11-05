@@ -1,5 +1,9 @@
 # Registro de cambios
 
+## Continuación sin Hugging Face — Infraestructura vectorial
+
+Migración 0005_vector e infraestructura interna de pgvector sin nuevas dependencias, descargas de modelos ni activación semántica. RLS, FK compuestas, búsqueda coseno exacta, caché idempotente/inmutable, presupuestos y eliminación inmediata/cascada de vectores. La continuación respeta la decisión de omitir Hugging Face.
+
 ## Preparación de Fase 5
 
 Instalador de artefactos ONNX con revisión/hash/licencia, registro offline, encoder para evaluación CPU y fragmentación con presupuestos. Origen rechazado por el proxy; sin pesos descargados, sin inferencia medida ni motor activado. Las pruebas nuevas son de integridad y preparación, no de exactitud semántica.

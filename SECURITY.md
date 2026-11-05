@@ -1,5 +1,9 @@
 # Seguridad y privacidad
 
+## Continuación sin Hugging Face — Infraestructura vectorial
+
+Los vectores quedan bajo RLS forzada y FK compuestas. Escritura revalida documento, extracción, fragmento, rangos originales y valores numéricos; serializa con el bloqueo documental usado por borrado. La consulta comprueba todas las fuentes y aplica permisos vigentes antes de top-k; no ofrece resultados parciales si una fuente es ajena. Borrar un documento elimina los vectores en la misma transacción, antes del purge físico. Eliminar fragmentos también los elimina por cascada. No se exponen endpoints de vectores ni se activa inferencia.
+
 ## Estado actual — Fase 4
 
 Las rutas del visor, descarga fijada a versión y exportación comprueban todos los permisos de la auditoría. Revisión solo para evaluadores autorizados, con motivo y control optimista expected_revision. Texto de notas se renderiza como texto React. Máximo 64 KiB por POST de auditoría/revisión. El navegador oculta datos al fallar revalidación periódica.
