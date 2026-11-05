@@ -1,6 +1,10 @@
 # Seguridad y privacidad
 
-## Estado actual — Fase 3
+## Estado actual — Fase 4
+
+Las rutas del visor, descarga fijada a versión y exportación comprueban todos los permisos de la auditoría. Revisión solo para evaluadores autorizados, con motivo y control optimista expected_revision. Texto de notas se renderiza como texto React. Máximo 64 KiB por POST de auditoría/revisión. El navegador oculta datos al fallar revalidación periódica.
+
+## Antecedente — Fase 3
 
 Auditorías verifican acceso al principal y todas las fuentes al crear, ejecutar y leer; revocación oculta el resultado y borrado invalida/limpia derivados. Idempotencia concurrente, RLS, límites de texto/evidencia/CPU y cancelación probados. No hay fetch de URL ni acceso web activo. Persisten las limitaciones de aislamiento del parser descritas en Fase 2.
 

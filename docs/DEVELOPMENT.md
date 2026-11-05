@@ -1,6 +1,10 @@
 # Desarrollo y pruebas — Fase 1
 
-## Estado actual — Fase 3
+## Estado actual — Fase 4
+
+Esquema actual 0004_review. Tests de fase 4 en backend/tests/test_evidence_viewer.py y frontend/tests/evidence.spec.ts. Usar scripts de prueba para separar aid_test y limpiar almacenamiento; no ejecutar reseteo contra desarrollo.
+
+## Antecedente — Fase 3
 
 Migración actual 0003_literal. Pruebas de comparación en backend/tests/test_literal.py y frontend/tests/literal.spec.ts. Corpus reproducible: `PYTHONPATH=backend python evaluation/literal-v1/evaluate.py --output docs/validation/phase3/literal-evaluation.json`. No conectar proveedores web sin política y autorización.
 
@@ -69,3 +73,5 @@ El worker tiene CPU 30 s, memoria virtual 512 MiB, salida máxima 32 MiB y timeo
 Las pruebas de navegador generan cuatro archivos sintéticos válidos (TXT, DOCX, PDF con texto y PDF sin texto), usan aid_test/Redis 15 y STORAGE_ROOT de pruebas. Al finalizar se detiene el worker de pruebas, se retira únicamente el subdirectorio aid_test de almacenamiento y se restauran API/worker a desarrollo. La base de desarrollo no recibe esas fixtures. No ejecutar estas pruebas en paralelo ni sobre infraestructura institucional.
 
 Los recursos PDF.js se copian desde la versión bloqueada al construir; no dependen de un CDN. El directorio generado public/pdfjs se excluye de Git. El visor se carga solo al abrir un PDF. Preservar las licencias/notices de las dependencias y completar revisión de distribución antes de publicar imágenes o un servicio.
+
+El CSS de Tailwind declara `source(none)` y `@source "./"` en src/style.css para buscar clases solo en src. Evita diferencias entre el checkout Git y el contexto Docker sin sus ignores; los activos compilados se comparan por SHA-256 en el cierre de Fase 4.

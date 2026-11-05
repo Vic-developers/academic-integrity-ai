@@ -1,6 +1,10 @@
 # Interfaces y visualizador de evidencias
 
-## Estado actual — Fase 3
+## Estado actual — Fase 4
+
+El visor ofrece navegación por hallazgo/fragmento y filtros de fuente/estado, marcadores temporales, texto seleccionable y zoom. Colores con etiquetas: rojo textual, verde justificado, gris descartado. Confirmar una coincidencia no confirma plagio. Razón y citación se guardan por evaluador con historial y conflicto de edición.
+
+## Antecedente — Fase 3
 
 Comparaciones permite escoger principal y fuentes, consultar estado real y abrir citas originales con rangos/versiones. Cobertura web separada muestra indisponibilidad y cero consultas. La pantalla requiere revisión humana; no expone un porcentaje de culpabilidad. Resaltado exacto y decisiones siguen en fase 4/futuras.
 

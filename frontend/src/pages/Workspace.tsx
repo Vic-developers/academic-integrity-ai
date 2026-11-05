@@ -14,6 +14,7 @@ import Documents from "./Documents";
 import DocumentDetail from "./DocumentDetail";
 import Courses from "./Courses";
 import Audits from "./Audits";
+import EvidenceViewer from "./EvidenceViewer";
 import AuditResult from "./AuditResult";
 export default function Workspace() {
   const { data, error, isPending } = useQuery({
@@ -172,6 +173,12 @@ export default function Workspace() {
             />
             <Route path="/documentos/:id" element={<DocumentDetail />} />
             <Route path="/auditorias" element={<Audits />} />
+            <Route
+              path="/auditorias/:id/evidencias"
+              element={
+                <EvidenceViewer canReview={selected.role !== "student"} />
+              }
+            />
             <Route path="/auditorias/:id" element={<AuditResult />} />
             <Route
               path="/asignaturas"

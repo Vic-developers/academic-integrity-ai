@@ -1,3 +1,4 @@
+import type { ReviewState, ReviewEvent } from "./evidence";
 export type AuditSnapshot = {
   document_id: string;
   version_id: string;
@@ -68,7 +69,9 @@ export type LiteralFinding = {
   source_id: string;
   category: string;
   word_count: number;
-  review_state: string;
+  review_state: ReviewState;
+  review_revision: number;
+  review_log: ReviewEvent[];
   evidence: {
     explanation: string;
     citation: string;

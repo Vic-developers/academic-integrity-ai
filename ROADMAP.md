@@ -1,6 +1,10 @@
 # Hoja de ruta y riesgos
 
-## Estado actual — Fase 3
+## Estado actual — Fase 4
+
+Fase 4 implementada: visor, resaltado verificable, navegación, explicación, revisión humana y pruebas. [Alcance](docs/PHASE_4.md). Fase 5 (similitud semántica) no iniciada; requiere autorización.
+
+## Antecedente — Fase 3
 
 Fase 3 implementada: comparación literal institucional explícita y limitación web visible. [Resultados y límites](docs/PHASE_3.md). La fase 4 (visor de evidencias y resaltado exacto) no se ha iniciado y requiere autorización.
 

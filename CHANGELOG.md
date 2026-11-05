@@ -1,6 +1,10 @@
 # Registro de cambios
 
-## Estado actual — Fase 3
+## Estado actual — Fase 4
+
+Visor de dos paneles, rangos Unicode comprobados, cajas PDF con abstención geométrica, navegación, filtros, marcadores temporales, estados de revisión con historial y exportación JSON. Push anterior confirmado en origin/work hasta 30e05a4; nuevo trabajo se conserva en commit local.
+
+## Antecedente — Fase 3
 
 Comparación literal normalizada con fuentes explícitas, evidencias trazables, unión de palabras sin duplicación, trabajos durables, cancelación e idempotencia; permisos y borrado de derivados. Web no disponible con cobertura honesta. Pruebas y evaluación técnica sintética añadidas.
 

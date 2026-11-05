@@ -64,6 +64,6 @@ def statistics(member: Member, db: DB) -> dict:
     )
     return {
         "active_members": count,
-        "phase": 3,
+        "phase": 4,
         "capabilities": {"documents": True, "audits": True, "semantic": False, "ai": False},
     }

@@ -49,6 +49,7 @@ test("comparación literal real con fuentes explícitas y cobertura web honesta"
   await page
     .getByRole("button", { name: "Iniciar comparación", exact: true })
     .click();
+  await expect(page).toHaveURL(/\/auditorias\/[0-9a-f-]+$/);
   await expect(
     page.getByText("Comparación completada", { exact: true }),
   ).toBeVisible({ timeout: 60000 });
@@ -83,6 +84,7 @@ test("comparación literal real con fuentes explícitas y cobertura web honesta"
   await page
     .getByRole("button", { name: "Iniciar comparación", exact: true })
     .click();
+  await expect(page).toHaveURL(/\/auditorias\/[0-9a-f-]+$/);
   await expect(
     page.getByText("Resultado parcial", { exact: true }),
   ).toBeVisible({ timeout: 60000 });

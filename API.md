@@ -1,6 +1,10 @@
 # API y contratos de motores
 
-## Estado actual — Fase 3
+## Estado actual — Fase 4
+
+Visor implementado: GET /audits/{id}/findings/{finding_id}/view (side=target|source, range_index); GET .../original (versión fijada); GET .../export (JSON); POST .../review (expected_revision, state, citation, reason). Revalida todos los permisos. Conflictos de versión/hash o revisión: 409. Referencia: [Fase 4](docs/PHASE_4.md).
+
+## Antecedente — Fase 3
 
 API literal implementada: [contrato actual](docs/LITERAL_API.md). Las rutas de decisiones y evidencia separada de la tabla futura siguen pendientes; los hallazgos actuales incluyen su evidencia. Se usa limit/offset, no cursores.
 

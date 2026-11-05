@@ -16,3 +16,12 @@ El cuerpo de creación está limitado a 64 KiB. Fuentes distintas del principal,
 Estados: pending, running, completed, partial, failed, cancelled, invalidated. completed solo describe el alcance local seleccionado. coverage separa fuentes seleccionadas/comparadas y web; summary cuenta palabras coincidentes sin duplicación, nunca una probabilidad de plagio. Fuentes conservan versión, SHA-256 y fecha real de consulta. Findings incluyen evidencia original y normalizada, localizadores, truncamiento y review_state pending.
 
 Un objeto ajeno o una fuente revocada produce 404. El borrado invalida y elimina evidencia derivada. No están implementadas las rutas futuras de decisiones, exportación o recuperación de páginas web.
+
+## Ampliación de Fase 4
+
+- GET /audits/{audit_id}/findings/{finding_id}/view?side=target|source&range_index=0: fragmento original verificado, rangos superpuestos, geometría por carácter y versión documental.
+- GET .../original?side=target|source: descarga de la versión vinculada, con todos los permisos revalidados.
+- GET .../export: JSON de evidencia, procedencia y revisión, descarga privada.
+- POST .../review: expected_revision, state (pending/reviewed/justified/dismissed/confirmed), citation (pending_review/correct/absent/incomplete), reason (5–2000 caracteres, significativo). Devuelve review_state, review_revision y review_log. Máximo 100 cambios; conflicto 409 si revisión obsoleta.
+
+Listados de hallazgos añaden review_revision y review_log. Los estudiantes no pueden guardar revisión. Los offsets se refieren a puntos de código del fragmento original. PDF rotado/recortado no obtiene overlay si PDF.js y geometría no coinciden; la evidencia textual sigue verificable.

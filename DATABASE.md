@@ -1,6 +1,10 @@
 # Modelo de datos
 
-## Estado actual — Fase 3
+## Estado actual — Fase 4
+
+0004_review añade findings.review_revision y review_log, valores por defecto y CHECK de estados humanos permitidos. El historial conserva actor/fecha/motivo/citación; se elimina con la evidencia derivada cuando se borra la fuente. Las migraciones 0001–0003 permanecen congeladas.
+
+## Antecedente — Fase 3
 
 0003_literal añade audits, audit_sources, findings y audit_jobs con RLS forzada, FK compuestas, unicidad de idempotencia y funciones internas claim_audit_job/fail_exhausted_audit_jobs con search_path fijo y PUBLIC revocado. Las migraciones previas no cambian. Snapshots y rangos se guardan en JSON acotado; borrar una fuente elimina derivados e invalida la auditoría.
 

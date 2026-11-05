@@ -71,6 +71,10 @@ class Finding(Base):
         CheckConstraint(
             "target_start >= 0 AND target_end > target_start AND source_start >= 0 AND source_end > source_start AND word_count >= 8"
         ),
+        CheckConstraint(
+            "review_revision >= 0 AND review_state IN ('pending','reviewed','justified','dismissed','confirmed')",
+            name="ck_finding_review",
+        ),
         Index("ix_findings_tenant_audit", "institution_id", "audit_id"),
     )
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
@@ -79,6 +83,8 @@ class Finding(Base):
     source_id: Mapped[str] = mapped_column(String(36))
     category: Mapped[str] = mapped_column(String(40), default="textual_exact_normalized")
     review_state: Mapped[str] = mapped_column(String(20), default="pending")
+    review_revision: Mapped[int] = mapped_column(default=0, server_default="0")
+    review_log: Mapped[list] = mapped_column(JSON, default=list, server_default="[]")
     target_start: Mapped[int]
     target_end: Mapped[int]
     source_start: Mapped[int]

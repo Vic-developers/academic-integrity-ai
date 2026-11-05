@@ -1,21 +1,14 @@
 # Academic Integrity AI
 
-## Estado real — Fase 3
+## Estado actual — Fase 4
 
-Comparación literal asíncrona con fuentes institucionales elegidas explícitamente, rangos y citas verificables, versiones/SHA-256, cobertura y permisos reales. No hay proveedor web configurado: cero búsquedas y fuentes web verificadas. La cobertura describe texto extraído y fuentes seleccionadas; no determina plagio.
+Visor comparativo de evidencias con resaltado de rangos originales, contexto, navegación, solapamientos, filtros, revisión humana con historial y exportación JSON. PDF con cajas de caracteres cuando la geometría es verificable; DOCX/TXT estructurados. [Fase 4 y límites](docs/PHASE_4.md), [verificación](docs/validation/phase4/README.md).
 
-Ver [Fase 3](docs/PHASE_3.md), [API literal](docs/LITERAL_API.md) y [evaluación técnica](evaluation/literal-v1/README.md). El visor de resaltado exacto de fase 4 sigue pendiente de autorización.
+Push previo confirmado en GitHub (rama work, 30e05a4). La fase 5 sigue pendiente de autorización. Web permanece no disponible; las coincidencias no determinan plagio.
 
+La base incluye autenticación institucional, carga privada PDF/DOCX/TXT y extracción asíncrona. La comparación literal consulta solo las fuentes autorizadas seleccionadas. OCR no está integrado; las páginas sin texto muestran cobertura parcial.
 
-Plataforma de apoyo a la revisión académica con evidencias verificables y decisión humana.
-
-## Antecedente — Fase 2
-
-Carga privada PDF/DOCX/TXT, extracción asíncrona real, hash, duplicados visibles, asignaturas/actividades/matrículas y vistas PDF/estructuradas implementados, junto con la autenticación y roles de Fase 1.
-
-Un estado de extracción completada no implica originalidad ni auditoría académica. OCR no está integrado: páginas PDF sin texto muestran resultado parcial. En ese cierre aún no existían comparaciones; modelos, informes y Moodle siguen pendientes.
-
-Resultados y límites: [Fase 2](docs/PHASE_2.md), [API documental](docs/DOCUMENT_API.md). Las comprobaciones se ejecutaron en Linux CPU, sin GPU ni APIs comerciales de análisis.
+Contratos: [API documental](docs/DOCUMENT_API.md), [API literal y revisión](docs/LITERAL_API.md). La [evaluación técnica sintética](evaluation/literal-v1/README.md) no acredita validez académica general. Verificaciones realizadas en Linux CPU, sin GPU ni APIs comerciales de análisis.
 
 ## Inicio en Windows / PowerShell
 
@@ -45,9 +38,9 @@ En Linux, sustituir `py -3.12` por `python3.12`. Consultar [guía de desarrollo 
 - [Seguridad](SECURITY.md), [modelos](AI_MODELS.md), [evaluación](EVALUATION.md).
 - [Instalación e infraestructura](DEPLOYMENT.md), [Moodle](MOODLE_INTEGRATION.md), [hoja de ruta](ROADMAP.md).
 - [UX y posiciones](docs/UX.md), [decisiones](docs/DECISIONS.md), [investigación histórica](docs/RESEARCH.md).
-- [Fase 0](docs/PHASE_0.md), [revisión de entorno](docs/REVIEW_2026-11-05.md), [Fase 1](docs/PHASE_1.md), [Fase 2](docs/PHASE_2.md), [cambios](CHANGELOG.md).
+- [Fase 0](docs/PHASE_0.md), [revisión de entorno](docs/REVIEW_2026-11-05.md), [Fase 1](docs/PHASE_1.md), [Fase 2](docs/PHASE_2.md), [Fase 3](docs/PHASE_3.md), [Fase 4](docs/PHASE_4.md), [cambios](CHANGELOG.md).
 
-Las versiones de investigación de Fase 0 son históricas. Los locks actuales y manifiestos de validación identifican las versiones efectivamente instaladas. La Fase 3 está implementada; la Fase 4 requiere autorización expresa. No se ha hecho push ni desplegado un servicio público.
+Las versiones de investigación de Fase 0 son históricas. Los locks actuales y manifiestos de validación identifican las versiones efectivamente instaladas. La Fase 4 está implementada; la Fase 5 requiere autorización expresa. Se publicó con autorización el trabajo previo hasta 30e05a4 en la rama work. La fase 4 se conserva inicialmente en Git local; no se ha desplegado un servicio público.
 
 ## Uso documental
 

@@ -1,6 +1,10 @@
 # Arquitectura
 
-## Estado actual — Fase 3
+## Estado actual — Fase 4
+
+Visor recupera fragmentos de la versión ligada a la evidencia, verifica hashes en servidor y navegador y segmenta puntos de código con fronteras de solapamiento. PDF.js renderiza el original; overlay SVG usa cajas de caracteres solo con referencia geométrica compatible. [Diseño y limitaciones](docs/PHASE_4.md).
+
+## Antecedente — Fase 3
 
 Motor literal CPU por proceso hijo y cola SQL durable; índice winnowing efímero por auditoría sobre fuentes explícitas autorizadas. No existe índice global ni proveedor web conectado. Detalles y límites: [Fase 3](docs/PHASE_3.md).
 

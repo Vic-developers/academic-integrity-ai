@@ -1,6 +1,10 @@
 # Evaluación y pruebas
 
-## Estado actual — Fase 3
+## Estado actual — Fase 4
+
+Pruebas de posicionamiento incluyen Unicode astral/combining marks/ß/ligaduras, solapamientos, navegación y DOCX. En PDF un fixture renderizado comprueba píxeles dentro de cajas y escalado; rotación incompatible y corrupción del mapa requieren abstención. No extrapolar a todos los PDFs. [Registro](docs/validation/phase4/README.md).
+
+## Antecedente — Fase 3
 
 [Protocolo literal técnico v1](evaluation/literal-v1/README.md) ejecutado sobre 201 casos sintéticos con anotación por posiciones. Resultado reproducible en docs/validation/phase3/literal-evaluation.json. No constituye validación académica representativa ni evaluación web; no se publica precisión de detección de plagio.
 

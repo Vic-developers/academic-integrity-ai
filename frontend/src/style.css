@@ -1,4 +1,5 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
+@source "./";
 :root {
   font-family:
     Inter,
@@ -821,4 +822,137 @@ details summary {
 [data-theme="dark"] .literal {
   background: #57362e;
   color: #f5d0c6;
+}
+
+.comparison-panes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  margin: 20px 0;
+}
+.evidence-pane {
+  min-width: 0;
+  overflow: hidden;
+}
+.evidence-pane h2 {
+  overflow-wrap: anywhere;
+}
+.evidence-pane .viewer-tools {
+  gap: 8px;
+}
+.evidence-pane .viewer-tools button {
+  padding: 8px;
+  font-size: 12px;
+}
+.evidence-context {
+  max-height: 55vh;
+  overflow: auto;
+  margin: 16px 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.original-context {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.85;
+  margin: 0;
+}
+mark.match {
+  background: #fde3e3;
+  color: #701b1b;
+  box-decoration-break: clone;
+  border-bottom: 2px solid #bf3535;
+  cursor: pointer;
+}
+mark.match[aria-current="true"] {
+  outline: 2px solid #a12424;
+  outline-offset: 2px;
+}
+mark.match.justified {
+  background: #d8f2df;
+  color: #184a29;
+  border-color: #28763f;
+}
+mark.match.dismissed {
+  background: #e3e5e9;
+  color: #343a46;
+  border-color: #727782;
+}
+mark.match.reviewed {
+  border-style: dashed;
+}
+mark.match:focus-visible {
+  outline: 3px solid #2769c5;
+}
+.pdf-sheet {
+  position: relative;
+  display: table;
+  margin: auto;
+}
+.pdf-highlights {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.pdf-match {
+  fill: #e54242;
+  fill-opacity: 0.25;
+  pointer-events: all;
+  cursor: pointer;
+}
+.pdf-match.selected {
+  stroke: #a12424;
+  stroke-width: 0.35;
+}
+.pdf-match.justified {
+  fill: #228843;
+}
+.pdf-match.dismissed {
+  fill: #727782;
+}
+.review-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.explanation form {
+  display: grid;
+  gap: 16px;
+  max-width: 750px;
+  margin: 20px 0;
+}
+.explanation textarea {
+  display: block;
+  width: 100%;
+  min-height: 95px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+}
+.explanation details article {
+  border-top: 1px solid var(--line);
+  padding: 14px 0;
+}
+.evidence-filters select {
+  max-width: 260px;
+}
+.text-zoom {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+.evidence-workspace .viewer-tools {
+  flex-wrap: wrap;
+}
+@media (max-width: 1100px) {
+  .comparison-panes {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

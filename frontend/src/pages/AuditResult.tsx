@@ -5,6 +5,7 @@ import { api } from "../api";
 import { warningLabel } from "../documents";
 import type { AuditRecord, EvidenceRange, LiteralFinding } from "../audits";
 import { auditStateNames, auditLimitations } from "../audits";
+import { reviewNames } from "../evidence";
 import ErrorMessage from "../components/ErrorMessage";
 function Ranges({ ranges }: { ranges: EvidenceRange[] }) {
   return (
@@ -153,6 +154,9 @@ export default function AuditResult() {
               )}
             </div>
           </div>
+          <Link className="button-link" to={`/auditorias/${id}/evidencias`}>
+            Abrir visor de evidencias
+          </Link>
           <h2>Evidencias de coincidencia literal</h2>
           <ErrorMessage message={findings.error?.message ?? ""} />
           {findings.isPending && <p role="status">Cargando evidencias…</p>}
@@ -165,7 +169,7 @@ export default function AuditResult() {
                     Coincidencia literal normalizada
                   </span>
                   <span className="small muted">
-                    Pendiente de revisión humana · {f.word_count} palabras
+                    {reviewNames[f.review_state]} · {f.word_count} palabras
                   </span>
                 </div>
                 <p>{f.evidence.explanation}</p>
@@ -185,7 +189,15 @@ export default function AuditResult() {
                   </div>
                 </div>
                 <p className="small muted">
-                  Citación: pendiente de comprobación.{" "}
+                  Citación:{" "}
+                  {f.review_log.at(-1)?.citation === "correct"
+                    ? "correcta"
+                    : f.review_log.at(-1)?.citation === "absent"
+                      ? "ausente"
+                      : f.review_log.at(-1)?.citation === "incomplete"
+                        ? "incompleta"
+                        : "pendiente de comprobación"}
+                  .{" "}
                   {f.evidence.raw_equal === true
                     ? "Los fragmentos extraídos son idénticos."
                     : "La igualdad se verificó tras normalizar Unicode, mayúsculas y separación de tokens."}

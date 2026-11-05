@@ -101,22 +101,24 @@ with tempfile.TemporaryDirectory(prefix="academic-integrity-e2e-") as tmp:
     finally:
         # Only the explicit test storage subtree; never development originals.
         test_stack = base + ["-f", str(override)]
-        subprocess.run(test_stack + ["stop", "worker"], check=True)
-        cleanup = "from app.config import settings; import shutil; c=settings(); assert c.environment=='test' and c.storage_root=='/var/lib/academic-integrity/documents/aid_test'; shutil.rmtree(c.storage_root, ignore_errors=True)"
-        subprocess.run(
-            test_stack + ["exec", "-T", "api", "python", "-c", cleanup], check=True
-        )
-        subprocess.run(
-            base
-            + [
-                "up",
-                "-d",
-                "--force-recreate",
-                "--no-deps",
-                "--no-build",
-                "api",
-                "worker",
-                "frontend",
-            ],
-            check=True,
-        )
+        try:
+            subprocess.run(test_stack + ["stop", "worker"], check=True)
+            cleanup = "from app.config import settings; import shutil; c=settings(); assert c.environment=='test' and c.storage_root=='/var/lib/academic-integrity/documents/aid_test'; shutil.rmtree(c.storage_root, ignore_errors=True)"
+            subprocess.run(
+                test_stack + ["exec", "-T", "api", "python", "-c", cleanup], check=True
+            )
+        finally:
+            subprocess.run(
+                base
+                + [
+                    "up",
+                    "-d",
+                    "--force-recreate",
+                    "--no-deps",
+                    "--no-build",
+                    "api",
+                    "worker",
+                    "frontend",
+                ],
+                check=True,
+            )

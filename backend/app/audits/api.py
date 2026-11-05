@@ -1,7 +1,12 @@
 import hashlib
 import json
 from uuid import UUID
-from typing import Annotated
+from typing import Annotated, Literal
+from fastapi.responses import FileResponse
+from app.documents.storage import object_path
+from app.documents.api import MIMES
+from app.audits.viewer import verified_range, boxes, digest
+from app.audits.service import lock_documents
 from fastapi import APIRouter, Header, HTTPException, Request
 from pydantic import BaseModel, Field
 from sqlalchemy import func, select, text
@@ -215,6 +220,8 @@ def findings(audit_id: UUID, member: Member, db: DB, limit: int = 25, offset: in
                 "source_id": f.source_id,
                 "category": f.category,
                 "review_state": f.review_state,
+                "review_revision": f.review_revision,
+                "review_log": f.review_log,
                 "word_count": f.word_count,
                 "evidence": f.evidence,
             }
@@ -233,3 +240,168 @@ def cancel(audit_id: UUID, member: Member, db: DB) -> dict:
         job.state = "cancelled"
     db.add(Activity(institution_id=member.institution_id, actor_id=member.id, action="audit.cancelled"))
     return {"state": "cancelled"}
+
+
+def selected_finding(db, member, audit_id, finding_id):
+    audit, sources = authorized_audit(db, member, str(audit_id))
+    finding = db.scalar(select(Finding).where(Finding.id == str(finding_id), Finding.audit_id == audit.id))
+    if finding is None or audit.state not in {"completed", "partial"}:
+        raise HTTPException(404, "Evidencia no disponible")
+    return audit, sources, finding
+
+
+@router.get("/{audit_id}/findings/{finding_id}/view")
+def view(
+    audit_id: UUID,
+    finding_id: UUID,
+    member: Member,
+    db: DB,
+    side: Literal["target", "source"] = "target",
+    range_index: int = 0,
+) -> dict:
+    audit, sources, finding = selected_finding(db, member, audit_id, finding_id)
+    source = next(s for s in sources if s.id == finding.source_id)
+    version = db.get(Version, audit.target_version_id if side == "target" else source.version_id)
+    spans = finding.evidence[f"{side}_ranges"]
+    if not 0 <= range_index < len(spans):
+        raise HTTPException(422, "Fragmento fuera de rango")
+    span = spans[range_index]
+    fragment = db.scalar(select(Fragment).where(Fragment.id == span["fragment_id"], Fragment.version_id == version.id))
+    if fragment is None:
+        raise HTTPException(409, "Versión de evidencia no disponible")
+    verified_range(fragment, span)
+    highlights = []
+    for row in db.scalars(select(Finding).where(Finding.audit_id == audit.id)):
+        if side == "source" and row.source_id != source.id:
+            continue
+        for other in row.evidence[f"{side}_ranges"]:
+            if other["fragment_id"] != fragment.id:
+                continue
+            a, b = verified_range(fragment, other)
+            highlights.append(
+                {
+                    "finding_id": row.id,
+                    "start": a,
+                    "end": b,
+                    "review_state": row.review_state,
+                    "boxes": boxes(fragment.original, fragment.locations, a, b) if version.format == "pdf" else None,
+                }
+            )
+    snap = audit.target_snapshot if side == "target" else source.snapshot
+    page = next((p for p in version.metadata_json.get("pages", []) if p["number"] == fragment.page), None)
+    return {
+        "document": {
+            **snap,
+            "format": version.format,
+            "author": version.metadata_json.get("author") or version.metadata_json.get("Author"),
+        },
+        "fragment": {
+            "id": fragment.id,
+            "original": fragment.original,
+            "sha256": digest(fragment.original),
+            "page": fragment.page,
+            "paragraph": fragment.paragraph,
+            "section": fragment.section,
+            "sentences": fragment.sentences,
+        },
+        "range_index": range_index,
+        "range_count": len(spans),
+        "selected_range": span,
+        "highlights": highlights,
+        "page_geometry": page,
+        "offset_unit": "unicode_code_points",
+    }
+
+
+@router.get("/{audit_id}/findings/{finding_id}/original")
+def evidence_original(
+    audit_id: UUID, finding_id: UUID, member: Member, db: DB, side: Literal["target", "source"] = "target"
+) -> FileResponse:
+    audit, sources, finding = selected_finding(db, member, audit_id, finding_id)
+    version_id = (
+        audit.target_version_id
+        if side == "target"
+        else next(s.version_id for s in sources if s.id == finding.source_id)
+    )
+    version = db.get(Version, version_id)
+    path = object_path(member.institution_id, version.id)
+    if not path.is_file() or path.is_symlink():
+        raise HTTPException(404, "Original no disponible")
+    return FileResponse(path, media_type=MIMES[version.format], filename="original." + version.format)
+
+
+class ReviewInput(BaseModel):
+    expected_revision: int = Field(ge=0)
+    state: Literal["pending", "reviewed", "justified", "dismissed", "confirmed"]
+    citation: Literal["pending_review", "correct", "absent", "incomplete"] = "pending_review"
+    reason: str = Field(min_length=5, max_length=2000)
+
+
+@router.post("/{audit_id}/findings/{finding_id}/review")
+def review(audit_id: UUID, finding_id: UUID, body: ReviewInput, member: Member, db: DB) -> dict:
+    # Authorize before attempting locks; follow the worker/delete lock order.
+    selected_finding(db, member, audit_id, finding_id)
+    if member.role not in MANAGERS | {"teacher", "auditor"}:
+        raise HTTPException(403, "La revisión requiere un evaluador autorizado")
+    if len(body.reason.strip()) < 5:
+        raise HTTPException(422, "Indica un motivo concreto")
+    lock_documents(db, str(audit_id))
+    authorized_audit(db, member, str(audit_id), lock=True)
+    finding = db.scalar(
+        select(Finding)
+        .where(Finding.id == str(finding_id), Finding.audit_id == str(audit_id))
+        .with_for_update()
+        .execution_options(populate_existing=True)
+    )
+    if finding is None:
+        raise HTTPException(404, "Evidencia no disponible")
+    if finding.review_revision != body.expected_revision:
+        raise HTTPException(409, "Otra revisión modificó el hallazgo; actualiza antes de guardar")
+    if finding.review_revision >= 100:
+        raise HTTPException(409, "Se alcanzó el límite de revisiones del hallazgo")
+    finding.review_revision += 1
+    finding.review_state = body.state
+    event = {
+        "revision": finding.review_revision,
+        "state": body.state,
+        "citation": body.citation,
+        "reason": body.reason.strip(),
+        "actor_id": member.id,
+        "at": now().isoformat(),
+    }
+    finding.review_log = [*finding.review_log, event]
+    db.add(Activity(institution_id=member.institution_id, actor_id=member.id, action="finding.reviewed"))
+    return {
+        "review_state": finding.review_state,
+        "review_revision": finding.review_revision,
+        "review_log": finding.review_log,
+    }
+
+
+@router.get("/{audit_id}/findings/{finding_id}/export")
+def export_evidence(audit_id: UUID, finding_id: UUID, member: Member, db: DB):
+    from fastapi import Response
+
+    audit, sources, finding = selected_finding(db, member, audit_id, finding_id)
+    source = next(s for s in sources if s.id == finding.source_id)
+    payload = {
+        "schema": "literal-evidence-v1",
+        "audit_id": audit.id,
+        "finding_id": finding.id,
+        "exported_at": now().isoformat(),
+        "engine_version": audit.engine_version,
+        "config": audit.config,
+        "target": audit.target_snapshot,
+        "source": source.snapshot,
+        "evidence": finding.evidence,
+        "word_count": finding.word_count,
+        "review_state": finding.review_state,
+        "review_revision": finding.review_revision,
+        "review_log": finding.review_log,
+        "limitation": "Evidencia textual para revisión humana; no declara plagio ni infracción académica.",
+    }
+    return Response(
+        json.dumps(payload, ensure_ascii=False),
+        media_type="application/json",
+        headers={"Content-Disposition": f'attachment; filename="evidencia-{finding.id}.json"'},
+    )

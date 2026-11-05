@@ -1,6 +1,10 @@
 # Requisitos y aceptación
 
-## Estado actual — Fase 3
+## Estado actual — Fase 4
+
+Resaltado en texto original con mapa Unicode, dos paneles, superposiciones y navegación implementados. PDF superpuesto solo con geometría compatible; fallback explícito para rotación/recorte o caracteres sin referencia. Revisión humana trazable y exportación JSON disponibles; PDF de informes y casos siguen pendientes.
+
+## Antecedente — Fase 3
 
 Implementada la comparación literal sobre documentos institucionales seleccionados legibles, con evidencia y cobertura. Búsqueda web declarada no disponible por falta de proveedor autorizado; no se simula. Resaltado exacto, semántica, IA e informes permanecen futuros.
 

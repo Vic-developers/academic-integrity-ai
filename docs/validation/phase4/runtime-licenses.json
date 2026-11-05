@@ -1,0 +1,511 @@
+[
+  {
+    "name": "alembic",
+    "version": "1.20.1",
+    "license_declared": "MIT",
+    "installed_version": "1.20.1",
+    "license_files": [
+      "alembic-1.20.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "amqp",
+    "version": "5.4.2",
+    "license_declared": "BSD",
+    "installed_version": "5.4.2",
+    "license_files": [
+      "amqp-5.4.2.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "annotated-doc",
+    "version": "0.0.5",
+    "license_declared": "MIT",
+    "installed_version": "0.0.5",
+    "license_files": [
+      "annotated_doc-0.0.5.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "annotated-types",
+    "version": "0.8.0",
+    "license_declared": "MIT",
+    "installed_version": "0.8.0",
+    "license_files": [
+      "annotated_types-0.8.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "anyio",
+    "version": "4.16.0",
+    "license_declared": "MIT",
+    "installed_version": "4.16.0",
+    "license_files": [
+      "anyio-4.16.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "argon2-cffi",
+    "version": "25.1.0",
+    "license_declared": "MIT",
+    "installed_version": "25.1.0",
+    "license_files": [
+      "argon2_cffi-25.1.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "argon2-cffi-bindings",
+    "version": "26.1.0",
+    "license_declared": "MIT",
+    "installed_version": "26.1.0",
+    "license_files": [
+      "argon2_cffi_bindings-26.1.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "billiard",
+    "version": "4.3.2",
+    "license_declared": "BSD",
+    "installed_version": "4.3.2",
+    "license_files": [
+      "billiard-4.3.2.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "celery",
+    "version": "5.6.3",
+    "license_declared": "BSD-3-Clause",
+    "installed_version": "5.6.3",
+    "license_files": [
+      "celery-5.6.3.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "cffi",
+    "version": "2.1.1",
+    "license_declared": "MIT-0",
+    "installed_version": "2.1.1",
+    "license_files": [
+      "cffi-2.1.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "charset-normalizer",
+    "version": "3.5.2",
+    "license_declared": "MIT",
+    "installed_version": "3.5.2",
+    "license_files": [
+      "charset_normalizer-3.5.2.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "click",
+    "version": "8.5.0",
+    "license_declared": "BSD-3-Clause",
+    "installed_version": "8.5.0",
+    "license_files": [
+      "click-8.5.0.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "click-didyoumean",
+    "version": "0.3.1",
+    "license_declared": "MIT",
+    "installed_version": "0.3.1",
+    "license_files": [
+      "click_didyoumean-0.3.1.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "click-plugins",
+    "version": "1.1.1.2",
+    "license_declared": "New BSD",
+    "installed_version": "1.1.1.2",
+    "license_files": [
+      "click_plugins-1.1.1.2.dist-info/licenses/AUTHORS.txt",
+      "click_plugins-1.1.1.2.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "click-repl",
+    "version": "0.4.1",
+    "license_declared": "MIT",
+    "installed_version": "0.4.1",
+    "license_files": [
+      "click_repl-0.4.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "cryptography",
+    "version": "50.0.2",
+    "license_declared": "Apache-2.0 OR BSD-3-Clause",
+    "installed_version": "50.0.2",
+    "license_files": [
+      "cryptography-50.0.2.dist-info/licenses/LICENSE",
+      "cryptography-50.0.2.dist-info/licenses/LICENSE.APACHE",
+      "cryptography-50.0.2.dist-info/licenses/LICENSE.BSD"
+    ]
+  },
+  {
+    "name": "defusedxml",
+    "version": "0.7.1",
+    "license_declared": "PSFL",
+    "installed_version": "0.7.1",
+    "license_files": [
+      "defusedxml-0.7.1.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "dnspython",
+    "version": "2.9.2",
+    "license_declared": "ISC",
+    "installed_version": "2.9.2",
+    "license_files": [
+      "dnspython-2.9.2.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "email-validator",
+    "version": "2.3.0",
+    "license_declared": "Unlicense",
+    "installed_version": "2.3.0",
+    "license_files": [
+      "email_validator-2.3.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "fastapi",
+    "version": "0.141.1",
+    "license_declared": "MIT",
+    "installed_version": "0.141.1",
+    "license_files": [
+      "fastapi-0.141.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "greenlet",
+    "version": "3.5.6",
+    "license_declared": "MIT AND PSF-2.0",
+    "installed_version": "3.5.6",
+    "license_files": [
+      "greenlet-3.5.6.dist-info/licenses/LICENSE",
+      "greenlet-3.5.6.dist-info/licenses/LICENSE.PSF"
+    ]
+  },
+  {
+    "name": "h11",
+    "version": "0.16.0",
+    "license_declared": "MIT",
+    "installed_version": "0.16.0",
+    "license_files": [
+      "h11-0.16.0.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "idna",
+    "version": "3.20",
+    "license_declared": "BSD-3-Clause",
+    "installed_version": "3.20",
+    "license_files": [
+      "idna-3.20.dist-info/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "kombu",
+    "version": "5.7.0",
+    "license_declared": "BSD-3-Clause",
+    "installed_version": "5.7.0",
+    "license_files": [
+      "kombu-5.7.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "lxml",
+    "version": "6.1.3",
+    "license_declared": "BSD-3-Clause",
+    "installed_version": "6.1.3",
+    "license_files": [
+      "lxml-6.1.3.dist-info/licenses/LICENSE.txt",
+      "lxml-6.1.3.dist-info/licenses/LICENSES.txt"
+    ]
+  },
+  {
+    "name": "mako",
+    "version": "1.4.3",
+    "license_declared": "MIT",
+    "installed_version": "1.4.3",
+    "license_files": [
+      "mako-1.4.3.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "markupsafe",
+    "version": "3.0.4",
+    "license_declared": "BSD-3-Clause",
+    "installed_version": "3.0.4",
+    "license_files": [
+      "markupsafe-3.0.4.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "packaging",
+    "version": "26.3",
+    "license_declared": "Apache-2.0 OR BSD-2-Clause",
+    "installed_version": "26.3",
+    "license_files": [
+      "packaging-26.3.dist-info/licenses/LICENSE",
+      "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+      "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+      "packaging/licenses/__init__.py",
+      "packaging/licenses/__pycache__/__init__.cpython-312.pyc",
+      "packaging/licenses/__pycache__/_spdx.cpython-312.pyc",
+      "packaging/licenses/_spdx.py"
+    ]
+  },
+  {
+    "name": "pdfminer-six",
+    "version": "20260107",
+    "license_declared": "MIT",
+    "installed_version": "20260107",
+    "license_files": [
+      "pdfminer_six-20260107.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pdfplumber",
+    "version": "0.11.10",
+    "license_declared": "License :: OSI Approved :: MIT License",
+    "installed_version": "0.11.10",
+    "license_files": [
+      "pdfplumber-0.11.10.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "pillow",
+    "version": "13.0.0",
+    "license_declared": "MIT-CMU",
+    "installed_version": "13.0.0",
+    "license_files": [
+      "pillow-13.0.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "prompt-toolkit",
+    "version": "3.0.53",
+    "license_declared": "License :: OSI Approved :: BSD License",
+    "installed_version": "3.0.53",
+    "license_files": [
+      "prompt_toolkit-3.0.53.dist-info/licenses/AUTHORS.rst",
+      "prompt_toolkit-3.0.53.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "psycopg",
+    "version": "3.3.8",
+    "license_declared": "LGPL-3.0-only",
+    "installed_version": "3.3.8",
+    "license_files": [
+      "psycopg-3.3.8.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "psycopg-binary",
+    "version": "3.3.8",
+    "license_declared": "LGPL-3.0-only",
+    "installed_version": "3.3.8",
+    "license_files": [
+      "psycopg_binary-3.3.8.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "pycparser",
+    "version": "3.12",
+    "license_declared": "BSD-3-Clause",
+    "installed_version": "3.12",
+    "license_files": [
+      "pycparser-3.12.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pydantic",
+    "version": "2.14.3",
+    "license_declared": "MIT",
+    "installed_version": "2.14.3",
+    "license_files": [
+      "pydantic-2.14.3.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pydantic-core",
+    "version": "2.50.4",
+    "license_declared": "MIT",
+    "installed_version": "2.50.4",
+    "license_files": [
+      "pydantic_core-2.50.4.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pydantic-settings",
+    "version": "2.16.2",
+    "license_declared": "MIT",
+    "installed_version": "2.16.2",
+    "license_files": [
+      "pydantic_settings-2.16.2.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pypdfium2",
+    "version": "5.14.0",
+    "license_declared": "BSD-3-Clause, Apache-2.0, dependency licenses",
+    "installed_version": "5.14.0",
+    "license_files": [
+      "pypdfium2-5.14.0.dist-info/licenses/LICENSES/Apache-2.0.txt",
+      "pypdfium2-5.14.0.dist-info/licenses/LICENSES/BSD-3-Clause.txt",
+      "pypdfium2-5.14.0.dist-info/licenses/LICENSES/CC-BY-4.0.txt",
+      "pypdfium2-5.14.0.dist-info/licenses/data/linux_x64/BUILD_LICENSES/abseil.txt",
+      "pypdfium2-5.14.0.dist-info/licenses/data/linux_x64/BUILD_LICENSES/agg23.txt",
+      "pypdfium2-5.14.0.dist-info/licenses/data/linux_x64/BUILD_LICENSES/fast_float.txt",
+      "pypdfium2-5.14.0.dist-info/licenses/data/linux_x64/BUILD_LICENSES/freetype.txt",
+      "pypdfium2-5.14.0.dist-info/licenses/data/linux_x64/BUILD_LICENSES/icu.txt",
+      "pypdfium2-5.14.0.dist-info/licenses/data/linux_x64/BUILD_LICENSES/lcms.txt",
+      "pypdfium2-5.14.0.dist-info/licenses/data/linux_x64/BUILD_LICENSES/libjpeg_turbo.ijg",
+      "pypdfium2-5.14.0.dist-info/licenses/data/linux_x64/BUILD_LICENSES/libjpeg_turbo.md",
+      "pypdfium2-5.14.0.dist-info/licenses/data/linux_x64/BUILD_LICENSES/libopenjpeg.txt",
+      "pypdfium2-5.14.0.dist-info/licenses/data/linux_x64/BUILD_LICENSES/libpng.txt",
+      "pypdfium2-5.14.0.dist-info/licenses/data/linux_x64/BUILD_LICENSES/llvm-libc.txt",
+      "pypdfium2-5.14.0.dist-info/licenses/data/linux_x64/BUILD_LICENSES/pdfium-binaries.txt",
+      "pypdfium2-5.14.0.dist-info/licenses/data/linux_x64/BUILD_LICENSES/pdfium.txt",
+      "pypdfium2-5.14.0.dist-info/licenses/data/linux_x64/BUILD_LICENSES/simdutf.txt",
+      "pypdfium2-5.14.0.dist-info/licenses/data/linux_x64/BUILD_LICENSES/zlib.txt"
+    ]
+  },
+  {
+    "name": "python-dateutil",
+    "version": "4.0.0",
+    "license_declared": "BSD-3-Clause",
+    "installed_version": "4.0.0",
+    "license_files": [
+      "python_dateutil-4.0.0.dist-info/licenses/AUTHORS.md",
+      "python_dateutil-4.0.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "python-docx",
+    "version": "1.2.0",
+    "license_declared": "MIT",
+    "installed_version": "1.2.0",
+    "license_files": [
+      "python_docx-1.2.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "python-dotenv",
+    "version": "1.2.4",
+    "license_declared": "BSD-3-Clause",
+    "installed_version": "1.2.4",
+    "license_files": [
+      "python_dotenv-1.2.4.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "python-multipart",
+    "version": "0.0.33",
+    "license_declared": "Apache-2.0",
+    "installed_version": "0.0.33",
+    "license_files": [
+      "python_multipart-0.0.33.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "redis",
+    "version": "7.4.1",
+    "license_declared": "MIT",
+    "installed_version": "7.4.1",
+    "license_files": [
+      "redis-7.4.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "sqlalchemy",
+    "version": "2.0.57",
+    "license_declared": "MIT",
+    "installed_version": "2.0.57",
+    "license_files": [
+      "sqlalchemy-2.0.57.dist-info/licenses/AUTHORS",
+      "sqlalchemy-2.0.57.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "starlette",
+    "version": "1.10.0",
+    "license_declared": "BSD-3-Clause",
+    "installed_version": "1.10.0",
+    "license_files": [
+      "starlette-1.10.0.dist-info/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "typing-extensions",
+    "version": "4.16.0",
+    "license_declared": "PSF-2.0",
+    "installed_version": "4.16.0",
+    "license_files": [
+      "typing_extensions-4.16.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "typing-inspection",
+    "version": "0.4.5",
+    "license_declared": "MIT",
+    "installed_version": "0.4.5",
+    "license_files": [
+      "typing_inspection-0.4.5.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "tzdata",
+    "version": "2026.6",
+    "license_declared": "Apache-2.0",
+    "installed_version": "2026.6",
+    "license_files": [
+      "tzdata-2026.6.dist-info/licenses/LICENSE",
+      "tzdata-2026.6.dist-info/licenses/licenses/LICENSE_APACHE"
+    ]
+  },
+  {
+    "name": "tzlocal",
+    "version": "5.4.5",
+    "license_declared": "MIT",
+    "installed_version": "5.4.5",
+    "license_files": [
+      "tzlocal-5.4.5.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "uvicorn",
+    "version": "0.52.4",
+    "license_declared": "BSD-3-Clause",
+    "installed_version": "0.52.4",
+    "license_files": [
+      "uvicorn-0.52.4.dist-info/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "vine",
+    "version": "5.1.0",
+    "license_declared": "BSD",
+    "installed_version": "5.1.0",
+    "license_files": [
+      "vine-5.1.0.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "wcwidth",
+    "version": "0.9.4",
+    "license_declared": "License :: OSI Approved :: MIT License",
+    "installed_version": "0.9.4",
+    "license_files": [
+      "wcwidth-0.9.4.dist-info/licenses/LICENSE"
+    ]
+  }
+]

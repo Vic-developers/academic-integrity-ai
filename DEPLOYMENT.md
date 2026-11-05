@@ -1,6 +1,10 @@
 # Infraestructura y operación
 
-## Estado actual — Fase 3
+## Estado actual — Fase 4
+
+Revisión Alembic esperada: 0004_review. API y worker deben ejecutar la misma imagen. Sin nuevas dependencias ni GPU. La exportación JSON usa sesión y permisos de auditoría; no se crea enlace público de descarga.
+
+## Antecedente — Fase 3
 
 Migración esperada actual: 0003_literal. API y worker deben usar la misma imagen/código. El worker procesa extracción y auditorías durables; no necesita GPU ni proveedor comercial. Los límites predeterminados son para desarrollo, sin benchmark de producción. No se ha desplegado públicamente.
 

@@ -110,7 +110,7 @@ def ready() -> dict:
     try:
         with engine.connect() as conn:
             revision = conn.execute(text("SELECT version_num FROM alembic_version")).scalar_one()
-            if revision != "0003_literal":
+            if revision != "0004_review":
                 raise HTTPException(503, "Migraciones pendientes")
         with Redis.from_url(settings().redis_url, socket_timeout=2, socket_connect_timeout=2) as redis:
             redis.ping()

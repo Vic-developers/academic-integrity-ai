@@ -6,7 +6,11 @@ class AuditBodyLimitMiddleware:
         self.app = app
 
     async def __call__(self, scope, receive, send):
-        if scope["type"] != "http" or scope["method"] != "POST" or scope["path"] != "/api/v1/audits":
+        if (
+            scope["type"] != "http"
+            or scope["method"] != "POST"
+            or not (scope["path"] == "/api/v1/audits" or scope["path"].startswith("/api/v1/audits/"))
+        ):
             return await self.app(scope, receive, send)
         size = 0
 

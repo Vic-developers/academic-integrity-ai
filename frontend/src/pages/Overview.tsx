@@ -25,9 +25,9 @@ export default function Overview({ identity }: { identity: Identity }) {
           </span>
         </div>
         <div className="panel phase">
-          <span className="pill">FASE 3</span>
+          <span className="pill">FASE 4</span>
           <h2>La base está en marcha</h2>
-          <p>Documentos y comparación literal con evidencias.</p>
+          <p>Documentos, comparación literal y revisión de evidencias.</p>
         </div>
       </div>
       <div className="panel next">
