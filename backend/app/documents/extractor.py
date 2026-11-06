@@ -1,4 +1,5 @@
 import json
+import math
 import re
 import sys
 from importlib.metadata import version
@@ -69,7 +70,17 @@ def extract_docx(path: Path) -> dict:
         offset = 0
         for number, run in enumerate(p.runs):
             if run.text:
-                locations.append({**location, "run": number, "start": offset, "end": offset + len(run.text)})
+                locations.append(
+                    {
+                        **location,
+                        "run": number,
+                        "start": offset,
+                        "end": offset + len(run.text),
+                        "explicit_hidden": run.font.hidden is True,
+                        "explicit_white": str(run.font.color.rgb or "") == "FFFFFF",
+                        "font_size_pt": run.font.size.pt if run.font.size is not None else None,
+                    }
+                )
                 offset += len(run.text)
         if offset != len(p.text):
             locations = [{**location, "start": 0, "end": len(p.text), "runs_reliable": False}]
@@ -103,12 +114,26 @@ def extract_docx(path: Path) -> dict:
         name: str(getattr(props, name) or "")[:1000]
         for name in ["author", "title", "subject", "last_modified_by", "revision", "created", "modified"]
     }
+    from zipfile import ZipFile
+    from defusedxml.ElementTree import fromstring
+
+    with ZipFile(path) as archive:
+        if "docProps/app.xml" in archive.namelist() and archive.getinfo("docProps/app.xml").file_size <= 65536:
+            root = fromstring(archive.read("docProps/app.xml"))
+            namespace = "{http://schemas.openxmlformats.org/officeDocument/2006/extended-properties}"
+            for field in ["Application", "AppVersion"]:
+                value = root.find(namespace + field)
+                if value is not None and value.text:
+                    metadata[field] = value.text[:1000]
     return {
         "fragments": fragments,
         "pages": None,
         "metadata": metadata,
-        "warnings": ["docx_structured_view_not_word_pagination"],
-        "extractor": "python-docx/" + version("python-docx") + "/" + NORMALIZER,
+        "warnings": [
+            "docx_structured_view_not_word_pagination",
+            "format_observations_explicit_only_not_rendered_visibility",
+        ],
+        "extractor": "python-docx/" + version("python-docx") + "/forensic-v1/" + NORMALIZER,
     }
 
 
@@ -156,6 +181,18 @@ def extract_pdf(path: Path) -> dict:
                             {
                                 "kind": "pdf_word",
                                 "char_mapping_reliable": word["text"] == "".join(c["text"] for c in word["chars"]),
+                                "font_size_min_pt": min(
+                                    (
+                                        float(c["size"])
+                                        for c in word["chars"]
+                                        if isinstance(c.get("size"), (int, float)) and math.isfinite(c["size"])
+                                    ),
+                                    default=None,
+                                ),
+                                "all_characters_white": bool(word["chars"])
+                                and all(
+                                    c.get("non_stroking_color") in (1, (1, 1, 1), [1, 1, 1]) for c in word["chars"]
+                                ),
                                 "start": offset,
                                 "end": offset + len(value),
                                 "bbox": [word["x0"], word["top"], word["x1"], word["bottom"]],
@@ -180,7 +217,7 @@ def extract_pdf(path: Path) -> dict:
                 "pages": len(document.pages),
                 "metadata": metadata,
                 "warnings": warnings,
-                "extractor": "pdfplumber/" + version("pdfplumber") + "/" + NORMALIZER,
+                "extractor": "pdfplumber/" + version("pdfplumber") + "/forensic-v1/" + NORMALIZER,
             }
     except PDFPasswordIncorrect as exc:
         raise DocumentError("encrypted_pdf") from exc

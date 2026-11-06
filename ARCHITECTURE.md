@@ -1,5 +1,9 @@
 # Arquitectura
 
+## Fase 9 — Forense y comparación de estilo autorizada
+
+forensics analiza metadatos/fragmentos existentes y propiedades explícitas de formato incorporadas al extractor. style_attestations conserva autorización/procedencia/historial; comparación bajo permisos actuales sin informe persistido. Módulo web diferido. No clasifica identidad ni deriva probabilidad de metadatos/estilo. [Alcance detallado](docs/PHASE_9.md).
+
 ## Fase 8 — Investigación experimental y observaciones lingüísticas
 
 experimental_ai separa medidas lingüísticas del pipeline offline de investigación. La API calcula observables desde fragmentos autorizados y se abstiene de clasificar autoría; no carga experimentos ni entrena con la base de datos. El pipeline usa biblioteca estándar en CPU y artefactos JSON inmutables. [Alcance detallado](docs/PHASE_8.md).

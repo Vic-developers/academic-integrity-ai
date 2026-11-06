@@ -1,5 +1,9 @@
 # Seguridad y privacidad
 
+## Fase 9 — Forense y comparación de estilo autorizada
+
+Autorización y verificación humana de muestras por versión, estudiante activo, procedencia e historial optimista. Revalidación de todos los documentos bajo bloqueo ordenado, rechazo de muestras incompatibles y revocación por borrado/cambio de acceso. Controles Unicode escapados en observaciones para evitar engaños visuales. Fuentes de corpus sin licencia confirmada no se usan para entrenamiento. [Alcance detallado](docs/PHASE_9.md).
+
 ## Fase 8 — Investigación experimental y observaciones lingüísticas
 
 No se entrenan modelos con documentos institucionales. El CLI exige corpus local explícito y permisos declarados, sin red, .env ni base de datos. Artefactos JSON, permisos privados e inmutabilidad; no pickle ni activación web. Observaciones con autorización documental, presupuesto, rate limit, abstención y respuestas privadas. [Alcance detallado](docs/PHASE_8.md).

@@ -1,5 +1,9 @@
 # Hoja de ruta y riesgos
 
+## Fase 9 — Forense y comparación de estilo autorizada
+
+Fase 9 implementa forense observable y comparación de estilo autorizada. La continuación es fase 10: comparador masivo, matriz, grafo, filtros y exportación; todavía no iniciado. En paralelo queda pendiente obtener el corpus real, entrenar/evaluar/calibrar el modelo propio y validar el alcance de probabilidades de autoría. [Alcance detallado](docs/PHASE_9.md).
+
 ## Fase 8 — Investigación experimental y observaciones lingüísticas
 
 El pipeline de fase 8 y las observaciones locales están implementados. La puerta científica queda pendiente de corpus autorizado representativo, evaluación independiente y aprobación; el entrenamiento de patrones técnicos no la satisface. No se inicia fase 9. [Alcance detallado](docs/PHASE_8.md).

@@ -6,7 +6,7 @@ Este directorio contiene únicamente un generador de **patrones técnicos invent
 
 ```bash
 python evaluation/experimental-ai-v1/technical_fixture.py /ruta/privada/fixture.json
-python scripts/train_experimental_ai.py --corpus /ruta/privada/fixture.json --output /ruta/privada/experimentos
+python scripts/train_experimental_ai.py --corpus /ruta/privada/fixture.json --output /ruta/privada/experimentos --allow-technical-fixture
 ```
 
 Usar una carpeta privada fuera del repositorio para corpus reales y experimentos privados. Solo requiere biblioteca estándar de Python; no carga `.env`, SQL, pesos ni descargas. Ante errores, CLI no imprime el corpus. Una segunda ejecución sobre el mismo directorio/identidad rechaza sobrescribirlo. No hay aprobación o integración automática del clasificador: la API devuelve siempre resultado no concluyente.
@@ -43,3 +43,6 @@ Antes de proponer aprobación, recopilar datos autorizados y representativos con
 El baseline actual usa características léxicas/de longitud y Platt en un split separado. No aprende sintaxis/semántica ni generaliza por el solo hecho de entrenar. No se reportan probabilidades personales de autoría. Las estadísticas de calibración sintéticas solo comprueban cálculos. El runtime se abstiene en todos los documentos; tampoco convierte una decisión humana previa sobre afirmaciones en una etiqueta de autoría.
 
 Consulta [alcance de fase 8](../../docs/PHASE_8.md) y [evidencia técnica](../../docs/validation/phase8/README.md).
+
+
+Desde la solicitud de un modelo con datos reales, el CLI rechaza por defecto corpus `technical_fixture`. El flag explícito anterior solo sirve para repetir pruebas históricas del software. [Preparación del corpus real](../../datasets/authorship-v1/README.md).

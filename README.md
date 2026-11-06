@@ -1,5 +1,9 @@
 # Academic Integrity AI
 
+## Fase 9 — Forense y comparación de estilo autorizada
+
+Fase 9: metadatos y observaciones técnicas con rangos originales, más comparación descriptiva de estilo con autorización y procedencia por estudiante/versión. No acreditan autoría o uso de IA. Modelo propio/probabilidades solicitado: pendiente de corpus real autorizado accesible y evaluación/calibración; no se sustituyen por el ensayo técnico de fase 8. [Alcance detallado](docs/PHASE_9.md).
+
 ## Fase 8 — Investigación experimental y observaciones lingüísticas
 
 La fase 8 incorpora observaciones lingüísticas sobre documentos autorizados y un pipeline offline de entrenamiento/evaluación/calibración en CPU. El ensayo ejecutado usa patrones técnicos inventados, no datos científicos de autoría. Sin corpus representativo autorizado ni modelo aprobado: resultado siempre no concluyente, sin probabilidad de IA. Hugging Face sigue deshabilitado. [Alcance detallado](docs/PHASE_8.md).

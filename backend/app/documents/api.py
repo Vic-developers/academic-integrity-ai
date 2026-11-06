@@ -267,6 +267,10 @@ def remove(document_id: UUID, member: Member, db: DB) -> None:
     from app.claims.service import invalidate as invalidate_claims
 
     invalidate_claims(db, version.id)
+    from app.forensics.models import StyleAttestation
+    from sqlalchemy import delete
+
+    db.execute(delete(StyleAttestation).where(StyleAttestation.version_id == version.id))
     document.deleted_at = now()
     for job in db.scalars(
         select(DocumentJob).where(DocumentJob.version_id == version.id, DocumentJob.kind == "extract")

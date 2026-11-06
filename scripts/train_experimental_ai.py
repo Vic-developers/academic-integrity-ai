@@ -15,7 +15,7 @@ from app.experimental_ai.corpus import canonical
 from app.experimental_ai.training import train
 
 
-def run(corpus_path, output):
+def run(corpus_path, output, *, allow_technical_fixture=False):
     if corpus_path.stat().st_size > 16 * 1024 * 1024:
         raise ValueError("corpus_file_budget")
 
@@ -23,6 +23,8 @@ def run(corpus_path, output):
         raise ValueError("non_finite_json")
 
     data = json.loads(corpus_path.read_text(encoding="utf-8"), parse_constant=reject)
+    if data.get("purpose") == "technical_fixture" and not allow_technical_fixture:
+        raise ValueError("technical_fixture_not_allowed_for_requested_research_model")
     started = time.perf_counter()
     result = train(data)
     elapsed = time.perf_counter() - started
@@ -62,9 +64,18 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--corpus", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--allow-technical-fixture",
+        action="store_true",
+        help="Only replay historical software tests; never an authorship research model",
+    )
     args = parser.parse_args()
     try:
-        path, identity = run(args.corpus, args.output)
+        path, identity = run(
+            args.corpus,
+            args.output,
+            allow_technical_fixture=args.allow_technical_fixture,
+        )
     except (ValueError, OSError, KeyError, TypeError) as exc:
         # Error codes only: do not echo private corpus data or paths.
         print("Experiment rejected:", type(exc).__name__, file=sys.stderr)

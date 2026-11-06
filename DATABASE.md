@@ -1,5 +1,9 @@
 # Modelo de datos
 
+## Fase 9 — Forense y comparación de estilo autorizada
+
+0009_forensics añade style_attestations con RLS forzada y FK institucionales a versión/estudiante. La fase 8 no añadió esquema, por eso desciende de 0007_claims. Borrado elimina autorización e historial. Los informes de forense/estilo se calculan con permisos actuales y no persisten resultados. [Alcance detallado](docs/PHASE_9.md).
+
 ## Fase 8 — Investigación experimental y observaciones lingüísticas
 
 La fase 8 conserva el esquema 0007_claims. Las observaciones se recalculan desde versiones/fragments protegidos por RLS, sin tablas o resultados derivados nuevos. Experimentos offline privados fuera de la base institucional; no hay exportación de documentos para entrenamiento. [Alcance detallado](docs/PHASE_8.md).

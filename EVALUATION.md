@@ -1,5 +1,9 @@
 # Evaluación y pruebas
 
+## Fase 9 — Forense y comparación de estilo autorizada
+
+Fase 9 valida propiedades reales de DOCX/PDF y Unicode/rangos, autorizaciones/estudiante/comparabilidad, revocación/conflictos y privacidad. Comparación de estilo es descriptiva y sus mínimos técnicos no son suficiencia científica. Probabilidades de autoría siguen pendientes de corpus real y evaluación/calibración independientes. [Alcance detallado](docs/PHASE_9.md).
+
 ## Fase 8 — Investigación experimental y observaciones lingüísticas
 
 La fase 8 verifica métricas observables y un baseline logístico/Platt real sobre 48 patrones inventados. La evaluación sintética no mide precisión de detección de IA ni calibración de autoría. Se comprueban separación de grupos, contaminación, procedencia, test independiente de parámetros y abstención de todos los documentos. Protocolo en evaluation/experimental-ai-v1/README.md. [Alcance detallado](docs/PHASE_8.md).

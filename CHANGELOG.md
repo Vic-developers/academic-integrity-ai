@@ -1,5 +1,9 @@
 # Registro de cambios
 
+## Fase 9 — Forense y comparación de estilo autorizada
+
+Añadidas observaciones forenses originales, extracción de formato explícito DOCX/PDF, autorizaciones/historial y comparación descriptiva de muestras previas del mismo estudiante. Añadido compilador de corpus real con derechos/hashes; patrones técnicos deshabilitados por defecto para entrenamiento. Migración 0009_forensics. [Alcance detallado](docs/PHASE_9.md).
+
 ## Fase 8 — Investigación experimental y observaciones lingüísticas
 
 Añadidas observaciones lingüísticas sin juicio de autoría y pipeline CPU offline de corpus autorizado, baseline logístico, calibración, métricas y artefactos versionados. Entrenamiento técnico real sin aprobación, sin nuevas dependencias ni Hugging Face. [Alcance detallado](docs/PHASE_8.md).

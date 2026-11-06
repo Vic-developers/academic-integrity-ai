@@ -21,6 +21,7 @@ import AuditResult from "./AuditResult";
 import Claims from "./Claims";
 
 import ClaimResult from "./ClaimResult";
+const Forensics = lazy(() => import("./Forensics"));
 const ExperimentalAI = lazy(() => import("./ExperimentalAI"));
 export default function Workspace() {
   const { data, error, isPending } = useQuery({
@@ -109,6 +110,7 @@ export default function Workspace() {
           <Link to="/">◈ &nbsp; Resumen</Link>
           <Link to="/documentos">▤ &nbsp; Documentos</Link>
           <Link to="/asignaturas">▦ &nbsp; Asignaturas</Link>
+          <Link to="/forense">▱ &nbsp; Forense y estilo</Link>
           <Link to="/indicios-ia">◌ &nbsp; Observaciones lingüísticas</Link>
           <Link to="/afirmaciones">◇ &nbsp; Afirmaciones</Link>
           <Link to="/bibliografia">▧ &nbsp; Bibliografía</Link>
@@ -198,6 +200,25 @@ export default function Workspace() {
                   fallback={<p role="status">Cargando observaciones…</p>}
                 >
                   <ExperimentalAI key={location.pathname} />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/forense"
+              element={
+                <Suspense fallback={<p>Cargando…</p>}>
+                  <Forensics canReview={selected.role !== "student"} />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/forense/:id"
+              element={
+                <Suspense fallback={<p>Cargando…</p>}>
+                  <Forensics
+                    key={location.pathname}
+                    canReview={selected.role !== "student"}
+                  />
                 </Suspense>
               }
             />

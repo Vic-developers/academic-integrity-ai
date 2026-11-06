@@ -1,5 +1,9 @@
 # Infraestructura y operación
 
+## Fase 9 — Forense y comparación de estilo autorizada
+
+Esquema actual 0009_forensics. Reconstruir API/worker/frontend y aplicar alembic upgrade head. Nuevas extracciones DOCX/PDF incluyen propiedades explícitas forensic-v1; las anteriores conservan identidad y declaran esa cobertura no disponible. Sin dependencias/GPU nuevas. El corpus real requiere acceso a fuente autorizada; Zenodo no está en la política de hosts actual y no se habilitó Hugging Face. [Alcance detallado](docs/PHASE_9.md).
+
 ## Fase 8 — Investigación experimental y observaciones lingüísticas
 
 Sin nuevas dependencias, pesos o migraciones en fase 8 (schema 0007_claims). Reconstruir API/frontend; el worker conserva sus tareas existentes. El pipeline offline es de CPU y no se activa por colocar un artefacto en el filesystem. No habilitar Hugging Face ni descargar corpus para ejecutar las observaciones. [Alcance detallado](docs/PHASE_8.md).

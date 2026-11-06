@@ -2,6 +2,7 @@ import os
 from alembic import context
 from sqlalchemy import create_engine
 from app.db import Base
+from app.forensics import models as forensic_models  # noqa: F401
 from app.semantic import models as vector_models  # noqa: F401
 from app.bibliography import models as bibliography_models  # noqa: F401
 from app.claims import models as claim_models  # noqa: F401

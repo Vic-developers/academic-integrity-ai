@@ -175,7 +175,9 @@ def test_cli_artifacts_match_manifest_and_are_immutable(tmp_path):
     path = tmp_path / "private-corpus.json"
     path.write_text(json.dumps(fixture_corpus()))
     output = tmp_path / "experiments"
-    folder, identity = module.run(path, output)
+    with pytest.raises(ValueError, match="technical_fixture_not_allowed"):
+        module.run(path, output)
+    folder, identity = module.run(path, output, allow_technical_fixture=True)
     manifest = json.loads((folder / "manifest.json").read_text())
     assert folder.name == identity
     assert hashlib.sha256((folder / "model.json").read_bytes().rstrip(b"\n")).hexdigest() == manifest["model_sha256"]
@@ -183,10 +185,10 @@ def test_cli_artifacts_match_manifest_and_are_immutable(tmp_path):
     assert (folder / "model.json").stat().st_mode & 0o777 == 0o600
     assert not any(p.suffix in {".pkl", ".pickle", ".joblib"} for p in folder.iterdir())
     with pytest.raises(FileExistsError):
-        module.run(path, output)
+        module.run(path, output, allow_technical_fixture=True)
     path.write_text('{"unknown": NaN}')
     with pytest.raises(ValueError, match="non_finite_json"):
-        module.run(path, output)
+        module.run(path, output, allow_technical_fixture=True)
 
 
 def test_ambiguous_test_data_excluded_from_binary_accuracy():
@@ -201,3 +203,43 @@ def test_ambiguous_test_data_excluded_from_binary_accuracy():
     assert result["report"]["test"]["excluded_mixed_or_edited"] == 1
     assert result["report"]["test"]["platt_calibrated"]["count"] == 12
     assert result["report"]["deployment"]["document_authorship_output"] == "not_conclusive"
+
+
+@pytest.mark.parametrize("failure", ["rights", "path", "hash"])
+def test_real_corpus_builder_fails_closed_without_source_evidence(tmp_path, failure):
+    import json
+
+    script = Path(__file__).resolve().parents[2] / "scripts/build_authorship_corpus.py"
+    spec = importlib.util.spec_from_file_location("real_corpus_builder", script)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    source = {
+        "purpose": "research",
+        "synthetic_patterns_allowed": False,
+        "samples": [{"source_id": "unverified", "text_path": "../outside.txt", "text_sha256": "0" * 64}] * 8,
+        "source_catalog": {},
+    }
+    if failure != "rights":
+        source["source_catalog"]["unverified"] = {
+            "training_allowed": True,
+            "evaluation_allowed": True,
+            "rights_reviewed": True,
+            "kind": "curated_human_ai_dataset",
+            "license_reference": "Test-only source authorization assertion",
+            "permission_reference": "Test-only declared permission reference",
+            "label_provenance": "Test-only declared label provenance",
+        }
+    if failure == "hash":
+        (tmp_path / "sample.txt").write_text("Datos de prueba exclusivos de esta comprobación.")
+        for r in source["samples"]:
+            r["text_path"] = "sample.txt"
+    collection = tmp_path / "collection.json"
+    collection.write_text(json.dumps(source))
+    with pytest.raises(
+        ValueError,
+        match={"rights": "source_rights_missing", "path": "text_path_outside", "hash": "sample_file_hash_changed"}[
+            failure
+        ],
+    ):
+        module.build(collection, tmp_path / "corpus.json")
+    assert not (tmp_path / "corpus.json").exists()

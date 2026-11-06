@@ -10,6 +10,7 @@ from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 from app import auth, institutions
 from app.claims import api as claims
 from app.experimental_ai import api as experimental_ai
+from app.forensics import api as forensics
 from app.bibliography import api as bibliography
 from app.audits import api as audits
 from app.audits.limits import AuditBodyLimitMiddleware
@@ -29,6 +30,7 @@ app.include_router(audits.router)
 app.include_router(bibliography.router)
 app.include_router(claims.router)
 app.include_router(experimental_ai.router)
+app.include_router(forensics.router)
 app.add_middleware(AuditBodyLimitMiddleware)
 app.add_middleware(UploadLimitMiddleware)
 log = logging.getLogger("uvicorn.error")
@@ -116,7 +118,7 @@ def ready() -> dict:
     try:
         with engine.connect() as conn:
             revision = conn.execute(text("SELECT version_num FROM alembic_version")).scalar_one()
-            if revision != "0007_claims":
+            if revision != "0009_forensics":
                 raise HTTPException(503, "Migraciones pendientes")
         with Redis.from_url(settings().redis_url, socket_timeout=2, socket_connect_timeout=2) as redis:
             redis.ping()

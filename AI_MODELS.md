@@ -1,5 +1,9 @@
 # Diseño de motores y modelos
 
+## Fase 9 — Forense y comparación de estilo autorizada
+
+No se promovió el modelo de patrones técnicos a detector. El nuevo compilador solo admite textos locales con hashes/procedencia y fuentes con derechos declarados; el entrenamiento rechaza por defecto technical_fixture. [Corpus real en preparación](datasets/authorship-v1/README.md). La solicitud de probabilidades requiere un modelo real evaluado/calibrado y no se declara cumplida. [Alcance detallado](docs/PHASE_9.md).
+
 ## Fase 8 — Investigación experimental y observaciones lingüísticas
 
 Baseline offline de regresión logística L2 sobre ocho características, estandarización solo de train y Platt solo de calibration, con splits separados de validation/test. Manifiesto hash de corpus/modelo/informe/código. Todos los experimentos permanecen sin aprobar. La ejecución técnica de 48 patrones inventados no acredita autoría; la aplicación solo muestra medidas observables. [Alcance detallado](docs/PHASE_8.md).

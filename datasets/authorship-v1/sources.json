@@ -1,0 +1,36 @@
+{
+  "schema": "authorship-corpus-sources-v1",
+  "purpose": "research",
+  "qualified_human_samples": 0,
+  "qualified_ai_samples": 0,
+  "synthetic_patterns_allowed_for_training": false,
+  "sources": [
+    {
+      "name": "MULTITuDE v3",
+      "publisher_reference": "https://github.com/MLNTeam-Unical/Multilingual-MGT-AA",
+      "publisher_readme_sha256": "7ff3c5d3a646fc3789a1438f403b52ab25940fc00c201055f26620ec400a362e",
+      "dataset_reference": "https://zenodo.org/records/15519413",
+      "metadata_endpoint": "https://zenodo.org/api/records/15519413",
+      "language_of_interest": "es",
+      "observed_network_result": "URLError",
+      "host_in_enforced_allowed_hosts": false,
+      "license_verified": false,
+      "data_downloaded": false,
+      "eligible_for_training": false
+    },
+    {
+      "name": "AuTexTification copy in Literata",
+      "reference": "https://github.com/jjastrz14/Literata",
+      "archive_sha256": "e39598df9a3a0868cbb232ab3dd004634ef3c551d1ec5576bfb0b219cfff750f",
+      "observed_archive_bytes": 13579765,
+      "original_publisher_reference": "https://github.com/autextification/AuTexTification-Overview",
+      "license_verified": false,
+      "eligible_for_training": false,
+      "reason": "No dataset redistribution/training license verified; repository software license is not substituted for data rights"
+    }
+  ],
+  "status": "real_corpus_acquisition_pending",
+  "trained_research_model": null,
+  "calibrated_research_model": null,
+  "document_authorship_probabilities_available": false
+}

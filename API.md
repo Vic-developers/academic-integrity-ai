@@ -1,5 +1,9 @@
 # API y contratos de motores
 
+## Fase 9 — Forense y comparación de estilo autorizada
+
+API /api/v1/forensics: metadatos/observaciones, autorización por documento/versión e historial, comparación descriptiva de estilo. Ver [contrato](docs/FORENSICS_API.md). No devuelve probabilidades de autoría basadas en propiedades editables o diferencias estilísticas. [Alcance detallado](docs/PHASE_9.md).
+
 ## Fase 8 — Investigación experimental y observaciones lingüísticas
 
 GET /api/v1/experimental-ai/capabilities declara las capacidades; GET /api/v1/experimental-ai/documents/{id} devuelve observaciones, versión/hashes y resultado not_conclusive con authorship_probability null. No hay entrenamiento web ni clasificador de autoría activo. [Alcance detallado](docs/PHASE_8.md).
