@@ -1,5 +1,9 @@
 # Arquitectura
 
+## Fase 7 — Afirmaciones y evaluación humana
+
+El módulo claims separa extracción/recuperación determinista del registro de decisiones humanas. Celery procesa trabajos con lease y revalida permisos antes/después del cálculo. No ejecuta NLI ni solicita contenido externo. [Alcance detallado](docs/PHASE_7.md).
+
 ## Fase 6 — Bibliografía local y adaptadores de metadatos
 
 Extracción bibliográfica determinista sobre fragmentos existentes, con offsets originales; no usa un LLM ni reconstruye fuentes. Las consultas de metadatos solo usan DOI, hosts fijos, tres niveles de consentimiento y transporte hijo con límite total de seis segundos. No se descarga el artículo ni se verifican afirmaciones. La falta de acceso remoto se conserva como resultado parcial, sin datos inventados.

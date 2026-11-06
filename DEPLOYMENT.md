@@ -1,5 +1,9 @@
 # Infraestructura y operación
 
+## Fase 7 — Afirmaciones y evaluación humana
+
+Esquema actual: 0007_claims. Aplicar alembic upgrade head y reconstruir API/worker/frontend. El worker incorpora app.worker.claims. Funciona en CPU sin pesos ni Hugging Face; mantener proveedores remotos deshabilitados. Validación de desarrollo Linux, no despliegue público ni Windows. [Alcance detallado](docs/PHASE_7.md).
+
 ## Fase 6 — Bibliografía local y adaptadores de metadatos
 
 Esquema actual 0006_bibliography. BIBLIOGRAPHY_EXTERNAL_ENABLED=false por defecto; OpenAlex necesita OPENALEX_API_KEY. Además, cada institución debe autorizar las consultas mediante su administrador y cada revisión requiere opt-in. Habilitar flags no concede acceso de red: respetar la política del entorno y su CA con TLS verificado. En esta sesión no se habilitaron los proveedores ni Hugging Face; no se probó acceso remoto satisfactorio ni despliegue público.

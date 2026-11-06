@@ -1,5 +1,9 @@
 # API y contratos de motores
 
+## Fase 7 — Afirmaciones y evaluación humana
+
+La API /api/v1/claims ofrece trabajos locales, candidatas, fragmentos originales, selección manual, decisiones humanas con historial y exportación. Ver [contrato de afirmaciones](docs/CLAIMS_API.md). [Alcance detallado](docs/PHASE_7.md).
+
 ## Fase 6 — Bibliografía local y adaptadores de metadatos
 
 Bibliografía implementada en [BIBLIOGRAPHY_API](docs/BIBLIOGRAPHY_API.md). Incluye capacidades, permiso institucional, creación asíncrona, historial autorizado, estado, referencias paginadas, respuesta registrada, cancelación y exportación JSON. No se aceptan URL de proveedores proporcionadas por el cliente. El cuerpo POST está limitado a 64 KiB.

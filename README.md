@@ -1,5 +1,9 @@
 # Academic Integrity AI
 
+## Fase 7 — Afirmaciones y evaluación humana
+
+La fase 7 local permite proponer afirmaciones, recuperar pasajes de fuentes seleccionadas y registrar decisiones humanas con evidencia e historial. No se habilitó Hugging Face. NLI, artículos externos y clasificación automática permanecen pendientes; no se inicia fase 8. [Alcance detallado](docs/PHASE_7.md).
+
 ## Fase 6 — Bibliografía local y adaptadores de metadatos
 
 Bibliografía permite extraer referencias candidatas, DOI, posibles duplicados y patrones de citas; conserva texto, rangos y hashes y exporta evidencia JSON. Crossref/OpenAlex tienen adaptadores y estados de cobertura, pero sus consultas reales fueron rechazadas por la red de esta sesión. No se presenta ninguna fuente como verificada externamente sin una respuesta válida.

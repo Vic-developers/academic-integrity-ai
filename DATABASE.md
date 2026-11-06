@@ -1,5 +1,9 @@
 # Modelo de datos
 
+## Fase 7 — Afirmaciones y evaluación humana
+
+0007_claims añade claim_runs, claim_sources, claims y claim_jobs: RLS forzada, FK institucionales, idempotencia, versiones y snapshots privados. Cada afirmación conserva evidencia original y un historial humano con revisión optimista. Borrar un documento invalida y limpia todos sus resultados relacionados. [Alcance detallado](docs/PHASE_7.md).
+
 ## Fase 6 — Bibliografía local y adaptadores de metadatos
 
 0006_bibliography añade bibliography_runs y bibliography_jobs con RLS forzada, FK compuestas, idempotencia y snapshots privados. Las funciones internas de claim/recovery tienen lease, token, intentos acotados, search_path fijo y PUBLIC revocado. institutions añade bibliography_external_allowed=false, con permiso UPDATE solo para esa columna y política RLS que exige administrador/superadministrador activo de la institución. El resto de sus columnas continúa sin permiso de escritura para aid_app.

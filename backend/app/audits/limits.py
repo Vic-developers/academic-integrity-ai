@@ -14,6 +14,8 @@ class AuditBodyLimitMiddleware:
                 or scope["path"].startswith("/api/v1/audits/")
                 or scope["path"] == "/api/v1/bibliography"
                 or scope["path"].startswith("/api/v1/bibliography/")
+                or scope["path"] == "/api/v1/claims"
+                or scope["path"].startswith("/api/v1/claims/")
             )
         ):
             return await self.app(scope, receive, send)

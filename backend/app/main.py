@@ -8,6 +8,7 @@ from fastapi.responses import JSONResponse
 from sqlalchemy import text
 from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 from app import auth, institutions
+from app.claims import api as claims
 from app.bibliography import api as bibliography
 from app.audits import api as audits
 from app.audits.limits import AuditBodyLimitMiddleware
@@ -25,6 +26,7 @@ app.include_router(documents.router)
 app.include_router(courses.router)
 app.include_router(audits.router)
 app.include_router(bibliography.router)
+app.include_router(claims.router)
 app.add_middleware(AuditBodyLimitMiddleware)
 app.add_middleware(UploadLimitMiddleware)
 log = logging.getLogger("uvicorn.error")
@@ -112,7 +114,7 @@ def ready() -> dict:
     try:
         with engine.connect() as conn:
             revision = conn.execute(text("SELECT version_num FROM alembic_version")).scalar_one()
-            if revision != "0006_bibliography":
+            if revision != "0007_claims":
                 raise HTTPException(503, "Migraciones pendientes")
         with Redis.from_url(settings().redis_url, socket_timeout=2, socket_connect_timeout=2) as redis:
             redis.ping()

@@ -1,5 +1,9 @@
 # Seguridad y privacidad
 
+## Fase 7 — Afirmaciones y evaluación humana
+
+Las evaluaciones humanas verifican permisos sobre principal y todas las fuentes, pertenencia de fragmento/versión, rangos Unicode y SHA-256. Estudiantes no clasifican. Decisiones de respaldo/contradicción requieren pasajes reales y motivo; revisión optimista evita sobrescritura silenciosa. Sin acceso remoto/modelos nuevos. [Alcance detallado](docs/PHASE_7.md).
+
 ## Fase 6 — Bibliografía local y adaptadores de metadatos
 
 Salida externa deshabilitada por defecto: exige habilitación del servidor, permiso de administrador institucional y opt-in por revisión. Solo transmite DOI; nunca la bibliografía completa ni el texto del documento. Hosts fijos HTTPS, sin redirecciones, respuesta limitada, red/SSL heredados de forma acotada y timeout total del proceso hijo. OpenAlex usa clave opcional de servidor, nunca retornada o registrada en evidencia. Permisos y consentimiento se revalidan antes de cada lookup habilitado y antes de persistir; cancelación/retirada descartan resultados tardíos. Borrar el documento limpia inmediatamente snapshots y resultados derivados.

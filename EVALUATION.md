@@ -1,5 +1,9 @@
 # Evaluación y pruebas
 
+## Fase 7 — Afirmaciones y evaluación humana
+
+La fase 7 prueba procedencia Unicode, citas reales, negaciones sin veredicto automático, decisiones humanas, concurrencia, revocación/borrado y aislamiento. Los textos sintéticos no acreditan precisión de extracción/entailment en investigación real. NLI y evaluación científica quedan pendientes. [Alcance detallado](docs/PHASE_7.md).
+
 ## Fase 6 — Bibliografía local y adaptadores de metadatos
 
 La evaluación local prueba referencias APA/numeradas limitadas, DOI, duplicados, citas compatibles y evidencia Unicode. Los contratos de proveedores usan JSON etiquetado como fixture técnico en aid_test. Se efectuaron además dos consultas reales a Crossref/OpenAlex, ambas sin éxito por la red; no se publica precisión de verificación remota. La cobertura local heurística no demuestra ausencia de fuentes/citas ni validez bibliográfica general.

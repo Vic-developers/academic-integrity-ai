@@ -18,6 +18,8 @@ import EvidenceViewer from "./EvidenceViewer";
 import Bibliography from "./Bibliography";
 import BibliographyResult from "./BibliographyResult";
 import AuditResult from "./AuditResult";
+import Claims from "./Claims";
+import ClaimResult from "./ClaimResult";
 export default function Workspace() {
   const { data, error, isPending } = useQuery({
     queryKey: ["identity"],
@@ -105,6 +107,7 @@ export default function Workspace() {
           <Link to="/">◈ &nbsp; Resumen</Link>
           <Link to="/documentos">▤ &nbsp; Documentos</Link>
           <Link to="/asignaturas">▦ &nbsp; Asignaturas</Link>
+          <Link to="/afirmaciones">◇ &nbsp; Afirmaciones</Link>
           <Link to="/bibliografia">▧ &nbsp; Bibliografía</Link>
           <Link to="/auditorias">⌕ &nbsp; Comparación literal</Link>
           {["admin", "superadmin", "coordinator"].includes(selected.role) && (
@@ -175,6 +178,16 @@ export default function Workspace() {
               element={<Documents role={selected.role} />}
             />
             <Route path="/documentos/:id" element={<DocumentDetail />} />
+            <Route path="/afirmaciones" element={<Claims />} />
+            <Route
+              path="/afirmaciones/:id"
+              element={
+                <ClaimResult
+                  key={location.pathname}
+                  canReview={selected.role !== "student"}
+                />
+              }
+            />
             <Route path="/bibliografia" element={<Bibliography />} />
             <Route
               path="/bibliografia/:documentId"

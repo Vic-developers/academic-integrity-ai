@@ -1,5 +1,9 @@
 # Registro de cambios
 
+## Fase 7 — Afirmaciones y evaluación humana
+
+Añadido el flujo local de afirmaciones: extracción heurística, recuperación léxica, evaluación humana con evidencia verificable, historial y conflictos de revisión; migración 0007_claims. Sin NLI, fuentes externas ni dependencias nuevas. [Alcance detallado](docs/PHASE_7.md).
+
 ## Fase 6 — Bibliografía local y adaptadores de metadatos
 
 Flujo bibliográfico local con trabajos durables, revisión de patrones, candidatos duplicados, citas y evidencia original. Adaptadores Crossref/OpenAlex con consentimiento, límites, hash/respuesta y errores explícitos. Política institucional revocable, cancelación, retirada de evidencia y exportación. Sin éxito de consulta remota en esta sesión; no se generan fuentes ni acusaciones automáticas.

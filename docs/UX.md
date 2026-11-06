@@ -42,3 +42,8 @@ Implementados login, recuperación, selección institucional, resumen, usuarios 
 ## Estado de Fase 2
 
 Documentos incluye carga por lote/arrastre, límites reales consultados, lista paginada y errores por archivo. Detalle incluye PDF original paginado/zoom o texto estructurado DOCX/TXT, normalización opcional, metadatos y descarga privada. Asignaturas incorpora actividades y matrículas. Los estados son de extracción; no hay indicadores de plagio o autoría. Los resaltados y visor comparativo siguen como diseño de Fase 4.
+
+
+## Afirmaciones
+
+Selección explícita de principal/fuentes, candidatas sin evaluar, pasajes léxicos identificados como sugerencias, motivo humano y evidencia obligatoria para estados afirmativos. Selección manual con índices Unicode y vista previa. Conflictos mantienen borrador y requieren actualizar revisión explícitamente. Historial y exportación privados; [alcance](PHASE_7.md).

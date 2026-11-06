@@ -1,5 +1,9 @@
 # Hoja de ruta y riesgos
 
+## Fase 7 — Afirmaciones y evaluación humana
+
+Se verifica el flujo local de fase 7: candidatas heurísticas, pasajes léxicos, selección manual y evaluación humana trazable. La puerta completa de clasificación automática/NLI y recuperación externa queda pendiente, junto a los pendientes previos de semántica y proveedores. No se avanza a fase 8. [Alcance detallado](docs/PHASE_7.md).
+
 ## Fase 6 — Bibliografía local y adaptadores de metadatos
 
 Se implementó el flujo local de fase 6: extracción, patrones de cita, duplicados, trabajos durables, permisos, vista y exportación. Los adaptadores Crossref/OpenAlex se prueban con fixtures de contrato; las dos consultas reales al origen fallaron por la política de red. La puerta de verificación en línea sigue pendiente. No se ha comenzado la fase 7; semántica permanece pospuesta. [Estado detallado](docs/PHASE_6.md).

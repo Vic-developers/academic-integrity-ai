@@ -264,6 +264,9 @@ def remove(document_id: UUID, member: Member, db: DB) -> None:
     from app.bibliography.service import invalidate
 
     invalidate(db, version.id)
+    from app.claims.service import invalidate as invalidate_claims
+
+    invalidate_claims(db, version.id)
     document.deleted_at = now()
     for job in db.scalars(
         select(DocumentJob).where(DocumentJob.version_id == version.id, DocumentJob.kind == "extract")

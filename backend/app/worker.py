@@ -19,6 +19,7 @@ celery.conf.update(
     broker_connection_retry_on_startup=True,
     beat_schedule={
         "deliver-reset-email": {"task": "app.worker.deliver", "schedule": 5.0},
+        "claims": {"task": "app.worker.claims", "schedule": 2.0, "options": {"expires": 5}},
         "bibliography": {"task": "app.worker.bibliography", "schedule": 2.0, "options": {"expires": 5}},
         "literal-audits": {"task": "app.worker.literal_audits", "schedule": 2.0, "options": {"expires": 5}},
         "extract-documents": {"task": "app.worker.extract_documents", "schedule": 2.0, "options": {"expires": 5}},
@@ -103,5 +104,12 @@ def literal_audits() -> int:
 @celery.task(name="app.worker.bibliography")
 def bibliography() -> int:
     from app.bibliography.jobs import process_next
+
+    return int(process_next())
+
+
+@celery.task(name="app.worker.claims")
+def claims() -> int:
+    from app.claims.jobs import process_next
 
     return int(process_next())
