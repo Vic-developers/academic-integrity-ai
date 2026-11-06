@@ -1,5 +1,9 @@
 # Arquitectura
 
+## Fase 8 — Investigación experimental y observaciones lingüísticas
+
+experimental_ai separa medidas lingüísticas del pipeline offline de investigación. La API calcula observables desde fragmentos autorizados y se abstiene de clasificar autoría; no carga experimentos ni entrena con la base de datos. El pipeline usa biblioteca estándar en CPU y artefactos JSON inmutables. [Alcance detallado](docs/PHASE_8.md).
+
 ## Fase 7 — Afirmaciones y evaluación humana
 
 El módulo claims separa extracción/recuperación determinista del registro de decisiones humanas. Celery procesa trabajos con lease y revalida permisos antes/después del cálculo. No ejecuta NLI ni solicita contenido externo. [Alcance detallado](docs/PHASE_7.md).

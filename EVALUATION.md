@@ -1,5 +1,9 @@
 # Evaluación y pruebas
 
+## Fase 8 — Investigación experimental y observaciones lingüísticas
+
+La fase 8 verifica métricas observables y un baseline logístico/Platt real sobre 48 patrones inventados. La evaluación sintética no mide precisión de detección de IA ni calibración de autoría. Se comprueban separación de grupos, contaminación, procedencia, test independiente de parámetros y abstención de todos los documentos. Protocolo en evaluation/experimental-ai-v1/README.md. [Alcance detallado](docs/PHASE_8.md).
+
 ## Fase 7 — Afirmaciones y evaluación humana
 
 La fase 7 prueba procedencia Unicode, citas reales, negaciones sin veredicto automático, decisiones humanas, concurrencia, revocación/borrado y aislamiento. Los textos sintéticos no acreditan precisión de extracción/entailment en investigación real. NLI y evaluación científica quedan pendientes. [Alcance detallado](docs/PHASE_7.md).

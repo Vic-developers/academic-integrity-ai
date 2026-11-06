@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Link, Navigate, Route, Routes } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import { api, ApiError } from "../api";
@@ -19,7 +19,9 @@ import Bibliography from "./Bibliography";
 import BibliographyResult from "./BibliographyResult";
 import AuditResult from "./AuditResult";
 import Claims from "./Claims";
+
 import ClaimResult from "./ClaimResult";
+const ExperimentalAI = lazy(() => import("./ExperimentalAI"));
 export default function Workspace() {
   const { data, error, isPending } = useQuery({
     queryKey: ["identity"],
@@ -107,6 +109,7 @@ export default function Workspace() {
           <Link to="/">◈ &nbsp; Resumen</Link>
           <Link to="/documentos">▤ &nbsp; Documentos</Link>
           <Link to="/asignaturas">▦ &nbsp; Asignaturas</Link>
+          <Link to="/indicios-ia">◌ &nbsp; Observaciones lingüísticas</Link>
           <Link to="/afirmaciones">◇ &nbsp; Afirmaciones</Link>
           <Link to="/bibliografia">▧ &nbsp; Bibliografía</Link>
           <Link to="/auditorias">⌕ &nbsp; Comparación literal</Link>
@@ -178,6 +181,26 @@ export default function Workspace() {
               element={<Documents role={selected.role} />}
             />
             <Route path="/documentos/:id" element={<DocumentDetail />} />
+            <Route
+              path="/indicios-ia"
+              element={
+                <Suspense
+                  fallback={<p role="status">Cargando observaciones…</p>}
+                >
+                  <ExperimentalAI />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/indicios-ia/:id"
+              element={
+                <Suspense
+                  fallback={<p role="status">Cargando observaciones…</p>}
+                >
+                  <ExperimentalAI key={location.pathname} />
+                </Suspense>
+              }
+            />
             <Route path="/afirmaciones" element={<Claims />} />
             <Route
               path="/afirmaciones/:id"

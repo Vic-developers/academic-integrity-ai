@@ -1,5 +1,9 @@
 # Registro de cambios
 
+## Fase 8 — Investigación experimental y observaciones lingüísticas
+
+Añadidas observaciones lingüísticas sin juicio de autoría y pipeline CPU offline de corpus autorizado, baseline logístico, calibración, métricas y artefactos versionados. Entrenamiento técnico real sin aprobación, sin nuevas dependencias ni Hugging Face. [Alcance detallado](docs/PHASE_8.md).
+
 ## Fase 7 — Afirmaciones y evaluación humana
 
 Añadido el flujo local de afirmaciones: extracción heurística, recuperación léxica, evaluación humana con evidencia verificable, historial y conflictos de revisión; migración 0007_claims. Sin NLI, fuentes externas ni dependencias nuevas. [Alcance detallado](docs/PHASE_7.md).

@@ -1,5 +1,9 @@
 # Infraestructura y operación
 
+## Fase 8 — Investigación experimental y observaciones lingüísticas
+
+Sin nuevas dependencias, pesos o migraciones en fase 8 (schema 0007_claims). Reconstruir API/frontend; el worker conserva sus tareas existentes. El pipeline offline es de CPU y no se activa por colocar un artefacto en el filesystem. No habilitar Hugging Face ni descargar corpus para ejecutar las observaciones. [Alcance detallado](docs/PHASE_8.md).
+
 ## Fase 7 — Afirmaciones y evaluación humana
 
 Esquema actual: 0007_claims. Aplicar alembic upgrade head y reconstruir API/worker/frontend. El worker incorpora app.worker.claims. Funciona en CPU sin pesos ni Hugging Face; mantener proveedores remotos deshabilitados. Validación de desarrollo Linux, no despliegue público ni Windows. [Alcance detallado](docs/PHASE_7.md).

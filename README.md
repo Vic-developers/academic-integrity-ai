@@ -1,5 +1,9 @@
 # Academic Integrity AI
 
+## Fase 8 — Investigación experimental y observaciones lingüísticas
+
+La fase 8 incorpora observaciones lingüísticas sobre documentos autorizados y un pipeline offline de entrenamiento/evaluación/calibración en CPU. El ensayo ejecutado usa patrones técnicos inventados, no datos científicos de autoría. Sin corpus representativo autorizado ni modelo aprobado: resultado siempre no concluyente, sin probabilidad de IA. Hugging Face sigue deshabilitado. [Alcance detallado](docs/PHASE_8.md).
+
 ## Fase 7 — Afirmaciones y evaluación humana
 
 La fase 7 local permite proponer afirmaciones, recuperar pasajes de fuentes seleccionadas y registrar decisiones humanas con evidencia e historial. No se habilitó Hugging Face. NLI, artículos externos y clasificación automática permanecen pendientes; no se inicia fase 8. [Alcance detallado](docs/PHASE_7.md).

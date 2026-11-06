@@ -1,5 +1,9 @@
 # Modelo de datos
 
+## Fase 8 — Investigación experimental y observaciones lingüísticas
+
+La fase 8 conserva el esquema 0007_claims. Las observaciones se recalculan desde versiones/fragments protegidos por RLS, sin tablas o resultados derivados nuevos. Experimentos offline privados fuera de la base institucional; no hay exportación de documentos para entrenamiento. [Alcance detallado](docs/PHASE_8.md).
+
 ## Fase 7 — Afirmaciones y evaluación humana
 
 0007_claims añade claim_runs, claim_sources, claims y claim_jobs: RLS forzada, FK institucionales, idempotencia, versiones y snapshots privados. Cada afirmación conserva evidencia original y un historial humano con revisión optimista. Borrar un documento invalida y limpia todos sus resultados relacionados. [Alcance detallado](docs/PHASE_7.md).

@@ -1,5 +1,9 @@
 # Seguridad y privacidad
 
+## Fase 8 — Investigación experimental y observaciones lingüísticas
+
+No se entrenan modelos con documentos institucionales. El CLI exige corpus local explícito y permisos declarados, sin red, .env ni base de datos. Artefactos JSON, permisos privados e inmutabilidad; no pickle ni activación web. Observaciones con autorización documental, presupuesto, rate limit, abstención y respuestas privadas. [Alcance detallado](docs/PHASE_8.md).
+
 ## Fase 7 — Afirmaciones y evaluación humana
 
 Las evaluaciones humanas verifican permisos sobre principal y todas las fuentes, pertenencia de fragmento/versión, rangos Unicode y SHA-256. Estudiantes no clasifican. Decisiones de respaldo/contradicción requieren pasajes reales y motivo; revisión optimista evita sobrescritura silenciosa. Sin acceso remoto/modelos nuevos. [Alcance detallado](docs/PHASE_7.md).

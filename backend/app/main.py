@@ -9,6 +9,7 @@ from sqlalchemy import text
 from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 from app import auth, institutions
 from app.claims import api as claims
+from app.experimental_ai import api as experimental_ai
 from app.bibliography import api as bibliography
 from app.audits import api as audits
 from app.audits.limits import AuditBodyLimitMiddleware
@@ -27,6 +28,7 @@ app.include_router(courses.router)
 app.include_router(audits.router)
 app.include_router(bibliography.router)
 app.include_router(claims.router)
+app.include_router(experimental_ai.router)
 app.add_middleware(AuditBodyLimitMiddleware)
 app.add_middleware(UploadLimitMiddleware)
 log = logging.getLogger("uvicorn.error")

@@ -1,5 +1,9 @@
 # API y contratos de motores
 
+## Fase 8 — Investigación experimental y observaciones lingüísticas
+
+GET /api/v1/experimental-ai/capabilities declara las capacidades; GET /api/v1/experimental-ai/documents/{id} devuelve observaciones, versión/hashes y resultado not_conclusive con authorship_probability null. No hay entrenamiento web ni clasificador de autoría activo. [Alcance detallado](docs/PHASE_8.md).
+
 ## Fase 7 — Afirmaciones y evaluación humana
 
 La API /api/v1/claims ofrece trabajos locales, candidatas, fragmentos originales, selección manual, decisiones humanas con historial y exportación. Ver [contrato de afirmaciones](docs/CLAIMS_API.md). [Alcance detallado](docs/PHASE_7.md).

@@ -1,5 +1,9 @@
 # Hoja de ruta y riesgos
 
+## Fase 8 — Investigación experimental y observaciones lingüísticas
+
+El pipeline de fase 8 y las observaciones locales están implementados. La puerta científica queda pendiente de corpus autorizado representativo, evaluación independiente y aprobación; el entrenamiento de patrones técnicos no la satisface. No se inicia fase 9. [Alcance detallado](docs/PHASE_8.md).
+
 ## Fase 7 — Afirmaciones y evaluación humana
 
 Se verifica el flujo local de fase 7: candidatas heurísticas, pasajes léxicos, selección manual y evaluación humana trazable. La puerta completa de clasificación automática/NLI y recuperación externa queda pendiente, junto a los pendientes previos de semántica y proveedores. No se avanza a fase 8. [Alcance detallado](docs/PHASE_7.md).

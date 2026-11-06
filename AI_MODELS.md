@@ -1,5 +1,9 @@
 # Diseño de motores y modelos
 
+## Fase 8 — Investigación experimental y observaciones lingüísticas
+
+Baseline offline de regresión logística L2 sobre ocho características, estandarización solo de train y Platt solo de calibration, con splits separados de validation/test. Manifiesto hash de corpus/modelo/informe/código. Todos los experimentos permanecen sin aprobar. La ejecución técnica de 48 patrones inventados no acredita autoría; la aplicación solo muestra medidas observables. [Alcance detallado](docs/PHASE_8.md).
+
 ## Coincidencia literal
 
 Normalización versionada con mapa reversible: Unicode, espacios y comparación por mayúsculas sin perder originales. Tokenización con offsets; n-gramas y fingerprints mediante winnowing para recuperación institucional. Confirmación por secuencias de tokens y extensión de rangos sobre texto realmente recuperado. Citas y bibliografía se etiquetan/excluyen mediante política explícita conservando evidencia. La cobertura es unión de intervalos, evitando contar dos veces solapes; porcentaje de texto comparado/coincidente no implica probabilidad de plagio.
